@@ -41,7 +41,7 @@ set whichwrap+=<,>,h,l  " backspace and cursor keys wrap to
 set shortmess=atI " shortens messages to avoid 'press a key' prompt 
 set report=0 " tell us when anything is changed via :...
 set noerrorbells " don't make noise
-" set mouse=a " enable mouse
+set mouse=a " enable mouse
 " make the splitters between windows be blank
 set fillchars=vert:\ ,stl:\ ,stlnc:\
 
