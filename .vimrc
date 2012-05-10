@@ -20,10 +20,10 @@ colorscheme default " set color scheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Files/Backups
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set backup " make backup file
-set backupdir=. " where to put backup file
-set directory=. " directory is the directory for temp file
-set makeef=make.err " When using make, where should it dump the file
+"set backup " make backup file
+"set backupdir=. " where to put backup file
+"set directory=. " directory is the directory for temp file
+"set makeef=make.err " When using make, where should it dump the file
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim UI
