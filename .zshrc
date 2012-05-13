@@ -14,6 +14,7 @@ ZSH_THEME="dpoggi"
 setopt AUTO_PUSHD
 setopt EXTENDED_GLOB
 setopt GLOB_DOTS
+setopt IGNORE_EOF
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -41,3 +42,19 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
+
+bindkey '^D' extended-logout
+
+function extended-logout() {
+  if [[ -z "$TMUX" ]]; then
+    logout
+  else
+    tmux det
+  fi
+}
+
+zle -N extended-logout
+
+if [[ -z "$TMUX" ]]; then
+  exec tmux att
+fi
