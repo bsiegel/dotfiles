@@ -73,6 +73,7 @@ set shiftwidth=4 " unify
 set noexpandtab " real tabs please!
 set nowrap " do not wrap lines  
 set smarttab " use tabs at the start of a line, spaces elsewhere
+set textwidth=80 " 80 column lines
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Folding
