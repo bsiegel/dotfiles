@@ -10,6 +10,8 @@ ZSH_THEME="dpoggi"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vi=vim
+alias view='vim -R'
 
 setopt AUTO_PUSHD
 setopt EXTENDED_GLOB
