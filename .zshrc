@@ -42,6 +42,6 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 
-if [[ -z "$TMUX" ]]; then
+if [[ -z "$TMUX" && -z "$SSH_CLIENT" ]]; then
   exec tmux att
 fi
