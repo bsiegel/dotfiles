@@ -36,13 +36,13 @@ setopt GLOB_DOTS
 plugins=(git osx rails3 ruby brew bundler gem rvm rake ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 
 # Customize to your needs...
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 if [[ -z "$TMUX" && -z "$SSH_CLIENT" ]]; then
   exec tmux att
