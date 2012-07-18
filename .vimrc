@@ -67,12 +67,12 @@ set fo=tcrqn " See Help (complex)
 set ai " autoindent
 set si " smartindent 
 set cindent " do c-style indenting
-set tabstop=4 " tab spacing (settings below are just to unify it)
-set softtabstop=4 " unify
-set shiftwidth=4 " unify 
-set noexpandtab " real tabs please!
-set nowrap " do not wrap lines  
-set smarttab " use tabs at the start of a line, spaces elsewhere
+"set tabstop=2 " tab spacing (settings below are just to unify it)
+"set softtabstop=2 " unify
+set shiftwidth=2 " unify 
+set expandtab " spaces please!
+"set nowrap " do not wrap lines  
+"set smarttab " use tabs at the start of a line, spaces elsewhere
 set textwidth=80 " 80 column lines
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

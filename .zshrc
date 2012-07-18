@@ -35,7 +35,7 @@ setopt GLOB_DOTS
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx rails3 ruby brew bundler gem rvm rake ssh-agent)
+plugins=(git rails3 ruby bundler gem rvm rake command-not-found debian pip tmux)
 
 source $ZSH/oh-my-zsh.sh
 
