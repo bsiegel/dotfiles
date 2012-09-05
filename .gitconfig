@@ -3,3 +3,12 @@
 	email = brandon@smartercode.net
 [color]
 	ui = auto
+[alias]
+  d = diff --word-diff
+  lg = log --color --oneline
+  co = checkout
+  mb = merge --no-ff --edit
+[push]
+  default = current
+[pull]
+  default = current

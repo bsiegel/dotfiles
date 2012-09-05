@@ -7,11 +7,14 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="dpoggi"
 
+autoload -U zmv
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vi=vim
 alias view='vim -R'
+alias mmv='noglob zmv -W'
 
 setopt AUTO_PUSHD
 setopt EXTENDED_GLOB
