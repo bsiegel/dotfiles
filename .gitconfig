@@ -12,3 +12,4 @@
   default = current
 [pull]
   default = current
+  rebase = true
