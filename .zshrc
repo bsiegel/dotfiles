@@ -52,5 +52,7 @@ export NODE_PATH=/usr/local/lib/node_modules
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 if [[ -z "$TMUX" && -z "$SSH_CLIENT" ]]; then
-  exec tmux att
+  exec tmux -S /tmp/tmux-tmux att -t tmux
 fi
+
+[[ -a "/tmp/tmux-tmux" ]] && chmod 1777 /tmp/tmux-tmux
