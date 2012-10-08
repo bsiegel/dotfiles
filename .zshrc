@@ -43,7 +43,7 @@ plugins=(history-substring-search git git-flow rails3 ruby bundler gem rvm rake 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/share/npm/bin
 export PATH=$PATH:~/android-sdks/tools:~/android-sdks/platform-tools
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
@@ -52,7 +52,20 @@ export NODE_PATH=/usr/local/lib/node_modules
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 if [[ -z "$TMUX" && -z "$SSH_CLIENT" ]]; then
-  exec tmux -S /tmp/tmux-tmux att -t tmux
+  TMUX_ACT=$(tmux -S /tmp/tmux-tmux ls -F '#{session_attached}' 2> /dev/null)
+  if [[ -z "$TMUX_ACT" || "$TMUX_ACT" = "0" ]]; then
+    exec tmux -S /tmp/tmux-tmux att -t tmux
+  else
+    TMUX_ATT=
+    vared -p 'Attach to active tmux session [nyc]? ' TMUX_ATT
+    if [[ "$TMUX_ATT" = "y" || "$TMUX_ATT" = "Y" ]]; then
+      exec tmux -S /tmp/tmux-tmux att -t tmux
+    else
+      if [[ "$TMUX_ATT" = "c" || "$TMUX_ATT" = "C" ]]; then
+        exec tmux -S /tmp/tmux-tmux new -t tmux
+      fi
+    fi
+  fi
 fi
 
 [[ -a "/tmp/tmux-tmux" ]] && chmod 1777 /tmp/tmux-tmux
