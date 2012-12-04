@@ -4,4 +4,3 @@
 --type-add=ruby=.haml,.rake,.rsel,.feature
 --type-add=css=.sass,.scss,.less
 --type-add=js=.coffee
---type-add=rack=.ru
