@@ -52,9 +52,7 @@ function SmartEnd(mode)
   let lastcol = a:mode == "i" ? col("$") : col("$") - 1
   "gravitate towards ending for wrapped lines
   if curcol < lastcol - 1
-    normal yl
-    let l:charlen = byteidx(getreg(), 1)
-    call cursor(0, curcol + l:charlen)
+    call cursor(0, curcol + 1)
   endif
   if curcol < lastcol
     if &wrap
@@ -67,9 +65,7 @@ function SmartEnd(mode)
   endif
   "correct edit mode cursor position, put after current character
   if a:mode == "i"
-    normal yl
-    let l:charlen = byteidx(getreg(), 1)
-    call cursor(0, col(".") + l:charlen)
+    call cursor(0, col(".") + 1)
   endif
   if a:mode == "v"
     normal msgv`s

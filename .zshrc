@@ -15,6 +15,7 @@ autoload -U zmv
 alias vi=vim
 alias view='vim -R'
 alias mmv='noglob zmv -W'
+alias serve='python -m SimpleHTTPServer'
 
 setopt AUTO_PUSHD
 setopt EXTENDED_GLOB
@@ -41,6 +42,17 @@ setopt GLOB_DOTS
 plugins=(history-substring-search git git-flow rails3 ruby bundler gem rvm rake brew osx tmux)
 
 source $ZSH/oh-my-zsh.sh
+
+alias gl='git log'
+compdef _git gl=git-log
+unalias gp
+compdef -d gp
+alias gpl='git pull'
+compdef _git gpl=git-pull
+alias gps='git push'
+compdef _git gps=git-push
+alias glgg="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+alias glg='git log --stat'
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/share/npm/bin
