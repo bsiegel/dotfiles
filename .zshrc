@@ -39,20 +39,21 @@ setopt GLOB_DOTS
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(history-substring-search git git-flow rails3 ruby gem bundler rake rbenv brew osx tmux)
+plugins=(history-substring-search git rails3 ruby gem bundler rake rbenv brew osx tmux zeus)
 
 source $ZSH/oh-my-zsh.sh
 
 alias gl='git log'
 compdef _git gl=git-log
-unalias gp
-compdef -d gp
+alias gp='git remote prune'
+compdef _git gp=git-remote
 alias gpl='git pull'
 compdef _git gpl=git-pull
 alias gps='git push'
 compdef _git gps=git-push
 alias glgg="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 alias glg='git log --stat'
+alias zeus='unbundled_zeus'
 
 # Customize to your needs...
 export PATH=$PATH:/usr/local/sbin:/usr/X11/bin:/usr/local/share/npm/bin:~/android-sdks/tools:~/android-sdks/platform-tools

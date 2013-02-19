@@ -13,7 +13,13 @@ cnoreabbrev hexq %!xxd -r
 let g:VMPhtmlreader = 'open'
 map <silent> <unique> <Leader>rd <Plug>RooterChangeToRootDirectory
 
+nmap <C-k> [e
+nmap <C-j> ]e
+vmap <C-k> [egv
+vmap <C-j> ]egv
+
 nmap <Leader>f :Ack<Space><C-r>=expand("<cword>")<CR>
+nmap <silent><Leader>x :bd<CR>
 
 nmap <silent><Home> :call SmartHome("n")<CR>
 nmap <silent><End> :call SmartEnd("n")<CR>

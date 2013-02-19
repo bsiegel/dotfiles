@@ -2737,12 +2737,26 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
+		<key>0xf700-0x280000</key>
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x0b</string>
+		</dict>
 		<key>0xf700-0x300000</key>
 		<dict>
 			<key>Action</key>
 			<integer>7</integer>
 			<key>Text</key>
 			<string></string>
+		</dict>
+		<key>0xf701-0x280000</key>
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x0a</string>
 		</dict>
 		<key>0xf701-0x300000</key>
 		<dict>
@@ -2894,13 +2908,13 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>343 409 445 270 0 0 1440 878 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>182 459 924 485 0 0 1920 1058 </string>
+	<string>-1284 219 924 485 -1920 0 1920 1080 </string>
 	<key>NSWindow Frame com.apple.typography_panel_InconsolataLGC</key>
 	<string>479 675 260 42 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>273 15 1487 710 0 0 1440 878 </string>
+	<string>-1663 422 570 476 -1920 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>103 293 585 476 0 0 1920 1058 </string>
+	<string>103 293 570 476 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>462 77 665 501 0 0 1920 1058 </string>
 	<key>New Bookmarks</key>
@@ -3235,13 +3249,6 @@
 					<key>Text</key>
 					<string>[1;6A</string>
 				</dict>
-				<key>0xf700-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x41</string>
-				</dict>
 				<key>0xf701-0x220000</key>
 				<dict>
 					<key>Action</key>
@@ -3262,13 +3269,6 @@
 					<integer>10</integer>
 					<key>Text</key>
 					<string>[1;6B</string>
-				</dict>
-				<key>0xf701-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x42</string>
 				</dict>
 				<key>0xf702-0x220000</key>
 				<dict>
@@ -3291,13 +3291,6 @@
 					<key>Text</key>
 					<string>[1;6D</string>
 				</dict>
-				<key>0xf702-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x44</string>
-				</dict>
 				<key>0xf703-0x220000</key>
 				<dict>
 					<key>Action</key>
@@ -3318,13 +3311,6 @@
 					<integer>10</integer>
 					<key>Text</key>
 					<string>[1;6C</string>
-				</dict>
-				<key>0xf703-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x43</string>
 				</dict>
 				<key>0xf704-0x20000</key>
 				<dict>
@@ -3678,7 +3664,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2012-12-14T16:08:11Z</date>
+	<date>2013-02-19T16:34:59Z</date>
 	<key>SUSkippedVersion</key>
 	<string>1.0.0.20120203</string>
 	<key>SavePasteHistory</key>
