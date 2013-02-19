@@ -5,6 +5,7 @@ color molokai
 
 au BufRead,BufNewFile *.scala set filetype=scala
 
+set ttymouse=xterm2
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 cnoreabbrev hex %!xxd
