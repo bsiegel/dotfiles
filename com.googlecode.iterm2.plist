@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AdjustWindowForFontSizeChange</key>
+	<true/>
+	<key>AllowClipboardAccess</key>
+	<true/>
 	<key>AnimateDimming</key>
 	<false/>
 	<key>AppleAntiAliasingThreshold</key>
@@ -2912,7 +2916,7 @@
 	<key>NSWindow Frame com.apple.typography_panel_InconsolataLGC</key>
 	<string>479 675 260 42 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1663 422 570 476 -1920 0 1920 1080 </string>
+	<string>-1920 594 570 476 -1920 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>103 293 570 476 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -3664,7 +3668,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-02-19T16:34:59Z</date>
+	<date>2013-02-19T17:38:31Z</date>
 	<key>SUSkippedVersion</key>
 	<string>1.0.0.20120203</string>
 	<key>SavePasteHistory</key>
@@ -3712,6 +3716,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>unknown</string>
+	<string>1.0.0.20130210</string>
 </dict>
 </plist>
