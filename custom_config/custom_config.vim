@@ -5,6 +5,7 @@ color molokai
 
 au BufRead,BufNewFile *.scala set filetype=scala
 
+set switchbuf=usetab,newtab
 set ttymouse=xterm2
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
@@ -21,6 +22,14 @@ vmap <C-j> ]egv
 
 nmap <Leader>f :Ack<Space><C-r>=expand("<cword>")<CR>
 nmap <silent><Leader>x :bd<CR>
+nmap <silent><Leader>` :tab sball<CR>
+
+"This allows for change paste motion cp{motion}
+nmap <silent> cp :set opfunc=ChangePaste<CR>g@
+function! ChangePaste(type, ...)
+  silent exe "normal! `[v`]\"_c"
+  silent exe "normal! p"
+endfunction
 
 nmap <silent><Home> :call SmartHome("n")<CR>
 nmap <silent><End> :call SmartEnd("n")<CR>
