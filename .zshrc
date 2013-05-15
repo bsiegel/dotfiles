@@ -18,10 +18,65 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   alias mmv='noglob zmv -W'
   alias serve='python -m SimpleHTTPServer'
   alias ag='ag -S -U'
-  alias jr='cd ~/working/mobiledefense_rails'
-  alias js='cd ~/working/mobiledefense_snotur2'
-  alias jsa='cd ~/working/mobiledefense_snotur_api_gem'
-  alias jss='cd ~/working/mobiledefense_snotur_service'
+  alias jj='popd'
+  alias z='zeus'
+  alias rdbg='be rdebug $(git rev-parse --show-toplevel)/script/server'
+  
+  function j() {
+    cd `f $1`
+  }
+
+  function f() {
+    word=$1
+    pattern=$word[1]
+    patternw='[\/|\.|_|-| ]'$word[1]'[a-zA-Z]*'
+    i=2
+    while [[ -n $word[$i] ]]; do
+      pattern="$pattern.*$word[$i]"
+      patternw="$patternw"'[\.|_|-| ]'"$word[$i]"'[a-zA-Z]*'
+      i=$(($i+1))
+    done
+    directories=`find -L -maxdepth 1 -type d | egrep -v '(^\.\/\.|\.sparsebundle$)'`
+    candidate=`echo $directories | egrep "^\.$patternw$" | head -n1`
+    if [[ -z $candidate ]]; then
+      candidate=`echo $directories | egrep -i "^\.$patternw$" | head -n1`
+    fi
+    if [[ -z $candidate ]]; then
+      candidate=`echo $directories | egrep "^\.$patternw" | head -n1`
+    fi
+    if [[ -z $candidate ]]; then
+      candidate=`echo $directories | egrep -i "^\.$patternw" | head -n1`
+    fi
+    if [[ -z $candidate ]]; then
+      candidate=`echo $directories | egrep "^\.\/$pattern" | head -n1`
+    fi
+    if [[ -z $candidate ]]; then
+      candidate=`echo $directories | egrep -i "^\.\/$pattern" | head -n1`
+    fi
+    if [[ -z $candidate ]]; then
+      candidate=`echo $directories | egrep "$patternw" | head -n1`
+    fi
+    if [[ -z $candidate ]]; then
+      candidate=`echo $directories | egrep -i "$patternw" | head -n1`
+    fi
+    if [[ -z $candidate ]]; then
+      candidate=`echo $directories | egrep "[\.|_|-| ]$pattern" | head -n1`
+    fi
+    if [[ -z $candidate ]]; then
+      candidate=`echo $directories | egrep -i "[\.|_|-| ]$pattern" | head -n1`
+    fi
+    if [[ -z $candidate ]]; then
+      candidate=`echo $directories | egrep "$pattern" | head -n1`
+    fi
+    if [[ -z $candidate ]]; then
+      candidate=`echo $directories | egrep -i "$pattern" | head -n1`
+    fi
+    if [[ -n $candidate ]]; then
+      echo $candidate
+    else
+      false
+    fi
+  }
 
   setopt AUTO_PUSHD
   setopt EXTENDED_GLOB
@@ -45,10 +100,16 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
   # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
   # Example format: plugins=(rails git textmate ruby lighthouse)
-  plugins=(history-substring-search git rails3 ruby gem bundler rake rbenv brew osx tmux zeus)
+  plugins=(history-substring-search safe-paste git rails3 ruby gem bundler rake rbenv brew osx tmux zeus)
 
   source $ZSH/oh-my-zsh.sh
 
+  alias grs='git reset'
+  compdef _git grs=git-reset
+  alias grsh='git reset --hard'
+  compdef _git grsh=git-reset
+  alias grb='git rebase'
+  compdef _git grb=git-rebase
   alias gl='git log'
   compdef _git gl=git-log
   alias gp='git remote prune'
@@ -59,7 +120,6 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   compdef _git gps=git-push
   alias glgg="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
   alias glg='git log --stat'
-  alias zeus='unbundled_zeus'
 
   # Customize to your needs...
   export PATH=$PATH:/usr/local/sbin:/usr/X11/bin:/usr/local/share/npm/bin:~/bin:~/android-sdks/tools:~/android-sdks/platform-tools
@@ -67,16 +127,19 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   export VISUAL=/usr/bin/vim
   export NODE_PATH=/usr/local/lib/node_modules
 else
-  TMUX_ACT=$(tmux -S /tmp/tmux-tmux ls -F '#{session_attached}' 2> /dev/null)
+  TMUX_ACT=$(tmux -S /tmp/tmux-tmux ls -F '#{session_windows}' 2> /dev/null)
   if [[ -z "$TMUX_ACT" || "$TMUX_ACT" = "0" ]]; then
     exec tmux -S /tmp/tmux-tmux new -s tmux
   else
-    TMUX_ATT=
-    vared -p 'Attach to active tmux session [nyc]? ' TMUX_ATT
-    if [[ "$TMUX_ATT" = "y" || "$TMUX_ATT" = "Y" ]]; then
+    TMUX_ATT=$(tmux -S /tmp/tmux-tmux ls -F '#{session_attached}' 2> /dev/null)
+    if [[ -z "$TMUX_ATT" || "$TMUX_ATT" = "0" ]]; then
       exec tmux -S /tmp/tmux-tmux att -t tmux
     else
-      if [[ "$TMUX_ATT" = "c" || "$TMUX_ATT" = "C" ]]; then
+      TMUX_RSP=
+      vared -p 'Attach to active tmux session [nyc]? ' TMUX_ATT
+      if [[ "$TMUX_RSP" = "y" || "$TMUX_RSP" = "Y" ]]; then
+        exec tmux -S /tmp/tmux-tmux att -t tmux
+      elif [[ "$TMUX_RSP" = "c" || "$TMUX_RSP" = "C" ]]; then
         exec tmux -S /tmp/tmux-tmux new -t tmux
       else
         export ZSHRC_FORCE=1

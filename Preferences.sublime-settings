@@ -1,0 +1,22 @@
+{
+	"bold_folder_labels": true,
+	"caret_style": "smooth",
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"fade_fold_buttons": false,
+	"font_face": "Inconsolata LGC",
+	"highlight_line": true,
+	"ignored_packages":
+	[
+	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"open_files_in_new_window": false,
+	"preview_on_click": false,
+	"rulers":
+	[
+		80
+	],
+	"scroll_past_end": true,
+	"translate_tabs_to_spaces": true,
+	"use_simple_full_screen": true
+}

@@ -1,8 +1,11 @@
 Bundle "git://github.com/airblade/vim-rooter.git"
 Bundle "git://github.com/vim-scripts/CSApprox.git"
 Bundle "git://github.com/derekwyatt/vim-scala.git"
+Bundle "git://github.com/airblade/vim-gitgutter.git"
+Bundle "git://github.com/vim-scripts/InsertChar.git"
 color molokai
 
+au BufRead,BufNewFile *.rabl set filetype=ruby
 au BufRead,BufNewFile *.scala set filetype=scala
 
 set switchbuf=usetab,newtab
@@ -14,6 +17,7 @@ cnoreabbrev hexq %!xxd -r
 
 let g:VMPhtmlreader = 'open'
 map <silent> <unique> <Leader>rd <Plug>RooterChangeToRootDirectory
+nnoremap <space> :<C-U>call InsertChar#insert(v:count1)<CR>
 
 nmap <C-k> [e
 nmap <C-j> ]e
@@ -23,6 +27,8 @@ vmap <C-j> ]egv
 nmap <Leader>f :Ack<Space><C-r>=expand("<cword>")<CR>
 nmap <silent><Leader>x :bd<CR>
 nmap <silent><Leader>` :tab sball<CR>
+nmap <silent><Leader><C-t> :CtrlPClearCache<CR>:<C-U>CtrlP<CR>
+nmap <silent><Leader>st :!subl %<CR><CR>
 
 "This allows for change paste motion cp{motion}
 nmap <silent> cp :set opfunc=ChangePaste<CR>g@
