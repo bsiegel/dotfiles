@@ -29,6 +29,8 @@ nmap <silent><Leader>x :bd<CR>
 nmap <silent><Leader>` :tab sball<CR>
 nmap <silent><Leader><C-t> :CtrlPClearCache<CR>:<C-U>CtrlP<CR>
 nmap <silent><Leader>st :!subl %<CR><CR>
+nmap <silent><Leader>] :NERDTreeToggle<CR>
+nmap <silent><Leader>[ :NERDTree \| NERDTreeToggle \| NERDTreeFind<CR>
 
 "This allows for change paste motion cp{motion}
 nmap <silent> cp :set opfunc=ChangePaste<CR>g@

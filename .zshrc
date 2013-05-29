@@ -36,7 +36,7 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
       patternw="$patternw"'[\.|_|-| ]'"$word[$i]"'[a-zA-Z]*'
       i=$(($i+1))
     done
-    directories=`find -L -maxdepth 1 -type d | egrep -v '(^\.\/\.|\.sparsebundle$)'`
+    directories=`find -L . -maxdepth 1 -type d | egrep -v '(^\.\/\.|\.sparsebundle$)'`
     candidate=`echo $directories | egrep "^\.$patternw$" | head -n1`
     if [[ -z $candidate ]]; then
       candidate=`echo $directories | egrep -i "^\.$patternw$" | head -n1`
@@ -74,7 +74,7 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
     if [[ -n $candidate ]]; then
       echo $candidate
     else
-      false
+      return 1
     fi
   }
 
@@ -82,6 +82,7 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   setopt EXTENDED_GLOB
   setopt GLOB_DOTS
 
+  export PATH=/usr/local/bin:/usr/local/sbin:$PATH
   # Set to this to use case-sensitive completion
   # CASE_SENSITIVE="true"
 
@@ -100,7 +101,7 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
   # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
   # Example format: plugins=(rails git textmate ruby lighthouse)
-  plugins=(history-substring-search safe-paste git rails3 ruby gem bundler rake rbenv brew osx tmux zeus)
+  plugins=(history-substring-search safe-paste git gem bundler rbenv brew osx tmux zeus vagrant sbt pip knife)
 
   source $ZSH/oh-my-zsh.sh
 
@@ -122,7 +123,7 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   alias glg='git log --stat'
 
   # Customize to your needs...
-  export PATH=$PATH:/usr/local/sbin:/usr/X11/bin:/usr/local/share/npm/bin:~/bin:~/android-sdks/tools:~/android-sdks/platform-tools
+  export PATH=$PATH:~/bin:/usr/local/share/npm/bin:/usr/local/opt/android-sdk/bin:/usr/local/opt/android-sdk/tools:/usr/local/opt/android-sdk/platform-tools
   export EDITOR=/usr/bin/vim
   export VISUAL=/usr/bin/vim
   export NODE_PATH=/usr/local/lib/node_modules

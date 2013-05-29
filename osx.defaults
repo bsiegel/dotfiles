@@ -1,0 +1,4 @@
+#!/bin/sh
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+defaults write com.apple.finder QLEnableTextSelection -bool TRUE
+defaults write com.apple.dashboard mcx-disabled -boolean true
