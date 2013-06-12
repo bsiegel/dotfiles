@@ -4,6 +4,7 @@ autoconf
 automake
 bison
 dart
+dex2jar
 gdbm
 git
 go
@@ -17,6 +18,7 @@ node
 pcre
 pkg-config
 rbenv
+rbenv-gem-rehash
 repo
 ruby-build
 sbt

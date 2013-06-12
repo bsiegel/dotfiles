@@ -9,7 +9,6 @@
   co = checkout
   mb = merge --no-ff --edit
 [push]
-  default = current
+  default = upstream
 [pull]
-  default = current
   rebase = true

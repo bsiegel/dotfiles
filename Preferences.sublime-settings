@@ -17,6 +17,7 @@
 		80
 	],
 	"scroll_past_end": true,
+	"theme": "Soda Light.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"use_simple_full_screen": true
 }

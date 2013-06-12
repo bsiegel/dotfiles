@@ -105,22 +105,51 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
 
   source $ZSH/oh-my-zsh.sh
 
-  alias grs='git reset'
-  compdef _git grs=git-reset
-  alias grsh='git reset --hard'
-  compdef _git grsh=git-reset
+  alias gre='git reset'
+  compdef _git gre=git-reset
+  alias grh='git reset --hard'
+  compdef _git grh=git-reset
   alias grb='git rebase'
   compdef _git grb=git-rebase
+  alias gri='git rebase -i'
+  compdef _git gri=git-rebase
+  alias grc='git rebase --continue'
+  compdef _git grc=git-rebase
+  alias gra='git rebase --abort'
+  compdef _git gra=git-rebase
+  alias gcpc='git cherry-pick --continue'
+  compdef _git gcpc=git-cherry-pick
+  alias gcpa='git cherry-pick --abort'
+  compdef _git gcpi=git-cherry-pick
+  alias gmc='git merge --continue'
+  compdef _git gmc=git-merge
+  alias gma='git merge --abort'
+  compdef _git gma=git-merge
+  alias gmt='git mergetool'
+  compdef _git gmt=git-mergetool
   alias gl='git log'
   compdef _git gl=git-log
+  alias glgg="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+  compdef _git glgg=git-log
+  alias glg='git log --stat'
+  compdef _git glg=git-log
   alias gp='git remote prune'
   compdef _git gp=git-remote
   alias gpl='git pull'
   compdef _git gpl=git-pull
   alias gps='git push'
   compdef _git gps=git-push
-  alias glgg="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
-  alias glg='git log --stat'
+  alias gpsu='git push --set-upstream origin $(current_branch)'
+  compdef _git gpsu=git-push
+  alias grm='git rm'
+  compdef _git grm=git-rm
+  alias gbd='git branch -d'
+  compdef _git gbd=git-branch
+  alias gbdd='git branch -D'
+  compdef _git gbdd=git-branch
+  alias gsu='git branch --set-upstream-to=origin/$(current_branch)'
+  compdef _git gsu=git-branch
+  gbdr() { if [[ -n $1 ]]; then; git push origin :$1; else; echo "fatal: must specify a remote ref to delete"; fi }
 
   # Customize to your needs...
   export PATH=$PATH:~/bin:/usr/local/share/npm/bin:/usr/local/opt/android-sdk/bin:/usr/local/opt/android-sdk/tools:/usr/local/opt/android-sdk/platform-tools

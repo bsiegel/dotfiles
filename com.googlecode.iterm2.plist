@@ -2859,11 +2859,11 @@
 	<key>Hotkey</key>
 	<false/>
 	<key>HotkeyChar</key>
-	<integer>0</integer>
+	<integer>63234</integer>
 	<key>HotkeyCode</key>
-	<integer>0</integer>
+	<integer>123</integer>
 	<key>HotkeyModifiers</key>
-	<integer>0</integer>
+	<integer>10617092</integer>
 	<key>IRMemory</key>
 	<integer>4</integer>
 	<key>JobName</key>
@@ -2885,9 +2885,9 @@
 	<key>NSScrollAnimationEnabled</key>
 	<false/>
 	<key>NSWindow Frame Preferences</key>
-	<string>269 126 924 485 0 0 1440 878 </string>
+	<string>-1099 154 924 485 -1920 -180 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1920 414 570 476 -1920 -180 1920 1080 </string>
+	<string>-1920 -180 1920 1080 -1920 -180 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>717 310 570 476 0 0 1440 878 </string>
 	<key>NeverWarnAboutShortLivedSessions_AB528825-B469-4B9E-9B00-D83EA36F4A53</key>
@@ -3203,6 +3203,20 @@
 					<key>Text</key>
 					<string>0x7f</string>
 				</dict>
+				<key>0x7f-0x100000</key>
+				<dict>
+					<key>Action</key>
+					<integer>11</integer>
+					<key>Text</key>
+					<string>0x15</string>
+				</dict>
+				<key>0x7f-0x80000</key>
+				<dict>
+					<key>Action</key>
+					<integer>11</integer>
+					<key>Text</key>
+					<string>0x17</string>
+				</dict>
 				<key>0xf700-0x240000</key>
 				<dict>
 					<key>Action</key>
@@ -3245,6 +3259,13 @@
 					<key>Text</key>
 					<string>[1;6D</string>
 				</dict>
+				<key>0xf702-0x280000</key>
+				<dict>
+					<key>Action</key>
+					<integer>10</integer>
+					<key>Text</key>
+					<string>b</string>
+				</dict>
 				<key>0xf703-0x240000</key>
 				<dict>
 					<key>Action</key>
@@ -3258,6 +3279,13 @@
 					<integer>10</integer>
 					<key>Text</key>
 					<string>[1;6C</string>
+				</dict>
+				<key>0xf703-0x280000</key>
+				<dict>
+					<key>Action</key>
+					<integer>10</integer>
+					<key>Text</key>
+					<string>f</string>
 				</dict>
 				<key>0xf704-0x20000</key>
 				<dict>
@@ -3611,7 +3639,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-05-29T15:45:09Z</date>
+	<date>2013-05-30T16:41:38Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
