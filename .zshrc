@@ -15,6 +15,8 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   # alias ohmyzsh="mate ~/.oh-my-zsh"
   alias vi=vim
   alias view='vim -R'
+  alias vim='reattach-to-user-namespace vim -p'
+  alias xargs='xargs -o'
   alias mmv='noglob zmv -W'
   alias serve='python -m SimpleHTTPServer'
   alias ag='ag -S -U'
@@ -153,9 +155,11 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
 
   # Customize to your needs...
   export PATH=$PATH:~/bin:/usr/local/share/npm/bin:/usr/local/opt/android-sdk/bin:/usr/local/opt/android-sdk/tools:/usr/local/opt/android-sdk/platform-tools
-  export EDITOR=/usr/bin/vim
-  export VISUAL=/usr/bin/vim
+  export EDITOR=vim
+  export VISUAL=vim
   export NODE_PATH=/usr/local/lib/node_modules
+  export GOPATH=/usr/local/opt/go
+  export ANDROID_HOME=/usr/local/opt/android-sdk
 else
   TMUX_ACT=$(tmux -S /tmp/tmux-tmux ls -F '#{session_windows}' 2> /dev/null)
   if [[ -z "$TMUX_ACT" || "$TMUX_ACT" = "0" ]]; then

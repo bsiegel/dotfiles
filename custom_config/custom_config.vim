@@ -10,6 +10,7 @@ au BufRead,BufNewFile *.scala set filetype=scala
 
 set switchbuf=usetab,newtab
 set ttymouse=xterm2
+set clipboard=unnamed
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 cnoreabbrev hex %!xxd
