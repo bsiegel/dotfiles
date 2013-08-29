@@ -1,6 +1,7 @@
 [user]
 	name = Brandon Siegel
 	email = brandon@smartercode.net
+	signingkey = 06755CF1
 [color]
 	ui = auto
 [alias]
@@ -12,3 +13,12 @@
   default = upstream
 [pull]
   rebase = true
+[mergetool "kdiff3"]
+	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+[merge]
+	tool = kdiff3
+[diff]
+	algorithm = patience
+[rebase]
+	autosquash = true
+	autostash = true

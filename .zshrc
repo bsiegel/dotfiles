@@ -13,9 +13,8 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   # Example aliases
   # alias zshconfig="mate ~/.zshrc"
   # alias ohmyzsh="mate ~/.oh-my-zsh"
-  alias vi=vim
-  alias view='vim -R'
-  alias vim='reattach-to-user-namespace vim -p'
+  alias vi=osxvim
+  alias vim=osxvim
   alias xargs='xargs -o'
   alias mmv='noglob zmv -W'
   alias serve='python -m SimpleHTTPServer'
@@ -111,9 +110,9 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   compdef _git gre=git-reset
   alias grh='git reset --hard'
   compdef _git grh=git-reset
-  alias grb='git rebase'
+  alias grb='git rebase --autostash'
   compdef _git grb=git-rebase
-  alias gri='git rebase -i'
+  alias gri='git rebase -i --autosquash --autostash'
   compdef _git gri=git-rebase
   alias grc='git rebase --continue'
   compdef _git grc=git-rebase
@@ -151,15 +150,27 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   compdef _git gbdd=git-branch
   alias gsu='git branch --set-upstream-to=origin/$(current_branch)'
   compdef _git gsu=git-branch
-  gbdr() { if [[ -n $1 ]]; then; git push origin :$1; else; echo "fatal: must specify a remote ref to delete"; fi }
+  gfix() {
+    git commit --fixup $1 && EDITOR=: VISUAL=: git rebase -i --autosquash $1~1
+  }
+  gbrm() {
+    if [[ -n $1 ]]; then
+      arr=$(echo $1 | tr "/" ":")
+      arr=("${(s/:/)arr}")
+      echo git push $arr[1] :$arr[2]
+    else
+      echo "fatal: must specify a remote ref to delete"
+    fi
+  }
 
   # Customize to your needs...
   export PATH=$PATH:~/bin:/usr/local/share/npm/bin:/usr/local/opt/android-sdk/bin:/usr/local/opt/android-sdk/tools:/usr/local/opt/android-sdk/platform-tools
-  export EDITOR=vim
-  export VISUAL=vim
+  export EDITOR=osxvim
+  export VISUAL=osxvim
   export NODE_PATH=/usr/local/lib/node_modules
-  export GOPATH=/usr/local/opt/go
+  export GOROOT=/usr/local/opt/go
   export ANDROID_HOME=/usr/local/opt/android-sdk
+  source ~/private/Keys/aws_keys.sh
 else
   TMUX_ACT=$(tmux -S /tmp/tmux-tmux ls -F '#{session_windows}' 2> /dev/null)
   if [[ -z "$TMUX_ACT" || "$TMUX_ACT" = "0" ]]; then

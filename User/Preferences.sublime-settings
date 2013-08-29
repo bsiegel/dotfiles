@@ -1,4 +1,11 @@
 {
+	"auto_complete_triggers":
+	[
+		{
+			"characters": ".",
+			"selector": "source.python - string - comment - constant.numeric"
+		}
+	],
 	"bold_folder_labels": true,
 	"caret_style": "smooth",
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
@@ -11,7 +18,7 @@
 	"line_padding_bottom": 1,
 	"line_padding_top": 1,
 	"open_files_in_new_window": false,
-	"preview_on_click": false,
+	"reveal-on-activate": true,
 	"rulers":
 	[
 		80

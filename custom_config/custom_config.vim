@@ -3,15 +3,35 @@ Bundle "git://github.com/vim-scripts/CSApprox.git"
 Bundle "git://github.com/derekwyatt/vim-scala.git"
 Bundle "git://github.com/airblade/vim-gitgutter.git"
 Bundle "git://github.com/vim-scripts/InsertChar.git"
+Bundle "git://github.com/klen/python-mode.git"
+Bundle "git://github.com/davidhalter/jedi-vim.git"
 color molokai
 
+set runtimepath+=$GOROOT/misc/vim
 au BufRead,BufNewFile *.rabl set filetype=ruby
 au BufRead,BufNewFile *.scala set filetype=scala
+au BufRead,BufNewFile *.go set filetype=go
 
 set switchbuf=usetab,newtab
 set ttymouse=xterm2
 set clipboard=unnamed
+
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+let g:pymode_rope = 0
+let g:pymode_doc = 1
+let g:pymode_doc_key = 'K'
+let g:pymode_lint = 1
+let g:pymode_lint_checker = "pyflakes,pep8"
+let g:pymode_lint_write = 1
+let g:pymode_virtualenv = 1
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_key = '<leader>k'
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
+let g:pymode_folding = 0
 
 cnoreabbrev hex %!xxd
 cnoreabbrev hexq %!xxd -r
@@ -32,6 +52,7 @@ nmap <silent><Leader><C-t> :CtrlPClearCache<CR>:<C-U>CtrlP<CR>
 nmap <silent><Leader>st :!subl %<CR><CR>
 nmap <silent><Leader>] :NERDTreeToggle<CR>
 nmap <silent><Leader>[ :NERDTree \| NERDTreeToggle \| NERDTreeFind<CR>
+nmap <silent>gt :tabnext<CR>
 
 "This allows for change paste motion cp{motion}
 nmap <silent> cp :set opfunc=ChangePaste<CR>g@
