@@ -23,6 +23,14 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   alias z='zeus'
   alias rdbg='be rdebug $(git rev-parse --show-toplevel)/script/server'
   
+  function vimall() {
+    ag -l $1 | xargs -o osxvim
+  }
+
+  function agin() {
+    ag $argv[2,-1] `find . | ag $1`
+  }
+
   function j() {
     cd `f $1`
   }
@@ -181,7 +189,7 @@ else
       exec tmux -S /tmp/tmux-tmux att -t tmux
     else
       TMUX_RSP=
-      vared -p 'Attach to active tmux session [nyc]? ' TMUX_ATT
+      vared -p 'Attach to active tmux session [nyc]? ' TMUX_RSP
       if [[ "$TMUX_RSP" = "y" || "$TMUX_RSP" = "Y" ]]; then
         exec tmux -S /tmp/tmux-tmux att -t tmux
       elif [[ "$TMUX_RSP" = "c" || "$TMUX_RSP" = "C" ]]; then
