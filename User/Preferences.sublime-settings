@@ -12,6 +12,7 @@
 	"fade_fold_buttons": false,
 	"font_face": "Inconsolata LGC",
 	"highlight_line": true,
+    "highlight_modified_tabs": true,
 	"ignored_packages":
 	[
 	],

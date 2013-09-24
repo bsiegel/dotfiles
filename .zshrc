@@ -114,6 +114,8 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
 
   source $ZSH/oh-my-zsh.sh
 
+  alias gdw='git diff --color-words'
+  compdef _git gdw=git-diff
   alias gre='git reset'
   compdef _git gre=git-reset
   alias grh='git reset --hard'
@@ -172,6 +174,7 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   }
 
   # Customize to your needs...
+  export KEYTIMEOUT=1
   export PATH=$PATH:~/bin:/usr/local/share/npm/bin:/usr/local/opt/android-sdk/bin:/usr/local/opt/android-sdk/tools:/usr/local/opt/android-sdk/platform-tools
   export EDITOR=osxvim
   export VISUAL=osxvim

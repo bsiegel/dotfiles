@@ -5,16 +5,20 @@ Bundle "git://github.com/airblade/vim-gitgutter.git"
 Bundle "git://github.com/vim-scripts/InsertChar.git"
 Bundle "git://github.com/klen/python-mode.git"
 Bundle "git://github.com/davidhalter/jedi-vim.git"
+Bundle "git://github.com/jtratner/vim-flavored-markdown.git"
+Bundle "git://github.com/jszakmeister/vim-togglecursor.git"
 color molokai
 
 set runtimepath+=$GOROOT/misc/vim
 au BufRead,BufNewFile *.rabl set filetype=ruby
 au BufRead,BufNewFile *.scala set filetype=scala
 au BufRead,BufNewFile *.go set filetype=go
+au BufRead,BufNewFile *.md,*.markdown set filetype=ghmarkdown
 
 set switchbuf=usetab,newtab
 set ttymouse=xterm2
 set clipboard=unnamed
+set timeout timeoutlen=1000 ttimeoutlen=10
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
