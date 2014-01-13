@@ -87,11 +87,40 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
     fi
   }
 
+  # complete words from tmux pane(s) {{{1
+  # Source: http://blog.plenz.com/2012-01/zsh-complete-words-from-tmux-pane.html
+  _tmux_pane_words() {
+    local expl
+    local -a w
+    if [[ -z "$TMUX_PANE" ]]; then
+      _message "not running inside tmux!"
+      return 1
+    fi
+    # capture current pane first
+    w=( ${(u)=$(tmux capture-pane -J -p)} )
+    for i in $(tmux list-panes -F '#P'); do
+      # skip current pane (handled above)
+      [[ "$TMUX_PANE" = "$i" ]] && continue
+      w+=( ${(u)=$(tmux capture-pane -J -p -t $i)} )
+    done
+    _wanted values expl 'words from current tmux pane' compadd -a w
+  }
+   
+  zle -C tmux-pane-words-prefix   complete-word _generic
+  zle -C tmux-pane-words-anywhere complete-word _generic
+  bindkey '^Xt' tmux-pane-words-prefix
+  bindkey '^X^X' tmux-pane-words-anywhere
+  zstyle ':completion:tmux-pane-words-(prefix|anywhere):*' completer _tmux_pane_words
+  zstyle ':completion:tmux-pane-words-(prefix|anywhere):*' ignore-line current
+  # display the (interactive) menu on first execution of the hotkey
+  zstyle ':completion:tmux-pane-words-(prefix|anywhere):*' menu yes select interactive
+  zstyle ':completion:tmux-pane-words-anywhere:*' matcher-list 'b:=* m:{A-Za-z}={a-zA-Z}'
+  # }}}
+
   setopt AUTO_PUSHD
   setopt EXTENDED_GLOB
   setopt GLOB_DOTS
 
-  export PATH=/usr/local/bin:/usr/local/sbin:$PATH
   # Set to this to use case-sensitive completion
   # CASE_SENSITIVE="true"
 
@@ -110,7 +139,7 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
   # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
   # Example format: plugins=(rails git textmate ruby lighthouse)
-  plugins=(history-substring-search safe-paste git gem bundler rbenv brew osx tmux zeus vagrant sbt pip knife)
+  plugins=(history-substring-search safe-paste git rbenv gem bundler brew osx zeus vagrant sbt pip knife)
 
   source $ZSH/oh-my-zsh.sh
 
@@ -181,8 +210,12 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   export NODE_PATH=/usr/local/lib/node_modules
   export GOROOT=/usr/local/opt/go
   export ANDROID_HOME=/usr/local/opt/android-sdk
+  export AWS_ACCESS_KEY_ID=$MD_AWS_ACCESS_KEY_ID
   source ~/private/Keys/aws_keys.sh
+  export AWS_SECRET_ACCESS_KEY=$MD_AWS_SECRET_ACCESS_KEY
+  export AWS_DEFAULT_REGION=us-east-1
 else
+  export PATH=/usr/local/bin:/usr/local/sbin:$PATH
   TMUX_ACT=$(tmux -S /tmp/tmux-tmux ls -F '#{session_windows}' 2> /dev/null)
   if [[ -z "$TMUX_ACT" || "$TMUX_ACT" = "0" ]]; then
     exec tmux -S /tmp/tmux-tmux new -s tmux

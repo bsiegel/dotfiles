@@ -12,7 +12,7 @@
 	"fade_fold_buttons": false,
 	"font_face": "Inconsolata LGC",
 	"highlight_line": true,
-    "highlight_modified_tabs": true,
+	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
 	],
@@ -25,6 +25,8 @@
 		80
 	],
 	"scroll_past_end": true,
+	"show_encoding": true,
+	"show_line_endings": true,
 	"theme": "Soda Light.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"use_simple_full_screen": true,

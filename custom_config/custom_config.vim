@@ -1,17 +1,16 @@
 Bundle "git://github.com/airblade/vim-rooter.git"
 Bundle "git://github.com/vim-scripts/CSApprox.git"
-Bundle "git://github.com/derekwyatt/vim-scala.git"
 Bundle "git://github.com/airblade/vim-gitgutter.git"
 Bundle "git://github.com/vim-scripts/InsertChar.git"
 Bundle "git://github.com/klen/python-mode.git"
 Bundle "git://github.com/davidhalter/jedi-vim.git"
 Bundle "git://github.com/jtratner/vim-flavored-markdown.git"
 Bundle "git://github.com/jszakmeister/vim-togglecursor.git"
+Bundle "git://github.com/Valloric/YouCompleteMe.git"
 color molokai
 
 set runtimepath+=$GOROOT/misc/vim
 au BufRead,BufNewFile *.rabl set filetype=ruby
-au BufRead,BufNewFile *.scala set filetype=scala
 au BufRead,BufNewFile *.go set filetype=go
 au BufRead,BufNewFile *.md,*.markdown set filetype=ghmarkdown
 
@@ -49,7 +48,7 @@ nmap <C-j> ]e
 vmap <C-k> [egv
 vmap <C-j> ]egv
 
-nmap <Leader>f :Ack<Space><C-r>=expand("<cword>")<CR>
+nmap <Leader>f :Ag<Space><C-r>=expand("<cword>")<CR>
 nmap <silent><Leader>x :bd<CR>
 nmap <silent><Leader>` :tab sball<CR>
 nmap <silent><Leader><C-t> :CtrlPClearCache<CR>:<C-U>CtrlP<CR>
