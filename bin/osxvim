@@ -1,2 +1,0 @@
-#!/bin/sh
-/usr/local/bin/reattach-to-user-namespace /usr/local/bin/vim -p $@

@@ -11,81 +11,18 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   autoload -U zmv
 
   # Example aliases
-  # alias zshconfig="mate ~/.zshrc"
-  # alias ohmyzsh="mate ~/.oh-my-zsh"
-  alias vi=osxvim
-  alias vim=osxvim
+  alias vi='reattach-to-user-namespace vim -p'
+  alias vim='reattach-to-user-namespace vim -p'
   alias xargs='xargs -o'
   alias mmv='noglob zmv -W'
   alias serve='python -m SimpleHTTPServer'
   alias ag='ag -S -U'
+  alias m='ag -S -U -l'
+  alias e='xargs -o reattach-to-user-namespace vim -p'
+  alias f='find . | ag -S -U'
+  alias j='cd'
   alias jj='popd'
   alias z='zeus'
-  alias rdbg='be rdebug $(git rev-parse --show-toplevel)/script/server'
-  
-  function vimall() {
-    ag -l $1 | xargs -o osxvim
-  }
-
-  function agin() {
-    ag $argv[2,-1] `find . | ag $1`
-  }
-
-  function j() {
-    cd `f $1`
-  }
-
-  function f() {
-    word=$1
-    pattern=$word[1]
-    patternw='[\/|\.|_|-| ]'$word[1]'[a-zA-Z]*'
-    i=2
-    while [[ -n $word[$i] ]]; do
-      pattern="$pattern.*$word[$i]"
-      patternw="$patternw"'[\.|_|-| ]'"$word[$i]"'[a-zA-Z]*'
-      i=$(($i+1))
-    done
-    directories=`find -L . -maxdepth 1 -type d | egrep -v '(^\.\/\.|\.sparsebundle$)'`
-    candidate=`echo $directories | egrep "^\.$patternw$" | head -n1`
-    if [[ -z $candidate ]]; then
-      candidate=`echo $directories | egrep -i "^\.$patternw$" | head -n1`
-    fi
-    if [[ -z $candidate ]]; then
-      candidate=`echo $directories | egrep "^\.$patternw" | head -n1`
-    fi
-    if [[ -z $candidate ]]; then
-      candidate=`echo $directories | egrep -i "^\.$patternw" | head -n1`
-    fi
-    if [[ -z $candidate ]]; then
-      candidate=`echo $directories | egrep "^\.\/$pattern" | head -n1`
-    fi
-    if [[ -z $candidate ]]; then
-      candidate=`echo $directories | egrep -i "^\.\/$pattern" | head -n1`
-    fi
-    if [[ -z $candidate ]]; then
-      candidate=`echo $directories | egrep "$patternw" | head -n1`
-    fi
-    if [[ -z $candidate ]]; then
-      candidate=`echo $directories | egrep -i "$patternw" | head -n1`
-    fi
-    if [[ -z $candidate ]]; then
-      candidate=`echo $directories | egrep "[\.|_|-| ]$pattern" | head -n1`
-    fi
-    if [[ -z $candidate ]]; then
-      candidate=`echo $directories | egrep -i "[\.|_|-| ]$pattern" | head -n1`
-    fi
-    if [[ -z $candidate ]]; then
-      candidate=`echo $directories | egrep "$pattern" | head -n1`
-    fi
-    if [[ -z $candidate ]]; then
-      candidate=`echo $directories | egrep -i "$pattern" | head -n1`
-    fi
-    if [[ -n $candidate ]]; then
-      echo $candidate
-    else
-      return 1
-    fi
-  }
 
   # complete words from tmux pane(s) {{{1
   # Source: http://blog.plenz.com/2012-01/zsh-complete-words-from-tmux-pane.html
@@ -105,7 +42,7 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
     done
     _wanted values expl 'words from current tmux pane' compadd -a w
   }
-   
+
   zle -C tmux-pane-words-prefix   complete-word _generic
   zle -C tmux-pane-words-anywhere complete-word _generic
   bindkey '^Xt' tmux-pane-words-prefix
@@ -189,29 +126,17 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   compdef _git gbdd=git-branch
   alias gsu='git branch --set-upstream-to=origin/$(current_branch)'
   compdef _git gsu=git-branch
-  gfix() {
-    git commit --fixup $1 && EDITOR=: VISUAL=: git rebase -i --autosquash $1~1
-  }
-  gbrm() {
-    if [[ -n $1 ]]; then
-      arr=$(echo $1 | tr "/" ":")
-      arr=("${(s/:/)arr}")
-      echo git push $arr[1] :$arr[2]
-    else
-      echo "fatal: must specify a remote ref to delete"
-    fi
-  }
 
   # Customize to your needs...
   export KEYTIMEOUT=1
   export PATH=$PATH:~/bin:/usr/local/share/npm/bin:/usr/local/opt/android-sdk/bin:/usr/local/opt/android-sdk/tools:/usr/local/opt/android-sdk/platform-tools
-  export EDITOR=osxvim
-  export VISUAL=osxvim
+  export EDITOR='reattach-to-user-namespace vim -p'
+  export VISUAL='reattach-to-user-namespace vim -p'
   export NODE_PATH=/usr/local/lib/node_modules
   export GOROOT=/usr/local/opt/go
   export ANDROID_HOME=/usr/local/opt/android-sdk
-  export AWS_ACCESS_KEY_ID=$MD_AWS_ACCESS_KEY_ID
   source ~/private/Keys/aws_keys.sh
+  export AWS_ACCESS_KEY_ID=$MD_AWS_ACCESS_KEY_ID
   export AWS_SECRET_ACCESS_KEY=$MD_AWS_SECRET_ACCESS_KEY
   export AWS_DEFAULT_REGION=us-east-1
 else

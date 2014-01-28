@@ -1,0 +1,2 @@
+#!/bin/sh
+tmux -S /tmp/tmux-tmux new -t tmux

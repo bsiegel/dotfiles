@@ -6,6 +6,7 @@ Bundle "git://github.com/klen/python-mode.git"
 Bundle "git://github.com/davidhalter/jedi-vim.git"
 Bundle "git://github.com/jtratner/vim-flavored-markdown.git"
 Bundle "git://github.com/jszakmeister/vim-togglecursor.git"
+Bundle "git://github.com/luochen1990/rainbow.git"
 Bundle "git://github.com/Valloric/YouCompleteMe.git"
 color molokai
 
@@ -20,7 +21,43 @@ set clipboard=unnamed
 set timeout timeoutlen=1000 ttimeoutlen=10
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
-
+let g:SuperTabDefaultCompletionType = '<C-Tab>'
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+\        'guifgs': ['#d33682', '#dc322f', '#cb4b16', '#b58900', '#719e07', '#2aa198', '#6c71c4', '#268bd2'],
+\        'ctermfgs': ['red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'gray'],
+\        'operators': '',
+\        'parentheses': [['(',')'], ['\[','\]'], ['{','}']],
+\        'separately': {
+\                '*': {},
+\                'xml': {
+\                        'parentheses': [['(',')'], ['\[','\]'], ['{','}'], ['<\a[^>]*[^/]>\|<\a>','</[^>]*>']],
+\                },
+\                'html': {
+\                        'parentheses': [['(',')'], ['\[','\]'], ['{','}'], ['<\a[^>]*[^/]>\|<\a>','</[^>]*>']],
+\                },
+\                'vim': {
+\                        'parentheses': [['fu\w* \s*.*)','endfu\w*'], ['for','endfor'], ['while', 'endwhile'], ['if','_elseif\|else_','endif'], ['(',')'], ['\[','\]'], ['{','}']],
+\                },
+\                'ruby': {
+\                        'parentheses': [['\(^\|;\)\s*class\s\+','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
+\                                        ['\(^\|;\)\s*module\s\+','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
+\                                        ['\(^\|;\)\s*def\s\+','_\(^\|;\)\s*\(rescue\|ensure\|else\)\(\s\+\|$\|#\|;\)_','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
+\                                        ['\s\+do\(\s\+\|$\|#\|;\)','_\(^\|;\)\s*\(break\|next\)\(\s\+\|(\|$\|#\|;\)_','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
+\                                        ['\(^\|;\)\s*begin\(\s\+\|$\|#\|;\)','_\(^\|;\)\s*\(rescue\|ensure\|else\)\(\s\+\|$\|#\|;\)_','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
+\                                        ['\(^\|;\)\s*for\s\+','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
+\                                        ['\(^\|;\)\s*while\s\+','_\(^\|;\)\s*\(break\|next\)\(\s\+\|(\|$\|#\|;\)_','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
+\                                        ['\(^\|;\)\s*until\s\+','_\(^\|;\)\s*\(break\|next\)\(\s\+\|(\|$\|#\|;\)_','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
+\                                        ['\(^\|;\)\s*case\s\+','_\(^\|;\)\s*\(\(when\s\+\)\|\(else\(\s\+\|$\|#\|;\)\)\)_','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
+\                                        ['\(^\|;\)\s*if\s\+','_\(^\|;\)\s*\(\(elsif\s\+\)\|\(else\(\s\+\|$\|#\|;\)\)\)_','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
+\                                        ['\(^\|;\)\s*unless\s\+','_\(^\|;\)\s*\(\(elsif\s\+\)\|\(else\(\s\+\|$\|#\|;\)\)\)_','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
+\                                        ['(',')'], ['\[','\]'], ['{','}']],
+\                },
+\                'tex': {
+\                        'parentheses': [['(',')'], ['\[','\]'], ['\\begin{.*}','\\end{.*}']],
+\                },
+\        }
+\}
 let g:pymode_rope = 0
 let g:pymode_doc = 1
 let g:pymode_doc_key = 'K'
