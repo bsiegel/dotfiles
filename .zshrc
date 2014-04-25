@@ -15,6 +15,8 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   alias vim='reattach-to-user-namespace vim -p'
   alias xargs='xargs -o'
   alias mmv='noglob zmv -W'
+  alias lsop='lsof -Pni'
+  alias sudo='sudo '
   alias serve='python -m SimpleHTTPServer'
   alias ag='ag -S -U'
   alias m='ag -S -U -l'
@@ -76,7 +78,8 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
   # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
   # Example format: plugins=(rails git textmate ruby lighthouse)
-  plugins=(history-substring-search safe-paste git rbenv gem bundler brew osx zeus vagrant sbt pip knife)
+  export RBENV_ROOT=/usr/local/opt/rbenv
+  plugins=(history-substring-search safe-paste git rbenv gem bundler brew zeus vagrant pip docker)
 
   source $ZSH/oh-my-zsh.sh
 
@@ -110,6 +113,8 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   compdef _git glgg=git-log
   alias glg='git log --stat'
   compdef _git glg=git-log
+  alias gag='git log --grep'
+  compdef _git gag=git-log
   alias gp='git remote prune'
   compdef _git gp=git-remote
   alias gpl='git pull'
@@ -139,6 +144,7 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   export AWS_ACCESS_KEY_ID=$MD_AWS_ACCESS_KEY_ID
   export AWS_SECRET_ACCESS_KEY=$MD_AWS_SECRET_ACCESS_KEY
   export AWS_DEFAULT_REGION=us-east-1
+  export DOCKER_HOST=tcp://localhost:4243
 else
   export PATH=/usr/local/bin:/usr/local/sbin:$PATH
   TMUX_ACT=$(tmux -S /tmp/tmux-tmux ls -F '#{session_windows}' 2> /dev/null)

@@ -5,19 +5,10 @@ ACTIVE_BLOCKS=$(vm_stat | grep "Pages active" | awk '{ print $3 }' | sed 's/\.//
 INACTIVE_BLOCKS=$(vm_stat | grep "Pages inactive" | awk '{ print $3 }' | sed 's/\.//')
 WIRED_BLOCKS=$(vm_stat | grep "Pages wired down" | awk '{ print $4 }' | sed 's/\.//')
 
-LOAD_AVG=$(sysctl -n vm.loadavg | sed -E 's/({ | })//g')
-
-#CPU=$(top -n0 -l2 | grep "CPU usage" | tail -n1 | sed 's/%//g')
-#USER=$(echo $CPU | awk '{ print $3 }')
-#SYS=$(echo $CPU | awk '{ print $5 }')
-
 TOTAL=$((($TOTAL_BYTES)/1048576))
 ACTIVE=$(($ACTIVE_BLOCKS*4096/1048576))
 INACTIVE=$(($INACTIVE_BLOCKS*4096/1048576))
 WIRED=$(($WIRED_BLOCKS*4096/1048576))
 USED=$((($ACTIVE+$INACTIVE+$WIRED)))
 
-#LOAD=$(echo $USER $SYS | awk '{T=$1+$2} END { printf "%.1f", T }')
-
-#echo $USED/$TOTAL"MB" $LOAD"%" $LOAD_AVG
-echo $USED/$TOTAL"MB" $LOAD_AVG
+echo $USED/$TOTAL"MB"

@@ -3,7 +3,6 @@ Bundle "git://github.com/vim-scripts/CSApprox.git"
 Bundle "git://github.com/airblade/vim-gitgutter.git"
 Bundle "git://github.com/vim-scripts/InsertChar.git"
 Bundle "git://github.com/klen/python-mode.git"
-Bundle "git://github.com/davidhalter/jedi-vim.git"
 Bundle "git://github.com/jtratner/vim-flavored-markdown.git"
 Bundle "git://github.com/jszakmeister/vim-togglecursor.git"
 Bundle "git://github.com/luochen1990/rainbow.git"
@@ -20,7 +19,11 @@ set ttymouse=xterm2
 set clipboard=unnamed
 set timeout timeoutlen=1000 ttimeoutlen=10
 
-let g:ackprg = 'ag --nogroup --nocolor --column'
+" custom vim-surround surroundings
+let g:surround_35 = "#{\r}"
+let g:surround_36 = "\"#{\r}\""
+let g:surround_37 = "{% \r %}"
+
 let g:SuperTabDefaultCompletionType = '<C-Tab>'
 let g:rainbow_active = 1
 let g:rainbow_conf = {

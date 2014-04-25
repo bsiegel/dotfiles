@@ -1,0 +1,11 @@
+#!/bin/bash
+
+LOAD_AVG=$(sysctl -n vm.loadavg | sed -E 's/({ | })//g')
+
+#CPU=$(top -n0 -l2 | grep "CPU usage" | tail -n1 | sed 's/%//g')
+#USER=$(echo $CPU | awk '{ print $3 }')
+#SYS=$(echo $CPU | awk '{ print $5 }')
+#LOAD=$(echo $USER $SYS | awk '{T=$1+$2} END { printf "%.1f", T }')
+
+#echo $LOAD"%" $LOAD_AVG
+echo $LOAD_AVG

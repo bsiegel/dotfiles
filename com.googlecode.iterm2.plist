@@ -21,7 +21,7 @@
 	<key>ClosingHotkeySwitchesSpaces</key>
 	<true/>
 	<key>CommandSelection</key>
-	<true/>
+	<false/>
 	<key>Control</key>
 	<integer>1</integer>
 	<key>CopyLastNewline</key>
@@ -2824,6 +2824,8 @@
 	<false/>
 	<key>NSColorPanelMode</key>
 	<string>1</string>
+	<key>NSColorPickerSlidersDefaults</key>
+	<string>1</string>
 	<key>NSFontPanelAttributes</key>
 	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
@@ -2853,6 +2855,18 @@
 		<dict>
 			<key>ASCII Anti Aliased</key>
 			<true/>
+			<key>AWDS Pane Directory</key>
+			<string></string>
+			<key>AWDS Pane Option</key>
+			<string>No</string>
+			<key>AWDS Tab Directory</key>
+			<string></string>
+			<key>AWDS Tab Option</key>
+			<string>No</string>
+			<key>AWDS Window Directory</key>
+			<string></string>
+			<key>AWDS Window Option</key>
+			<string>No</string>
 			<key>Allow Title Reporting</key>
 			<true/>
 			<key>Ambiguous Double Width</key>
@@ -2860,11 +2874,11 @@
 			<key>Ansi 0 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<real>0.070588238537311554</real>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<real>0.070588238537311554</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.070588238537311554</real>
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
@@ -2986,11 +3000,11 @@
 			<key>Ansi 8 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<real>0.30196079611778259</real>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<real>0.30196079611778259</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.30196079611778259</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -3068,7 +3082,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>No</string>
+			<string>Yes</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Disable Printing</key>
@@ -3533,19 +3547,19 @@
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
-			<true/>
+			<false/>
 			<key>Use Canonical Parser</key>
 			<true/>
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Vertical Spacing</key>
-			<real>0.99685919284820557</real>
+			<real>1.010359525680542</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/brandon</string>
+			<string>~/working/</string>
 		</dict>
 	</array>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
@@ -3603,7 +3617,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-01-13T15:36:10Z</date>
+	<date>2014-04-25T19:48:25Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -3653,6 +3667,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20131228</string>
+	<string>1.0.0.20140421</string>
 </dict>
 </plist>
