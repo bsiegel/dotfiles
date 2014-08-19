@@ -2,9 +2,8 @@
 	"installed_packages":
 	[
 		"AdvancedNewFile",
-		"Anaconda",
 		"BracketHighlighter",
-		"File Navigator",
+		"DashDoc",
 		"Find++",
 		"Git",
 		"GitGutter",
@@ -14,7 +13,6 @@
 		"knockdown",
 		"Search in Project",
 		"SideBarEnhancements",
-		"SideBarGit",
 		"StringEncode",
 		"Surround",
 		"SyncedSideBar",

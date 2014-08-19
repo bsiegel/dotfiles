@@ -11,8 +11,8 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   autoload -U zmv
 
   # Example aliases
-  alias vi='reattach-to-user-namespace vim -p'
-  alias vim='reattach-to-user-namespace vim -p'
+  alias vi='vim -p'
+  alias vim='vim -p'
   alias xargs='xargs -o'
   alias mmv='noglob zmv -W'
   alias lsop='lsof -Pni'
@@ -20,11 +20,12 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   alias serve='python -m SimpleHTTPServer'
   alias ag='ag -S -U'
   alias m='ag -S -U -l'
-  alias e='xargs -o reattach-to-user-namespace vim -p'
-  alias f='find . | ag -S -U'
+  alias e='xargs -o vim -p'
+  alias f='find -X . -type f | ag -S -U'
   alias j='cd'
   alias jj='popd'
   alias z='zeus'
+  alias first=$'awk \'{print $1}\''
 
   # complete words from tmux pane(s) {{{1
   # Source: http://blog.plenz.com/2012-01/zsh-complete-words-from-tmux-pane.html
@@ -83,6 +84,11 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
 
   source $ZSH/oh-my-zsh.sh
 
+  bindkey '\e[A' history-substring-search-up
+  bindkey '\e[B' history-substring-search-down
+
+  alias gcf='git commit -e --fixup'
+  compdef _git gcf=git-commit
   alias gdw='git diff --color-words'
   compdef _git gdw=git-diff
   alias gre='git reset'
@@ -109,11 +115,11 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   compdef _git gmt=git-mergetool
   alias gl='git log'
   compdef _git gl=git-log
-  alias glgg="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
+  alias glgg="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
   compdef _git glgg=git-log
-  alias glg='git log --stat'
+  alias glg='git log --abbrev-commit --stat'
   compdef _git glg=git-log
-  alias gag='git log --grep'
+  alias gag='git log --abbrev-commit --grep'
   compdef _git gag=git-log
   alias gp='git remote prune'
   compdef _git gp=git-remote
@@ -132,13 +138,19 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   alias gsu='git branch --set-upstream-to=origin/$(current_branch)'
   compdef _git gsu=git-branch
 
+  function gwm() {
+    git log --no-merges -p --abbrev-commit $1~1..$1
+  }
+
   # Customize to your needs...
   export KEYTIMEOUT=1
   export PATH=$PATH:~/bin:/usr/local/share/npm/bin:/usr/local/opt/android-sdk/bin:/usr/local/opt/android-sdk/tools:/usr/local/opt/android-sdk/platform-tools
-  export EDITOR='reattach-to-user-namespace vim -p'
-  export VISUAL='reattach-to-user-namespace vim -p'
+  export EDITOR='vim -p'
+  export VISUAL='vim -p'
+  export JAVA_HOME=$(/usr/libexec/java_home)
   export NODE_PATH=/usr/local/lib/node_modules
-  export GOROOT=/usr/local/opt/go
+  export GOROOT=/usr/local/opt/go/libexec
+  export GPG_TTY=$(tty)
   export ANDROID_HOME=/usr/local/opt/android-sdk
   source ~/private/Keys/aws_keys.sh
   export AWS_ACCESS_KEY_ID=$MD_AWS_ACCESS_KEY_ID

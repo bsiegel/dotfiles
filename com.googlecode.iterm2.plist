@@ -2734,6 +2734,20 @@
 	<real>1</real>
 	<key>GlobalKeyMap</key>
 	<dict>
+		<key>0x4b-0x120000</key>
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x01 0x6b</string>
+		</dict>
+		<key>0x6b-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>11</integer>
+			<key>Text</key>
+			<string>0x0c</string>
+		</dict>
 		<key>0x74-0x100000</key>
 		<dict>
 			<key>Action</key>
@@ -2901,11 +2915,11 @@
 			<key>Ansi 11 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.11764705926179886</real>
+				<real>0.11764702945947647</real>
 				<key>Green Component</key>
 				<real>0.58431375026702881</real>
 				<key>Red Component</key>
-				<real>0.98823529481887817</real>
+				<real>0.98823535442352295</real>
 			</dict>
 			<key>Ansi 12 Color</key>
 			<dict>
@@ -2973,9 +2987,9 @@
 			<key>Ansi 5 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.45190444588661194</real>
+				<real>0.45190438628196716</real>
 				<key>Green Component</key>
-				<real>0.14562134444713593</real>
+				<real>0.14562125504016876</real>
 				<key>Red Component</key>
 				<real>0.98164010047912598</real>
 			</dict>
@@ -3000,20 +3014,20 @@
 			<key>Ansi 8 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.30196079611778259</real>
+				<real>0.30196076631546021</real>
 				<key>Green Component</key>
-				<real>0.30196079611778259</real>
+				<real>0.30196073651313782</real>
 				<key>Red Component</key>
-				<real>0.30196079611778259</real>
+				<real>0.30196076631546021</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.13333332538604736</real>
+				<real>0.13332411646842957</real>
 				<key>Green Component</key>
-				<real>0.1333332359790802</real>
+				<real>0.1338672935962677</real>
 				<key>Red Component</key>
-				<real>0.89803922176361084</real>
+				<real>0.89965265989303589</real>
 			</dict>
 			<key>Automatically Log</key>
 			<false/>
@@ -3583,21 +3597,21 @@
 		<key>Button,1,1,,</key>
 		<dict>
 			<key>Action</key>
-			<string>kContextMenuPointerAction</string>
-		</dict>
-		<key>Button,1,1,s,</key>
-		<dict>
-			<key>Action</key>
 			<string>kSendHexCodePointerAction</string>
 			<key>Argument</key>
 			<string>0x01 0x5d</string>
 		</dict>
-		<key>Button,1,1,s^,</key>
+		<key>Button,1,1,^,</key>
 		<dict>
 			<key>Action</key>
 			<string>kSendHexCodePointerAction</string>
 			<key>Argument</key>
 			<string>0x01 0x3d</string>
+		</dict>
+		<key>Button,1,1,o,</key>
+		<dict>
+			<key>Action</key>
+			<string>kContextMenuPointerAction</string>
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
@@ -3617,7 +3631,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-04-25T19:48:25Z</date>
+	<date>2014-08-19T14:32:12Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -3667,6 +3681,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20140421</string>
+	<string>2.0</string>
 </dict>
 </plist>

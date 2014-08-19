@@ -2,11 +2,11 @@ Bundle "git://github.com/airblade/vim-rooter.git"
 Bundle "git://github.com/vim-scripts/CSApprox.git"
 Bundle "git://github.com/airblade/vim-gitgutter.git"
 Bundle "git://github.com/vim-scripts/InsertChar.git"
-Bundle "git://github.com/klen/python-mode.git"
 Bundle "git://github.com/jtratner/vim-flavored-markdown.git"
 Bundle "git://github.com/jszakmeister/vim-togglecursor.git"
 Bundle "git://github.com/luochen1990/rainbow.git"
 Bundle "git://github.com/Valloric/YouCompleteMe.git"
+Bundle "git://github.com/jamessan/vim-gnupg.git"
 color molokai
 
 set runtimepath+=$GOROOT/misc/vim
@@ -29,52 +29,47 @@ let g:rainbow_active = 1
 let g:rainbow_conf = {
 \        'guifgs': ['#d33682', '#dc322f', '#cb4b16', '#b58900', '#719e07', '#2aa198', '#6c71c4', '#268bd2'],
 \        'ctermfgs': ['red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'gray'],
-\        'operators': '',
-\        'parentheses': [['(',')'], ['\[','\]'], ['{','}']],
+\        'operators': '_,_',
+\        'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/'],
 \        'separately': {
 \                '*': {},
-\                'xml': {
-\                        'parentheses': [['(',')'], ['\[','\]'], ['{','}'], ['<\a[^>]*[^/]>\|<\a>','</[^>]*>']],
-\                },
-\                'html': {
-\                        'parentheses': [['(',')'], ['\[','\]'], ['{','}'], ['<\a[^>]*[^/]>\|<\a>','</[^>]*>']],
+\                'tex': {
+\                        'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
 \                },
 \                'vim': {
-\                        'parentheses': [['fu\w* \s*.*)','endfu\w*'], ['for','endfor'], ['while', 'endwhile'], ['if','_elseif\|else_','endif'], ['(',')'], ['\[','\]'], ['{','}']],
+\                        'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ containedin=vimFuncBody'],
 \                },
+\                'xml': {
+\                        'parentheses': ['start=/\v\<\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'))?)*\>/ end=#</\z1># fold'],
+\                },
+\                'xhtml': {
+\                        'parentheses': ['start=/\v\<\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'))?)*\>/ end=#</\z1># fold'],
+\                },
+\                'html': {
+\                        'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+\                },
+\                'php': {
+\                        'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold', 'start=/(/ end=/)/ containedin=@htmlPreproc contains=@phpClTop', 'start=/\[/ end=/\]/ containedin=@htmlPreproc contains=@phpClTop', 'start=/{/ end=/}/ containedin=@htmlPreproc contains=@phpClTop'],
+\                },
+\                'css': 0,
 \                'ruby': {
-\                        'parentheses': [['\(^\|;\)\s*class\s\+','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
-\                                        ['\(^\|;\)\s*module\s\+','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
-\                                        ['\(^\|;\)\s*def\s\+','_\(^\|;\)\s*\(rescue\|ensure\|else\)\(\s\+\|$\|#\|;\)_','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
-\                                        ['\s\+do\(\s\+\|$\|#\|;\)','_\(^\|;\)\s*\(break\|next\)\(\s\+\|(\|$\|#\|;\)_','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
-\                                        ['\(^\|;\)\s*begin\(\s\+\|$\|#\|;\)','_\(^\|;\)\s*\(rescue\|ensure\|else\)\(\s\+\|$\|#\|;\)_','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
-\                                        ['\(^\|;\)\s*for\s\+','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
-\                                        ['\(^\|;\)\s*while\s\+','_\(^\|;\)\s*\(break\|next\)\(\s\+\|(\|$\|#\|;\)_','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
-\                                        ['\(^\|;\)\s*until\s\+','_\(^\|;\)\s*\(break\|next\)\(\s\+\|(\|$\|#\|;\)_','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
-\                                        ['\(^\|;\)\s*case\s\+','_\(^\|;\)\s*\(\(when\s\+\)\|\(else\(\s\+\|$\|#\|;\)\)\)_','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
-\                                        ['\(^\|;\)\s*if\s\+','_\(^\|;\)\s*\(\(elsif\s\+\)\|\(else\(\s\+\|$\|#\|;\)\)\)_','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
-\                                        ['\(^\|;\)\s*unless\s\+','_\(^\|;\)\s*\(\(elsif\s\+\)\|\(else\(\s\+\|$\|#\|;\)\)\)_','\(^\|;\)\s*end\(\s\+\|$\|#\|;\)'],
-\                                        ['(',')'], ['\[','\]'], ['{','}']],
-\                },
-\                'tex': {
-\                        'parentheses': [['(',')'], ['\[','\]'], ['\\begin{.*}','\\end{.*}']],
+\                        'parentheses': [
+\                                'start=/\(^\|;\)\s*class\s\+/ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
+\                                'start=/\(^\|;\)\s*module\s\+/ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
+\                                'start=/\(^\|;\)\s*def\s\+/ step=_\(^\|;\)\s*\(rescue\|ensure\|else\)\(\s\+\|$\|#\|;\)_ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
+\                                'start=/\s\+do\(\s\+\|$\|#\|;\)/ step=_\(^\|;\)\s*\(break\|next\)\(\s\+\|(\|$\|#\|;\)_ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
+\                                'start=/\(^\|;\)\s*begin\(\s\+\|$\|#\|;\)/ step=_\(^\|;\)\s*\(rescue\|ensure\|else\)\(\s\+\|$\|#\|;\)_ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
+\                                'start=/\(^\|;\)\s*for\s\+/ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
+\                                'start=/\(^\|;\)\s*while\s\+/ step=_\(^\|;\)\s*\(break\|next\)\(\s\+\|(\|$\|#\|;\)_ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
+\                                'start=/\(^\|;\)\s*until\s\+/ step=_\(^\|;\)\s*\(break\|next\)\(\s\+\|(\|$\|#\|;\)_ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
+\                                'start=/\(^\|;\)\s*case\s\+/ step=_\(^\|;\)\s*\(\(when\s\+\)\|\(else\(\s\+\|$\|#\|;\)\)\)_ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
+\                                'start=/\(^\|;\)\s*if\s\+/ step=_\(^\|;\)\s*\(\(elsif\s\+\)\|\(else\(\s\+\|$\|#\|;\)\)\)_ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
+\                                'start=/\(^\|;\)\s*unless\s\+/ step=_\(^\|;\)\s*\(\(elsif\s\+\)\|\(else\(\s\+\|$\|#\|;\)\)\)_ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
+\                                'start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/'
+\                        ],
 \                },
 \        }
 \}
-let g:pymode_rope = 0
-let g:pymode_doc = 1
-let g:pymode_doc_key = 'K'
-let g:pymode_lint = 1
-let g:pymode_lint_checker = "pyflakes,pep8"
-let g:pymode_lint_write = 1
-let g:pymode_virtualenv = 1
-let g:pymode_breakpoint = 1
-let g:pymode_breakpoint_key = '<leader>k'
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 1
-let g:pymode_syntax_indent_errors = g:pymode_syntax_all
-let g:pymode_syntax_space_errors = g:pymode_syntax_all
-let g:pymode_folding = 0
 
 cnoreabbrev hex %!xxd
 cnoreabbrev hexq %!xxd -r
