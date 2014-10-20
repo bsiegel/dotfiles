@@ -4,6 +4,8 @@ android-sdk
 apktool
 autoconf
 automake
+awscli
+bash
 boot2docker
 cmake
 dart
@@ -18,6 +20,7 @@ heroku-toolbelt
 htop-osx
 iperf
 jq
+keychain
 leiningen
 libevent
 libtool
@@ -30,11 +33,13 @@ openssh
 openssl
 packer
 pcre
+pidcat
 pkg-config
 pv
 python
 rbenv
 rbenv-gem-rehash
+readline
 reattach-to-user-namespace
 reaver
 redis

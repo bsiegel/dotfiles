@@ -26,6 +26,7 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   alias jj='popd'
   alias z='zeus'
   alias first=$'awk \'{print $1}\''
+  alias bup='brew update && brew upgrade && brew cleanup'
 
   # complete words from tmux pane(s) {{{1
   # Source: http://blog.plenz.com/2012-01/zsh-complete-words-from-tmux-pane.html
@@ -80,7 +81,7 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
   # Example format: plugins=(rails git textmate ruby lighthouse)
   export RBENV_ROOT=/usr/local/opt/rbenv
-  plugins=(history-substring-search safe-paste git rbenv gem bundler brew zeus vagrant pip docker)
+  plugins=(history-substring-search safe-paste brew git rbenv gem bundler zeus pip)
 
   source $ZSH/oh-my-zsh.sh
 
@@ -137,14 +138,41 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   compdef _git gbdd=git-branch
   alias gsu='git branch --set-upstream-to=origin/$(current_branch)'
   compdef _git gsu=git-branch
+  alias gup='git pull --rebase --prune'
+
+  function gbdm() {
+    git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d;
+  }
 
   function gwm() {
-    git log --no-merges -p --abbrev-commit $1~1..$1
+    git --no-pager show --abbrev-commit $(git log $1..master --ancestry-path --merges --pretty='%h' 2>/dev/null | tail -n1)
+  }
+
+  function activate() {
+    if [[ ! -d env ]]; then
+      virtualenv --no-site-packages env
+    fi
+    if [[ -f .activate ]]; then
+      source .activate
+    else
+      source env/bin/activate
+    fi
+  }
+
+  function pair() {
+    if [[ $1 == "on" ]]; then
+      sudo chpass -s /bin/bash pair >/dev/null 2>&1 && echo "Pairing turned ON"
+    elif [[ $1 == "off" ]]; then
+      sudo chpass -s /usr/bin/false pair >/dev/null 2>&1 && echo "Pairing turned OFF"
+    else
+      echo "Must specify 'on' or 'off'"
+    fi
   }
 
   # Customize to your needs...
+  eval "$(keychain --noask --quiet --eval --agents ssh md.id_rsa)"
   export KEYTIMEOUT=1
-  export PATH=$PATH:~/bin:/usr/local/share/npm/bin:/usr/local/opt/android-sdk/bin:/usr/local/opt/android-sdk/tools:/usr/local/opt/android-sdk/platform-tools
+  export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/local/opt/android-sdk/bin:/usr/local/opt/android-sdk/tools:/usr/local/opt/android-sdk/platform-tools:$PATH
   export EDITOR='vim -p'
   export VISUAL='vim -p'
   export JAVA_HOME=$(/usr/libexec/java_home)
@@ -158,7 +186,6 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   export AWS_DEFAULT_REGION=us-east-1
   export DOCKER_HOST=tcp://localhost:4243
 else
-  export PATH=/usr/local/bin:/usr/local/sbin:$PATH
   TMUX_ACT=$(tmux -S /tmp/tmux-tmux ls -F '#{session_windows}' 2> /dev/null)
   if [[ -z "$TMUX_ACT" || "$TMUX_ACT" = "0" ]]; then
     exec tmux -S /tmp/tmux-tmux new -s tmux

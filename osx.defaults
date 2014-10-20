@@ -1,6 +1,26 @@
 #!/bin/sh
-defaults write com.apple.desktopservices DSDontWriteNetworkStores true
-defaults write com.apple.finder QLEnableTextSelection -bool TRUE
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSTextShowsControlCharacters -bool true
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.05
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 defaults write com.apple.dashboard mcx-disabled -boolean true
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+defaults write com.apple.dock tilesize -int 36
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+defaults write com.apple.finder QLEnableTextSelection -bool TRUE
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 5
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 chflags nohidden ~/Library/
