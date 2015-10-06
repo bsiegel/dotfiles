@@ -1,7 +1,7 @@
 [user]
 	name = Brandon Siegel
 	email = brandon@smartercode.net
-	signingkey = 06755CF1
+	signingkey = 3D6E8B65
 [color]
 	ui = auto
 [alias]
@@ -9,16 +9,31 @@
   lg = log --color --oneline
   co = checkout
   mb = merge --no-ff --edit
+  stop-packing = gc --prune=now
 [push]
   default = upstream
 [pull]
   rebase = true
-[mergetool "kdiff3"]
-	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
-[merge]
-	tool = kdiff3
-[diff]
-	algorithm = patience
 [rebase]
 	autosquash = true
 	autostash = true
+[diff]
+	algorithm = patience
+	tool = kdiff3
+[merge]
+	tool = kdiff3
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+	keepBackup = false
+[difftool "kdiff3"]
+	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+[mergetool "kdiff3"]
+	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

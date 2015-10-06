@@ -1,18 +1,30 @@
-Bundle "git://github.com/airblade/vim-rooter.git"
-Bundle "git://github.com/vim-scripts/CSApprox.git"
-Bundle "git://github.com/airblade/vim-gitgutter.git"
-Bundle "git://github.com/vim-scripts/InsertChar.git"
-Bundle "git://github.com/jtratner/vim-flavored-markdown.git"
-Bundle "git://github.com/jszakmeister/vim-togglecursor.git"
-Bundle "git://github.com/luochen1990/rainbow.git"
-Bundle "git://github.com/Valloric/YouCompleteMe.git"
-Bundle "git://github.com/jamessan/vim-gnupg.git"
+call neobundle#append()
+  NeoBundle "git://github.com/airblade/vim-rooter.git"
+  NeoBundle "git://github.com/vim-scripts/CSApprox.git"
+  NeoBundle "git://github.com/airblade/vim-gitgutter.git"
+  NeoBundle "git://github.com/vim-scripts/InsertChar.git"
+  NeoBundle "git://github.com/jtratner/vim-flavored-markdown.git"
+  NeoBundle "git://github.com/jszakmeister/vim-togglecursor.git"
+  NeoBundle "git://github.com/luochen1990/rainbow.git"
+  NeoBundle "git://github.com/jamessan/vim-gnupg.git"
+  NeoBundle "git://github.com/terryma/vim-expand-region.git"
+  NeoBundle "git://github.com/Valloric/YouCompleteMe.git", {
+        \ 'build' : {
+        \     'mac' : './install.sh',
+        \    },
+        \ }
+call neobundle#end()
+
 color molokai
+
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 
 set runtimepath+=$GOROOT/misc/vim
 au BufRead,BufNewFile *.rabl set filetype=ruby
 au BufRead,BufNewFile *.go set filetype=go
 au BufRead,BufNewFile *.md,*.markdown set filetype=ghmarkdown
+au BufRead,BufNewFile *.md,*.markdown set tw=72
 
 set switchbuf=usetab,newtab
 set ttymouse=xterm2
@@ -91,6 +103,12 @@ nmap <silent><Leader>st :!subl %<CR><CR>
 nmap <silent><Leader>] :NERDTreeToggle<CR>
 nmap <silent><Leader>[ :NERDTree \| NERDTreeToggle \| NERDTreeFind<CR>
 nmap <silent>gt :tabnext<CR>
+
+set grepprg=ag\ --nogroup\ --nocolor
+let g:ctrlp_use_caching = 0
+unlet g:ctrlp_user_command
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'ag %s -l --nocolor -g ""']
+let g:ctrlp_prompt_mappings = { 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'] }
 
 "This allows for change paste motion cp{motion}
 nmap <silent> cp :set opfunc=ChangePaste<CR>g@

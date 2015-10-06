@@ -21,12 +21,16 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   alias ag='ag -S -U'
   alias m='ag -S -U -l'
   alias e='xargs -o vim -p'
-  alias f='find -X . -type f | ag -S -U'
+  alias f='find -X . -type f 2>&1 | ag -S -U'
   alias j='cd'
   alias jj='popd'
   alias z='zeus'
-  alias first=$'awk \'{print $1}\''
-  alias bup='brew update && brew upgrade && brew cleanup'
+  alias bup='brew update && brew upgrade --all && brew cleanup'
+  alias rcopy='rsync -a --info=progress2'
+
+  function field() {
+    awk "{print \$$1}"
+  }
 
   # complete words from tmux pane(s) {{{1
   # Source: http://blog.plenz.com/2012-01/zsh-complete-words-from-tmux-pane.html
@@ -81,7 +85,7 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
   # Example format: plugins=(rails git textmate ruby lighthouse)
   export RBENV_ROOT=/usr/local/opt/rbenv
-  plugins=(history-substring-search safe-paste brew git rbenv gem bundler zeus pip)
+  plugins=(history-substring-search safe-paste brew git rbenv bundler zeus pip)
 
   source $ZSH/oh-my-zsh.sh
 
@@ -139,9 +143,16 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   alias gsu='git branch --set-upstream-to=origin/$(current_branch)'
   compdef _git gsu=git-branch
   alias gup='git pull --rebase --prune'
+  compdef _git gup=git-pull
+  alias glm='git fetch origin master:master'
+  compdef _git glm=git-fetch
+  alias gwc='gwch'
+  alias gdc='gdca'
+  alias glb='git fetch && git reset --hard $(git rev-parse --abbrev-ref --symbolic-full-name @{u})'
+  alias gbdm='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
 
-  function gbdm() {
-    git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d;
+  function gfl() {
+    git commit --fixup $(git log --pretty='%h' $1 2>/dev/null | head -n1)
   }
 
   function gwm() {
@@ -149,6 +160,7 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   }
 
   function activate() {
+    cd $(git rev-parse --show-toplevel || echo ".")
     if [[ ! -d env ]]; then
       virtualenv --no-site-packages env
     fi
@@ -169,8 +181,27 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
     fi
   }
 
+  function converge() {
+    if [[ $1 == "all" ]]; then
+      bundle exec knife node list | grep $2
+      read -q "REPLY?Converge these nodes?..."
+      echo
+      if [[ $REPLY == "y" ]]; then
+        bundle exec knife ssh "name:*$2*" "sudo chef-client --force-formatter | grep -v 'INFO: Processing\|up to date\|skipped due'"
+      fi
+    elif [[ $1 == "one" ]]; then
+      bundle exec knife node list | grep $2 | xargs -n1 -I% -p bundle exec knife ssh name:% "sudo chef-client --force-formatter | grep -v 'INFO: Processing\|up to date\|skipped due'"
+    else
+      echo "Must specify mode: 'all' or 'one'"
+    fi
+  }
+
+  function vault() {
+    ansible-vault edit vault/$1.yml --vault-password-file=.vault-pass
+  }
+
   # Customize to your needs...
-  eval "$(keychain --noask --quiet --eval --agents ssh md.id_rsa)"
+  eval "$(keychain --quiet --eval --agents ssh md)"
   export KEYTIMEOUT=1
   export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/local/opt/android-sdk/bin:/usr/local/opt/android-sdk/tools:/usr/local/opt/android-sdk/platform-tools:$PATH
   export EDITOR='vim -p'

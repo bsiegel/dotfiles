@@ -1,4 +1,8 @@
 {
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
 	"installed_packages":
 	[
 		"AdvancedNewFile",
@@ -7,10 +11,12 @@
 		"Find++",
 		"Git",
 		"GitGutter",
+		"Haml",
 		"HexViewer",
 		"Highlighter",
 		"jQuery",
 		"knockdown",
+		"Package Control",
 		"Search in Project",
 		"SideBarEnhancements",
 		"StringEncode",
