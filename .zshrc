@@ -84,8 +84,8 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
   # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
   # Example format: plugins=(rails git textmate ruby lighthouse)
-  export RBENV_ROOT=/usr/local/opt/rbenv
-  plugins=(history-substring-search safe-paste brew git rbenv bundler zeus pip)
+  eval "$(rbenv init --no-rehash - zsh)"
+  plugins=(history-substring-search safe-paste brew git bundler zeus pip)
 
   source $ZSH/oh-my-zsh.sh
 

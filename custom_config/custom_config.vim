@@ -1,14 +1,14 @@
 call neobundle#append()
-  NeoBundle "git://github.com/airblade/vim-rooter.git"
-  NeoBundle "git://github.com/vim-scripts/CSApprox.git"
-  NeoBundle "git://github.com/airblade/vim-gitgutter.git"
-  NeoBundle "git://github.com/vim-scripts/InsertChar.git"
-  NeoBundle "git://github.com/jtratner/vim-flavored-markdown.git"
-  NeoBundle "git://github.com/jszakmeister/vim-togglecursor.git"
-  NeoBundle "git://github.com/luochen1990/rainbow.git"
-  NeoBundle "git://github.com/jamessan/vim-gnupg.git"
-  NeoBundle "git://github.com/terryma/vim-expand-region.git"
-  NeoBundle "git://github.com/Valloric/YouCompleteMe.git", {
+  NeoBundle "airblade/vim-rooter"
+  NeoBundle "vim-scripts/CSApprox"
+  NeoBundle "airblade/vim-gitgutter"
+  NeoBundle "vim-scripts/InsertChar"
+  NeoBundle "jtratner/vim-flavored-markdown"
+  NeoBundle "jszakmeister/vim-togglecursor"
+  NeoBundle "luochen1990/rainbow"
+  NeoBundle "jamessan/vim-gnupg"
+  NeoBundle "terryma/vim-expand-region"
+  NeoBundle "Valloric/YouCompleteMe", {
         \ 'build' : {
         \     'mac' : './install.sh',
         \    },
