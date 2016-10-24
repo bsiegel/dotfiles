@@ -25,8 +25,9 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   alias j='cd'
   alias jj='popd'
   alias z='zeus'
-  alias bup='brew update && brew upgrade --all && brew cleanup'
+  alias bup='brew update && brew upgrade && brew cleanup'
   alias rcopy='rsync -a --info=progress2'
+  alias docker-cleanup='docker rm $(docker ps -a -f "name=_run_" -q); docker rmi $(docker images -f "dangling=true" -q); docker volume rm $(docker volume ls -qf dangling=true)'
 
   function field() {
     awk "{print \$$1}"
@@ -84,10 +85,12 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
   # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
   # Example format: plugins=(rails git textmate ruby lighthouse)
-  eval "$(rbenv init --no-rehash - zsh)"
-  plugins=(history-substring-search safe-paste brew git bundler zeus pip)
+  ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
+  plugins=(brew git bundler zsh-completions zsh-syntax-highlighting history-substring-search)
 
   source $ZSH/oh-my-zsh.sh
+
+  autoload -U compinit && compinit
 
   bindkey '\e[A' history-substring-search-up
   bindkey '\e[B' history-substring-search-down
@@ -150,6 +153,8 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   alias gdc='gdca'
   alias glb='git fetch && git reset --hard $(git rev-parse --abbrev-ref --symbolic-full-name @{u})'
   alias gbdm='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
+  alias gchown='git commit --amend --reuse-message=HEAD --author "$(git config user.name) <$(git config user.email)>"'
+  alias gcu='f \\.orig | xargs rm'
 
   function gfl() {
     git commit --fixup $(git log --pretty='%h' $1 2>/dev/null | head -n1)
@@ -200,22 +205,30 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
     ansible-vault edit vault/$1.yml --vault-password-file=.vault-pass
   }
 
+  function aws-env() {
+    export AWS_ACCESS_KEY_ID=$(aws configure get aws_access_key_id --profile ${1:=default})
+    export AWS_SECRET_ACCESS_KEY=$(aws configure get aws_secret_access_key --profile ${1:=default})
+    export AWS_DEFAULT_REGION=us-east-1
+    export AWS_PROFILE=${1:=default}
+  }
+
   # Customize to your needs...
   eval "$(keychain --quiet --eval --agents ssh md)"
   export KEYTIMEOUT=1
-  export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/local/opt/android-sdk/bin:/usr/local/opt/android-sdk/tools:/usr/local/opt/android-sdk/platform-tools:$PATH
+  export GOROOT=/usr/local/opt/go/libexec
+  export GOPATH=~/.go
+  export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/local/opt/android-sdk/bin:/usr/local/opt/android-sdk/tools:/usr/local/opt/android-sdk/platform-tools:$GOROOT/bin:$GOPATH/bin:$PATH
   export EDITOR='vim -p'
   export VISUAL='vim -p'
   export JAVA_HOME=$(/usr/libexec/java_home)
   export NODE_PATH=/usr/local/lib/node_modules
-  export GOROOT=/usr/local/opt/go/libexec
   export GPG_TTY=$(tty)
   export ANDROID_HOME=/usr/local/opt/android-sdk
+
+  eval "$(rbenv init --no-rehash - zsh)"
+  eval "$(nodenv init --no-rehash - zsh)"
+
   source ~/private/Keys/aws_keys.sh
-  export AWS_ACCESS_KEY_ID=$MD_AWS_ACCESS_KEY_ID
-  export AWS_SECRET_ACCESS_KEY=$MD_AWS_SECRET_ACCESS_KEY
-  export AWS_DEFAULT_REGION=us-east-1
-  export DOCKER_HOST=tcp://localhost:4243
 else
   TMUX_ACT=$(tmux -S /tmp/tmux-tmux ls -F '#{session_windows}' 2> /dev/null)
   if [[ -z "$TMUX_ACT" || "$TMUX_ACT" = "0" ]]; then

@@ -2726,6 +2726,8 @@
 	<true/>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
+	<key>DisallowCopyEmptyString</key>
+	<true/>
 	<key>DoubleClickPerformsSmartSelection</key>
 	<true/>
 	<key>EnableRendezvous</key>
@@ -2854,6 +2856,8 @@
 	<false/>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/.dotfiles</string>
+	<key>NSNavPanelExpandedSizeForOpenMode</key>
+	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -2879,34 +2883,10 @@
 	<array/>
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
-	<key>NSToolbar Configuration Terminal Toolbar</key>
-	<dict>
-		<key>TB Display Mode</key>
-		<integer>1</integer>
-		<key>TB Icon Size Mode</key>
-		<integer>1</integer>
-		<key>TB Is Shown</key>
-		<integer>0</integer>
-		<key>TB Size Mode</key>
-		<integer>1</integer>
-	</dict>
-	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
-	<dict>
-		<key>TB Is Shown</key>
-		<integer>1</integer>
-	</dict>
-	<key>NSWindow Frame Preferences</key>
-	<string>316 417 606 456 0 0 1440 877 </string>
-	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>370 203 700 622 0 0 1440 877 </string>
-	<key>NSWindow Frame UKCrashReporter</key>
-	<string>99 293 592 584 0 0 1440 877 </string>
+	<key>NSWindow Frame SharedPreferences</key>
+	<string>187 289 918 512 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 375 570 502 0 0 1440 877 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>356 109 570 502 0 0 1440 877 </string>
-	<key>NSWindow Frame iTerm Window 2</key>
-	<string>408 176 570 502 0 0 1440 877 </string>
+	<string>155 53 570 502 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_AB528825-B469-4B9E-9B00-D83EA36F4A53</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -3608,7 +3588,7 @@
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
-			<false/>
+			<true/>
 			<key>Use Canonical Parser</key>
 			<true/>
 			<key>Use Cursor Guide</key>
@@ -5053,32 +5033,20 @@
 			<string>~/working/</string>
 		</dict>
 	</array>
-	<key>NoSyncLastTipTime</key>
-	<real>457970644.10628903</real>
-	<key>NoSyncNeverRemindPrefsChangesLost</key>
+	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
-	<key>NoSyncTipsDisabled</key>
-	<true/>
-	<key>NoSyncTipsToNotShow</key>
-	<array>
-		<string>0000</string>
-		<string>0001</string>
-		<string>0002</string>
-		<string>0003</string>
-		<string>0004</string>
-		<string>0005</string>
-		<string>0006</string>
-		<string>000</string>
-		<string>0000</string>
-		<string>0001</string>
-		<string>0002</string>
-	</array>
+	<key>NoSyncInstallationId</key>
+	<string>2590F281-F243-4686-BF75-FCC0A492003E</string>
+	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
+	<real>499018714.63531899</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenBookmark</key>
 	<false/>
+	<key>OpenFileInNewWindows</key>
+	<true/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
@@ -5086,6 +5054,10 @@
 	<key>PassOnControlClick</key>
 	<true/>
 	<key>PasteFromClipboard</key>
+	<false/>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>4</integer>
+	<key>PerformDictionaryLookupOnQuickLook</key>
 	<false/>
 	<key>PointerActions</key>
 	<dict>
@@ -5111,10 +5083,12 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/brandon/.dotfiles</string>
+	<key>PromptForPasteWhenNotAtPrompt</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
-	<false/>
+	<true/>
 	<key>RightCommand</key>
 	<integer>8</integer>
 	<key>RightOption</key>
@@ -5124,11 +5098,13 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/nightly.xml</string>
+	<string>https://iterm2.com/appcasts/testing.xml?shard=21</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-08-10T14:50:24Z</date>
+	<date>2016-10-24T16:19:05Z</date>
+	<key>SUSendProfileInfo</key>
+	<false/>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -5159,18 +5135,24 @@
 	<array>
 		<string>Profiles</string>
 	</array>
+	<key>TraditionalVisualBell</key>
+	<false/>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<true/>
-	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1426627712</real>
 	<key>URLHandlersByGuid</key>
 	<dict/>
+	<key>UseAdaptiveFrameRate</key>
+	<true/>
 	<key>UseBorder</key>
 	<false/>
 	<key>UseCompactLabel</key>
 	<true/>
 	<key>UseLionStyleFullscreen</key>
 	<false/>
+	<key>UseOpenDirectory</key>
+	<false/>
+	<key>UseSystemCursorWhenPossible</key>
+	<true/>
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
@@ -5186,7 +5168,11 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20150810-nightly</string>
+	<string>3.0.11</string>
+	<key>kCPKSelectionViewPreferredModeKey</key>
+	<integer>0</integer>
+	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
 	<key>kCommandHistoryHasEverBeenUsed</key>
 	<true/>
 </dict>

@@ -20,6 +20,7 @@
 [diff]
 	algorithm = patience
 	tool = kdiff3
+	compactionHeuristic = true
 [merge]
 	tool = kdiff3
 [difftool]
@@ -37,3 +38,10 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[pager]
+	log = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+	show = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+	diff = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+	whatchanged = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+[interactive]
+	diffFilter = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight

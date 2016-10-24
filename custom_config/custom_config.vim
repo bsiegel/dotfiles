@@ -1,6 +1,5 @@
 call neobundle#append()
   NeoBundle "airblade/vim-rooter"
-  NeoBundle "vim-scripts/CSApprox"
   NeoBundle "airblade/vim-gitgutter"
   NeoBundle "vim-scripts/InsertChar"
   NeoBundle "jtratner/vim-flavored-markdown"
@@ -15,7 +14,13 @@ call neobundle#append()
         \ }
 call neobundle#end()
 
+set termguicolors
+set t_8f=[38;2;%lu;%lu;%lum  " Needed in tmux
+set t_8b=[48;2;%lu;%lu;%lum  " Ditto
 color molokai
+
+set colorcolumn=80
+highlight ColorColumn ctermbg=234 guibg=#232526
 
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
@@ -94,6 +99,7 @@ nmap <C-k> [e
 nmap <C-j> ]e
 vmap <C-k> [egv
 vmap <C-j> ]egv
+vmap <Leader>p p==:%s/\s\+$//e<CR>gq$$
 
 nmap <Leader>f :Ag<Space><C-r>=expand("<cword>")<CR>
 nmap <silent><Leader>x :bd<CR>
