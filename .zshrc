@@ -217,17 +217,18 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   export KEYTIMEOUT=1
   export GOROOT=/usr/local/opt/go/libexec
   export GOPATH=~/.go
-  export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/local/opt/android-sdk/bin:/usr/local/opt/android-sdk/tools:/usr/local/opt/android-sdk/platform-tools:$GOROOT/bin:$GOPATH/bin:$PATH
+  export ANDROID_HOME=$HOME/Library/Android/sdk
+  export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$GOROOT/bin:$GOPATH/bin:$PATH
   export EDITOR='vim -p'
   export VISUAL='vim -p'
   export JAVA_HOME=$(/usr/libexec/java_home)
   export NODE_PATH=/usr/local/lib/node_modules
   export GPG_TTY=$(tty)
-  export ANDROID_HOME=/usr/local/opt/android-sdk
 
   eval "$(rbenv init --no-rehash - zsh)"
   eval "$(nodenv init --no-rehash - zsh)"
 
+  source ~/.cargo/env
   source ~/private/Keys/aws_keys.sh
 else
   TMUX_ACT=$(tmux -S /tmp/tmux-tmux ls -F '#{session_windows}' 2> /dev/null)

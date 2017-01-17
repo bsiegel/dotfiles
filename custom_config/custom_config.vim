@@ -9,7 +9,7 @@ call neobundle#append()
   NeoBundle "terryma/vim-expand-region"
   NeoBundle "Valloric/YouCompleteMe", {
         \ 'build' : {
-        \     'mac' : './install.sh',
+        \     'mac' : './install.py',
         \    },
         \ }
 call neobundle#end()

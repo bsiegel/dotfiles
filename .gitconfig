@@ -45,3 +45,5 @@
 	whatchanged = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
 [interactive]
 	diffFilter = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight
+[core]
+	excludesfile = /Users/brandon/.gitignore_global
