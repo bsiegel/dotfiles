@@ -2,3 +2,5 @@ log/
 logs/
 tmp/
 coverage/
+vendor/
+node_modules/

@@ -15,6 +15,7 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 defaults write com.apple.dashboard mcx-disabled -boolean true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 defaults write com.apple.dock tilesize -int 36
+defaults write com.apple.dock size-immutable -bool yes
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 defaults write com.apple.finder QLEnableTextSelection -bool TRUE
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true

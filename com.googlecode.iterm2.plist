@@ -3615,7 +3615,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>~/working/</string>
+			<string>~/work/</string>
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>
@@ -4330,7 +4330,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>~/working/</string>
+			<string>~/work/</string>
 		</dict>
 	</array>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>

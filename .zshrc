@@ -25,9 +25,10 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   alias j='cd'
   alias jj='popd'
   alias z='zeus'
-  alias bup='brew update && brew upgrade && brew cleanup'
+  alias bup='brew update && brew upgrade && brew cleanup && brew cu -y -a && brew cask cleanup'
   alias rcopy='rsync -a --info=progress2'
   alias docker-cleanup='docker rm $(docker ps -a -f "name=_run_" -q); docker rmi $(docker images -f "dangling=true" -q); docker volume rm $(docker volume ls -qf dangling=true)'
+  alias emu='emulator -avd $(emulator -list-avds | head -n1)'
 
   function field() {
     awk "{print \$$1}"
@@ -218,7 +219,7 @@ if [[ -n "$TMUX" || -n "$SSH_CLIENT" || -n "$ZSHRC_FORCE" ]]; then
   export GOROOT=/usr/local/opt/go/libexec
   export GOPATH=~/.go
   export ANDROID_HOME=$HOME/Library/Android/sdk
-  export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$GOROOT/bin:$GOPATH/bin:$PATH
+  export PATH=~/bin:/usr/local/opt/openssl/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$GOROOT/bin:$GOPATH/bin:$PATH
   export EDITOR='vim -p'
   export VISUAL='vim -p'
   export JAVA_HOME=$(/usr/libexec/java_home)

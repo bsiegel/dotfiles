@@ -1,6 +1,7 @@
 aria2
 autoconf
 awscli
+chromedriver
 cmake
 dex2jar
 elixir
@@ -11,10 +12,14 @@ git
 go
 heroku
 htop
-imagemagick
+imagemagick@6
 jpeg
 jq
 keychain
+kubernetes-cli
+kubernetes-helm
+lastpass-cli
+leiningen
 libevent
 libpng
 libssh2
@@ -22,9 +27,7 @@ libtiff
 libtool
 libyaml
 mercurial
-mongodb
 mysql@5.6
-node
 node-build
 nodenv
 oniguruma
@@ -42,8 +45,9 @@ reattach-to-user-namespace
 redis
 rsync
 ruby-build
-rust
 sqlite
+syncthing
+syncthing-inotify
 terraform
 the_silver_searcher
 tmux
