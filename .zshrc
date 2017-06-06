@@ -31,10 +31,10 @@ else
   alias lsop='lsof -Pni'
   alias sudo='sudo '
   alias serve='python -m SimpleHTTPServer'
-  alias ag='ag -S -U'
-  alias m='ag -S -U -l'
+  alias ag='rg -S'
+  alias m='rg -S -l'
   alias e='xargs -o vim -p'
-  alias f='find -X . -type f 2>&1 | ag -S -U'
+  alias f='find -X . -type f 2>&1 | rg -S'
   alias j='cd'
   alias jj='popd'
   alias z='zeus'
@@ -63,10 +63,21 @@ else
   gwm() { git --no-pager show --abbrev-commit $(git log $1..master --ancestry-path --merges --pretty='%h' 2>/dev/null | tail -n1) }
 
   aws-env() {
+    unset ASSURANT_AWS_ACCESS_KEY_ID
+    unset ASSURANT_AWS_SECRET_ACCESS_KEY
+    unset MD_AWS_ACCESS_KEY_ID
+    unset MD_AWS_SECRET_ACCESS_KEY
     export AWS_ACCESS_KEY_ID=$(aws configure get aws_access_key_id --profile ${1:=default})
     export AWS_SECRET_ACCESS_KEY=$(aws configure get aws_secret_access_key --profile ${1:=default})
     export AWS_DEFAULT_REGION=us-east-1
     export AWS_PROFILE=${1:=default}
+    if [[ "$AWS_PROFILE" = "default" ]]; then
+      export ASSURANT_AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+      export ASSURANT_AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+    elif [[ "$AWS_PROFILE" = "mobile-defense" ]]; then
+      export MD_AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+      export MD_AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+    fi
   }
 
   eval "$(keychain --quiet --eval --agents ssh md)"
