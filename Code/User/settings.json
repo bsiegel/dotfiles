@@ -1,0 +1,26 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.fontFamily": "Inconsolata LGC for Powerline",
+    "editor.renderWhitespace": "boundary",
+    "window.restoreWindows": "none",
+    "javascript.implicitProjectConfig.checkJs": true,
+    "terraform.formatOnSave": true,
+    "terraform.indexing": {
+        "enabled": true,
+        "indexerPath": "/usr/local/bin/terraform-index",
+        "liveIndexing": true,
+        "delay": 500
+    },
+    "workbench.colorTheme": "Monokai",
+    "workbench.colorCustomizations": {
+        "tab.activeBackground": "#414339",
+        "tab.inactiveBackground": "#272822"
+    },
+    "editor.autoIndent": true,
+    "FSharp.toolsDirPath": "/usr/local/bin",
+    "FSharp.monoPath": "/usr/local/bin/mono",
+    "FSharp.fsiFilePath": "/usr/local/bin/fsharpi",
+    "FSharp.automaticProjectModification": true,
+    "FSharp.resolveNamespaces": true,
+    "workbench.startupEditor": "newUntitledFile"
+}
