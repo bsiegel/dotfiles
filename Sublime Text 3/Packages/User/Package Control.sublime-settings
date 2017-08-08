@@ -6,8 +6,9 @@
 	"installed_packages":
 	[
 		"AdvancedNewFile",
+		"AutoWrap",
+		"Block Cursor Everywhere",
 		"BracketHighlighter",
-		"DashDoc",
 		"Find++",
 		"Git",
 		"GitGutter",
@@ -15,15 +16,18 @@
 		"HexViewer",
 		"Highlighter",
 		"jQuery",
-		"knockdown",
+		"Markdown Extended",
+		"Monokai Extended",
 		"Package Control",
 		"Search in Project",
 		"SideBarEnhancements",
+		"SmartMarkdown",
 		"StringEncode",
 		"Surround",
 		"SyncedSideBar",
 		"Theme - Soda",
 		"Vintage Escape",
-		"Vintage Surround"
+		"Vintage Surround",
+		"Wrap Plus"
 	]
 }
