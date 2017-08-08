@@ -6,13 +6,16 @@ cmake
 dex2jar
 elixir
 erlang
+exercism
 freetype
 gdbm
 git
 go
+haskell-stack
 heroku
 htop
-imagemagick@6
+icu4c
+imagemagick
 jpeg
 jq
 keychain
@@ -26,8 +29,8 @@ libssh2
 libtiff
 libtool
 libyaml
-mercurial
 mysql@5.6
+node
 node-build
 nodenv
 oniguruma
@@ -38,7 +41,7 @@ percona-toolkit
 pidcat
 pkg-config
 postgresql
-python
+pyenv
 rbenv
 readline
 reattach-to-user-namespace
@@ -46,6 +49,8 @@ redis
 ripgrep-bin
 rsync
 ruby-build
+rustup-init
+smali
 sqlite
 syncthing
 syncthing-inotify

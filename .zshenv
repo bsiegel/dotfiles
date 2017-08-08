@@ -1,8 +1,10 @@
+export LPASS_AGENT_TIMEOUT=0
 export KEYTIMEOUT=1
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/.go
+export PYTHON_CONFIGURE_OPTS="--enable-framework"
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$HOME/bin:/usr/local/opt/openssl/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$GOROOT/bin:$GOPATH/bin:$HOME/.cargo/bin:$PATH
+export PATH=$HOME/bin:/usr/local/opt/openssl/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$GOROOT/bin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH
 export EDITOR='vim -p'
 export VISUAL='vim -p'
 export JAVA_HOME=$(/usr/libexec/java_home)

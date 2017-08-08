@@ -5,12 +5,16 @@ else
   ZSH_THEME="dpoggi"
   ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
   plugins=(
+    adb
+    dircycle
+    fancy-ctrl-z
+    gem
     git
-    bundler
-    zsh-completions
-    zsh-syntax-highlighting
     history-substring-search
     tmux-pane-words
+    terraform
+    zsh-completions
+    zsh-syntax-highlighting
   )
   source $ZSH/oh-my-zsh.sh
 
@@ -34,15 +38,17 @@ else
   alias ag='rg -S'
   alias m='rg -S -l'
   alias e='xargs -o vim -p'
-  alias f='find -X . -type f 2>&1 | rg -S'
+  alias f='rg -L -uuu --files . 2>/dev/null | rg -S'
   alias j='cd'
   alias jj='popd'
-  alias z='zeus'
+  alias dif='git diff --no-index --'
   alias bup='brew update && brew upgrade && brew cleanup && brew cu -y -a && brew cask cleanup'
   alias rcopy='rsync -a --info=progress2'
   alias docker-cleanup='docker rm $(docker ps -a -f "name=_run_" -q); docker rmi $(docker images -f "dangling=true" -q); docker volume rm $(docker volume ls -qf dangling=true)'
   alias emu='emulator -avd $(emulator -list-avds | head -n1)'
+  alias be='bundle exec'
   field() { awk "{print \$$1}" }
+  activate() { if [[ -f .activate ]]; then source .activate; else source env/bin/activate; fi }
 
   alias gri='grbi --autosquash --autostash'
   alias grc='grbc'
@@ -59,7 +65,8 @@ else
   alias gbdm='git branch --merged master | grep -v "\* master" | xargs -n 1 git branch -d'
   alias gchown='git commit --amend --reuse-message=HEAD --author "$(git config user.name) <$(git config user.email)>"'
   alias gcu='f \\.orig | xargs rm'
-  gfl() { git commit --fixup $(git log --pretty='%h' $1 2>/dev/null | head -n1) }
+  alias gcf='gc --fixup'
+  gcff() { git commit --fixup $(git log -n 1 --pretty='%h' $1 2>/dev/null) }
   gwm() { git --no-pager show --abbrev-commit $(git log $1..master --ancestry-path --merges --pretty='%h' 2>/dev/null | tail -n1) }
 
   aws-env() {
@@ -78,9 +85,13 @@ else
       export MD_AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
       export MD_AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
     fi
+    export RPROMPT="<aws:$AWS_PROFILE>"
   }
 
   eval "$(keychain --quiet --eval --agents ssh md)"
   eval "$(rbenv init --no-rehash - zsh)"
+  eval "$(pyenv init --no-rehash - zsh)"
   eval "$(nodenv init --no-rehash - zsh)"
+  #eval "$(kubectl completion zsh)"
+  #eval "$(npm completion)"
 fi
