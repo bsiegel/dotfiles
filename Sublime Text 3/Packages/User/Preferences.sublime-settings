@@ -28,7 +28,7 @@
 	"scroll_past_end": true,
 	"show_encoding": true,
 	"show_line_endings": true,
-	"theme": "Soda Light.sublime-theme",
+	"theme": "Default.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"use_simple_full_screen": true,
 	"wide_caret": true

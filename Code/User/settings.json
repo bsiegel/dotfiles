@@ -13,8 +13,7 @@
     },
     "workbench.colorTheme": "Monokai",
     "workbench.colorCustomizations": {
-        "tab.activeBackground": "#414339",
-        "tab.inactiveBackground": "#272822"
+        "tab.inactiveBackground": "#1E1F1C"
     },
     "editor.autoIndent": true,
     "FSharp.toolsDirPath": "/usr/local/bin",
@@ -22,5 +21,18 @@
     "FSharp.fsiFilePath": "/usr/local/bin/fsharpi",
     "FSharp.automaticProjectModification": true,
     "FSharp.resolveNamespaces": true,
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "rust.mode": "rls",
+    "rust.rls": {
+        "executable": "rustup",
+        "args": [
+            "run",
+            "nightly",
+            "rls"
+        ],
+        "useRustfmt": false
+    },
+    "rust.rustup": {
+        "toolchain": "stable-x86_64-apple-darwin"
+    }
 }

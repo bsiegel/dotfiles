@@ -11,7 +11,6 @@ freetype
 gdbm
 git
 go
-haskell-stack
 heroku
 htop
 icu4c
@@ -44,7 +43,6 @@ postgresql
 pyenv
 rbenv
 readline
-reattach-to-user-namespace
 redis
 ripgrep-bin
 rsync
