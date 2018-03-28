@@ -6,7 +6,6 @@ else
   ZSH_THEME="dpoggi"
   ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
   plugins=(
-    adb
     dircycle
     fancy-ctrl-z
     gem
@@ -46,7 +45,6 @@ else
   alias bup='brew update && brew upgrade && brew cleanup && brew cu -y -a && brew cask cleanup'
   alias rcopy='rsync -a --info=progress2'
   alias docker-cleanup='docker rm $(docker ps -a -f "name=_run_" -q); docker rmi $(docker images -f "dangling=true" -q); docker volume rm $(docker volume ls -qf dangling=true)'
-  alias emu='emulator -avd $(emulator -list-avds | head -n1)'
   alias dr='docker run -v $PWD:$PWD -w $PWD'
   alias be='bundle exec'
   alias stree='open -a SourceTree .'
@@ -74,29 +72,11 @@ else
   gcff() { git commit --fixup $(git log -n 1 --pretty='%h' $1 2>/dev/null) }
   gwm() { git --no-pager show --abbrev-commit $(git log $1..master --ancestry-path --merges --pretty='%h' 2>/dev/null | tail -n1) }
 
-  aws-env() {
-    unset ASSURANT_AWS_ACCESS_KEY_ID
-    unset ASSURANT_AWS_SECRET_ACCESS_KEY
-    unset MD_AWS_ACCESS_KEY_ID
-    unset MD_AWS_SECRET_ACCESS_KEY
-    export AWS_ACCESS_KEY_ID=$(aws configure get aws_access_key_id --profile ${1:=default})
-    export AWS_SECRET_ACCESS_KEY=$(aws configure get aws_secret_access_key --profile ${1:=default})
-    export AWS_DEFAULT_REGION=us-east-1
-    export AWS_PROFILE=${1:=default}
-    if [[ "$AWS_PROFILE" = "default" ]]; then
-      export ASSURANT_AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
-      export ASSURANT_AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
-    elif [[ "$AWS_PROFILE" = "mobile-defense" ]]; then
-      export MD_AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
-      export MD_AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
-    fi
-    export RPROMPT="<aws:$AWS_PROFILE>"
-  }
   alias kube-secret='EDITOR=nvim ksecret'
   alias kube-env='kubectl config use-context'
   kube-shell() { kubectl exec -i -t $* -- /bin/sh }
 
-  eval "$(keychain --quiet --eval --agents ssh md)"
+  eval "$(keychain --quiet --eval --agents ssh github.id_rsa)"
   eval "$(rbenv init --no-rehash - zsh)"
   eval "$(pyenv init --no-rehash - zsh)"
   eval "$(nodenv init --no-rehash - zsh)"
