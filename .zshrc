@@ -28,8 +28,8 @@ else
   bindkey '\e[A' history-substring-search-up
   bindkey '\e[B' history-substring-search-down
 
-  alias vi='vim -p'
-  alias vim='vim -p'
+  alias vi='nvim -p'
+  alias vim='nvim -p'
   alias xargs='xargs -o'
   alias mmv='noglob zmv -W'
   alias lsop='lsof -Pni'
@@ -37,7 +37,7 @@ else
   alias serve='python -m SimpleHTTPServer'
   alias ag='rg -S'
   alias m='rg -S -l'
-  alias e='xargs -o vim -p'
+  alias e='xargs -o nvim -p'
   alias f='rg -L -uuu --files . 2>/dev/null | rg -S'
   alias j='cd'
   alias jj='popd'
