@@ -41,6 +41,8 @@ let g:surround_35 = "#{\r}"
 let g:surround_36 = "\"#{\r}\""
 let g:surround_37 = "{% \r %}"
 
+let g:ycm_rust_src_path = '/Users/brandon/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
+
 let g:SuperTabDefaultCompletionType = '<C-Tab>'
 let g:rainbow_active = 1
 let g:rainbow_conf = {

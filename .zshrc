@@ -2,6 +2,7 @@ if [[ -z "$TMUX" && -z "$EMACS" && -z "$VIM" && -z "$SSH_TTY" ]]; then
   exec tmux new-session -t tmux
 else
   ZSH=$HOME/.oh-my-zsh
+  ZSH_CUSTOM=$HOME/.dotfiles/custom
   ZSH_THEME="dpoggi"
   ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
   plugins=(
@@ -46,7 +47,11 @@ else
   alias rcopy='rsync -a --info=progress2'
   alias docker-cleanup='docker rm $(docker ps -a -f "name=_run_" -q); docker rmi $(docker images -f "dangling=true" -q); docker volume rm $(docker volume ls -qf dangling=true)'
   alias emu='emulator -avd $(emulator -list-avds | head -n1)'
+  alias dr='docker run -v $PWD:$PWD -w $PWD'
   alias be='bundle exec'
+  alias stree='open -a SourceTree .'
+  alias code='open -a "Visual Studio Code - Insiders"'
+  alias subl='open -a "Sublime Text"'
   field() { awk "{print \$$1}" }
   activate() { if [[ -f .activate ]]; then source .activate; else source env/bin/activate; fi }
 
@@ -87,6 +92,9 @@ else
     fi
     export RPROMPT="<aws:$AWS_PROFILE>"
   }
+  alias kube-secret='EDITOR=nvim ksecret'
+  alias kube-env='kubectl config use-context'
+  kube-shell() { kubectl exec -i -t $* -- /bin/sh }
 
   eval "$(keychain --quiet --eval --agents ssh md)"
   eval "$(rbenv init --no-rehash - zsh)"

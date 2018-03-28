@@ -1,10 +1,9 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.fontFamily": "Inconsolata LGC for Powerline",
+    "editor.fontFamily": "Inconsolata LGC",
     "editor.renderWhitespace": "boundary",
     "window.restoreWindows": "none",
     "javascript.implicitProjectConfig.checkJs": true,
-    "terraform.formatOnSave": true,
     "terraform.indexing": {
         "enabled": true,
         "indexerPath": "/usr/local/bin/terraform-index",
@@ -16,23 +15,11 @@
         "tab.inactiveBackground": "#1E1F1C"
     },
     "editor.autoIndent": true,
-    "FSharp.toolsDirPath": "/usr/local/bin",
-    "FSharp.monoPath": "/usr/local/bin/mono",
-    "FSharp.fsiFilePath": "/usr/local/bin/fsharpi",
-    "FSharp.automaticProjectModification": true,
-    "FSharp.resolveNamespaces": true,
     "workbench.startupEditor": "newUntitledFile",
-    "rust.mode": "rls",
-    "rust.rls": {
-        "executable": "rustup",
-        "args": [
-            "run",
-            "nightly",
-            "rls"
-        ],
-        "useRustfmt": false
-    },
-    "rust.rustup": {
-        "toolchain": "stable-x86_64-apple-darwin"
+    "rust-client.channel": "stable",
+    "FSharp.fsacRuntime": "netcore",
+    "FSharp.msbuildHost": ".net core",
+    "[terraform]": {
+        "editor.formatOnSave": true
     }
 }
