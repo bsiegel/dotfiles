@@ -30,10 +30,6 @@ let NERDTreeHijackNetrw = 0
 " syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_messages = {'level': 'warning'}
-" syntastic is too slow for haml and sass
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': [],
-                           \ 'passive_filetypes': ['haml','scss','sass','vue'] }
 
 " surround
 " # to surround with ruby string interpolation
@@ -43,23 +39,8 @@ let g:surround_45 = "<% \r %>"
 " = to surround with output erb tag
 let g:surround_61 = "<%= \r %>"
 
-" paredit
-let g:paredit_leader= '\'
-
-" clojure
-let vimclojure#ParenRainbow  = 1
-
 " rspec
 let g:rspec_command = "Dispatch rspec --format=progress --no-profile {spec}"
-
-" elm
-" Disable provided keybindings
-let g:elm_setup_keybindings = 0
-" Format on save (needs elm-format installed)
-let g:elm_format_autosave = 1
-
-" jsx
-let g:jsx_ext_required = 0
 
 "-----------------------------------------
 
@@ -125,6 +106,6 @@ unlet g:ctrlp_user_command
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'ag %s -l --nocolor -g ""']
 let g:ctrlp_prompt_mappings = { 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'] }
 
-" rust
+" YouCompleteMe
 let g:ycm_rust_src_path = '/Users/brsiegel/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
 

@@ -1,7 +1,3 @@
-" dash.vim
-nmap <Leader>qs <Plug>DashSearch
-nmap <Leader>qa <Plug>DashGlobalSearch
-
 " ctrlp
 nnoremap <Leader>b :<C-U>CtrlPBuffer<CR>
 nnoremap <Leader>t :<C-U>CtrlP<CR>
@@ -41,33 +37,11 @@ vmap <C-Down> ]egv
 " gundo
 map <Leader>h :GundoToggle<CR>
 
-" rails
-map <Leader>oc :Rcontroller<Space>
-map <Leader>ov :Rview<Space>
-map <Leader>om :Rmodel<Space>
-map <Leader>oh :Rhelper<Space>
-map <Leader>oj :Rjavascript<Space>
-map <Leader>os :Rstylesheet<Space>
-map <Leader>oi :Rintegration<Space>
-
 " rspec
 nmap <Leader>rc :wa<CR> :call RunCurrentSpecFile()<CR>
 nmap <Leader>rn :wa<CR> :call RunNearestSpec()<CR>
 nmap <Leader>rl :wa<CR> :call RunLastSpec()<CR>
 nmap <Leader>ra :wa<CR> :call RunAllSpecs()<CR>
-
-" elm
-" Compilation
-nmap <Leader>em <Plug>(elm-make)
-nmap <Leader>eb <Plug>(elm-make-main)
-nmap <Leader>ee <Plug>(elm-error-detail)
-" Test
-nmap <Leader>et <Plug>(elm-test)
-" REPL
-nmap <Leader>er <Plug>(elm-repl)
-" Docs
-nmap <Leader>ed <Plug>(elm-show-docs)
-nmap <Leader>ew <Plug>(elm-browse-docs)
 
 " easy wrap toggling
   nmap <Leader>w :set wrap!<cr>
@@ -80,8 +54,6 @@ nmap <Leader>ew <Plug>(elm-browse-docs)
   nmap g 
 
 " shortcuts for frequenly used files
-  nmap gs :e db/schema.rb<cr>
-  nmap gr :e config/routes.rb<cr>
   nmap gm :e Gemfile<cr>
 
 " insert blank lines without going into insert mode
@@ -137,6 +109,11 @@ nmap <silent><Leader>x :bd<CR>
 nmap <silent><Leader>` :tab sball<CR>
 nmap <silent><Leader>st :!subl %<CR><CR>
 nmap <silent>gt :tabnext<CR>
+
+" easyclip
+nmap <silent> cp <plug>SubstituteOverMotionMap
+nmap cpp <plug>SubstituteLine
+xmap cp <plug>XEasyClipPaste
 
 " expand-region
 vmap v <Plug>(expand_region_expand)

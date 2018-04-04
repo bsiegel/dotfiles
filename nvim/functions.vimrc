@@ -28,13 +28,6 @@ command! StripTrailingWhitespaces call <SID>StripTrailingWhitespaces()
 
 " ------------------------------------
 
-" This allows for change paste motion cp{motion}
-nmap <silent> cp :set opfunc=ChangePaste<CR>g@
-function! ChangePaste(type, ...)
-  silent exe "normal! `[v`]\"_c"
-  silent exe "normal! p"
-endfunction
-
 " SmartHome
 nmap <silent><Home> :call SmartHome("n")<CR>
 nmap <silent><End> :call SmartEnd("n")<CR>
