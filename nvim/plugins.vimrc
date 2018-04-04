@@ -15,6 +15,7 @@ let g:airline_mode_map = {
     \ }
 
 " Supertab
+let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
 " CtrlP
@@ -27,9 +28,10 @@ let g:tagbar_autofocus = 1
 " nerdtree
 let NERDTreeHijackNetrw = 0
 
-" syntastic
-let g:syntastic_enable_signs=1
-let g:syntastic_quiet_messages = {'level': 'warning'}
+" neomake
+autocmd! BufWritePost,BufEnter * Neomake
+let g:neomake_open_list = 2
+call neomake#configure#automake('rw')
 
 " surround
 " # to surround with ruby string interpolation
@@ -49,9 +51,6 @@ let g:rspec_command = "Dispatch rspec --format=progress --no-profile {spec}"
 let g:surround_35 = "#{\r}"
 let g:surround_36 = "\"#{\r}\""
 let g:surround_37 = "{% \r %}"
-
-" supertab
-let g:SuperTabDefaultCompletionType = '<C-Tab>'
 
 " rainbow
 let g:rainbow_active = 1
@@ -106,6 +105,5 @@ unlet g:ctrlp_user_command
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'ag %s -l --nocolor -g ""']
 let g:ctrlp_prompt_mappings = { 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'] }
 
-" YouCompleteMe
-let g:ycm_rust_src_path = '/Users/brsiegel/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
-
+" deoplete
+let g:deoplete#enable_at_startup = 1

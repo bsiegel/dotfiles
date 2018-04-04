@@ -17,7 +17,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-abolish'
   Plug 'bling/vim-airline'
   Plug 'Lokaltog/vim-easymotion'
-  Plug 'metalelf0/supertab'
   Plug 'kien/ctrlp.vim'
   Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
   Plug 'rking/ag.vim'
@@ -27,7 +26,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'scrooloose/nerdtree'
   Plug 'vim-scripts/ZoomWin'
   Plug 'tpope/vim-unimpaired'
-  Plug 'scrooloose/syntastic'
+  Plug 'neomake/neomake'
   Plug 'sjl/gundo.vim'
   Plug 'tpope/vim-surround'
 
@@ -41,6 +40,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'luochen1990/rainbow'
   Plug 'jamessan/vim-gnupg'
   Plug 'terryma/vim-expand-region'
-  Plug 'Valloric/YouCompleteMe'
+  Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+  Plug 'ervandew/supertab'
   Plug 'crusoexia/vim-monokai'
 call plug#end()
