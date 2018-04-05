@@ -57,46 +57,6 @@ let g:rainbow_active = 1
 let g:rainbow_conf = {
 \        'guifgs': ['#d33682', '#dc322f', '#cb4b16', '#b58900', '#719e07', '#2aa198', '#6c71c4', '#268bd2'],
 \        'ctermfgs': ['red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'gray'],
-\        'operators': '_,_',
-\        'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/'],
-\        'separately': {
-\                '*': {},
-\                'tex': {
-\                        'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-\                },
-\                'vim': {
-\                        'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ containedin=vimFuncBody'],
-\                },
-\                'xml': {
-\                        'parentheses': ['start=/\v\<\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'))?)*\>/ end=#</\z1># fold'],
-\                },
-\                'xhtml': {
-\                        'parentheses': ['start=/\v\<\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'))?)*\>/ end=#</\z1># fold'],
-\                },
-\                'html': {
-\                        'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-\                },
-\                'php': {
-\                        'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold', 'start=/(/ end=/)/ containedin=@htmlPreproc contains=@phpClTop', 'start=/\[/ end=/\]/ containedin=@htmlPreproc contains=@phpClTop', 'start=/{/ end=/}/ containedin=@htmlPreproc contains=@phpClTop'],
-\                },
-\                'css': 0,
-\                'ruby': {
-\                        'parentheses': [
-\                                'start=/\(^\|;\)\s*class\s\+/ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
-\                                'start=/\(^\|;\)\s*module\s\+/ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
-\                                'start=/\(^\|;\)\s*def\s\+/ step=_\(^\|;\)\s*\(rescue\|ensure\|else\)\(\s\+\|$\|#\|;\)_ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
-\                                'start=/\s\+do\(\s\+\|$\|#\|;\)/ step=_\(^\|;\)\s*\(break\|next\)\(\s\+\|(\|$\|#\|;\)_ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
-\                                'start=/\(^\|;\)\s*begin\(\s\+\|$\|#\|;\)/ step=_\(^\|;\)\s*\(rescue\|ensure\|else\)\(\s\+\|$\|#\|;\)_ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
-\                                'start=/\(^\|;\)\s*for\s\+/ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
-\                                'start=/\(^\|;\)\s*while\s\+/ step=_\(^\|;\)\s*\(break\|next\)\(\s\+\|(\|$\|#\|;\)_ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
-\                                'start=/\(^\|;\)\s*until\s\+/ step=_\(^\|;\)\s*\(break\|next\)\(\s\+\|(\|$\|#\|;\)_ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
-\                                'start=/\(^\|;\)\s*case\s\+/ step=_\(^\|;\)\s*\(\(when\s\+\)\|\(else\(\s\+\|$\|#\|;\)\)\)_ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
-\                                'start=/\(^\|;\)\s*if\s\+/ step=_\(^\|;\)\s*\(\(elsif\s\+\)\|\(else\(\s\+\|$\|#\|;\)\)\)_ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
-\                                'start=/\(^\|;\)\s*unless\s\+/ step=_\(^\|;\)\s*\(\(elsif\s\+\)\|\(else\(\s\+\|$\|#\|;\)\)\)_ end=/\(^\|;\)\s*end\(\s\+\|$\|#\|;\)/',
-\                                'start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/'
-\                        ],
-\                },
-\        }
 \}
 
 " CtrlP
