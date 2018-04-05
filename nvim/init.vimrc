@@ -41,6 +41,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'jamessan/vim-gnupg'
   Plug 'terryma/vim-expand-region'
   Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+  Plug 'zchee/deoplete-go', {'do': 'make'}
+  Plug 'uplus/deoplete-solargraph'
   Plug 'ervandew/supertab'
   Plug 'crusoexia/vim-monokai'
 call plug#end()
