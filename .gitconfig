@@ -10,6 +10,7 @@
   co = checkout
   mb = merge --no-ff --edit
   stop-packing = gc --prune=now
+  pancake = !git fetch && git reset --hard $(git rev-parse --abbrev-ref --symbolic-full-name @{u})
 [push]
   default = upstream
 [pull]

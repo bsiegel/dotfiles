@@ -48,6 +48,7 @@ alias rcopy='rsync -a --info=progress2'
 alias docker-cleanup='docker rm $(docker ps -a -f "name=_run_" -q); docker rmi $(docker images -f "dangling=true" -q); docker volume rm $(docker volume ls -qf dangling=true)'
 alias dr='docker run -v $PWD:$PWD -w $PWD'
 alias be='bundle exec'
+alias nr='npm run'
 alias stree='open -a SourceTree .'
 alias code='open -a "Visual Studio Code - Insiders"'
 alias subl='open -a "Sublime Text"'
@@ -77,7 +78,7 @@ alias kube-secret='EDITOR=nvim ksecret'
 alias kube-env='kubectl config use-context'
 kube-shell() { kubectl exec -i -t $* -- /bin/sh }
 
-eval "$(keychain --quiet --eval --agents ssh github.id_rsa)"
+eval "$(keychain --quiet --eval --agents ssh vsts.id_rsa github.id_rsa)"
 eval "$(rbenv init --no-rehash - zsh)"
 #eval "$(pyenv init --no-rehash - zsh)"
 #eval "$(nodenv init --no-rehash - zsh)"

@@ -15,6 +15,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'vim-scripts/matchit.zip'
   Plug 'vim-scripts/ruby-matchit'
   Plug 'tpope/vim-abolish'
+  Plug 'leafgarland/typescript-vim'
   Plug 'bling/vim-airline'
   Plug 'Lokaltog/vim-easymotion'
   Plug 'kien/ctrlp.vim'
@@ -43,6 +44,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
   Plug 'zchee/deoplete-go', {'do': 'make'}
   Plug 'uplus/deoplete-solargraph'
+  Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
   Plug 'ervandew/supertab'
   Plug 'crusoexia/vim-monokai'
 call plug#end()

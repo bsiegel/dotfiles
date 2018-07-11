@@ -1,24 +1,33 @@
 // Place your settings in this file to overwrite the default settings
 {
+    "editor.autoIndent": true,
     "editor.fontFamily": "Inconsolata LGC",
     "editor.renderWhitespace": "boundary",
-    "window.restoreWindows": "none",
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlens.historyExplorer.enabled": true,
+    "javascript.referencesCodeLens.enabled": true,
     "javascript.implicitProjectConfig.checkJs": true,
-    "terraform.indexing": {
-        "enabled": true,
-        "indexerPath": "/usr/local/bin/terraform-index",
-        "liveIndexing": true,
-        "delay": 500
-    },
-    "workbench.colorTheme": "Monokai",
-    "workbench.colorCustomizations": {
-        "tab.inactiveBackground": "#1E1F1C"
-    },
-    "editor.autoIndent": true,
-    "workbench.startupEditor": "newUntitledFile",
     "rust-client.channel": "stable",
-    "FSharp.fsacRuntime": "netcore",
-    "FSharp.msbuildHost": ".net core",
+    "standard.usePackageJson": true,
+    "standard.autoFixOnSave": true,
+    "standard.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript"
+    ],
+    "window.restoreWindows": "none",
+    "workbench.colorCustomizations": {
+        "editorGroupHeader.tabsBackground": "#221f22",
+        "tab.border": "#221f22",
+        "tab.hoverBorder": "#2d2a2e",
+        "tab.inactiveBackground": "#221f22"
+    },
+    "workbench.colorTheme": "Monokai Pro",
+    "workbench.editor.enablePreview": false,
+    "workbench.iconTheme": "Monokai Pro Icons",
+    "workbench.startupEditor": "newUntitledFile",
     "[terraform]": {
         "editor.formatOnSave": true
     }

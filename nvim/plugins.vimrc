@@ -46,6 +46,8 @@ let g:rspec_command = "Dispatch rspec --format=progress --no-profile {spec}"
 
 "-----------------------------------------
 
+let g:EasyClipEnableBlackHoleRedirect = 0
+let g:EasyClipUseCutDefaults = 0
 
 " custom vim-surround surroundings
 let g:surround_35 = "#{\r}"
