@@ -1,14 +1,41 @@
 // Place your settings in this file to overwrite the default settings
 {
+    "bracketPairColorizer.consecutivePairColors": [
+        "()",
+        "[]",
+        "{}",
+        [
+            "#ff6188",
+            "#fc9867",
+            "#ffd866",
+            "#a9dc76",
+            "#78dce8",
+            "#ab9df2"
+        ],
+        "#da3c50"
+    ],
+    "bracketPairColorizer.showBracketsInGutter": true,
+    "bracketPairColorizer.showHorizontalScopeLine": false,
+    "bracketPairColorizer.showVerticalScopeLine": false,
+    "breadcrumbs.enabled": true,
+    "cSpell.allowCompoundWords": true,
     "editor.autoIndent": true,
     "editor.fontFamily": "Inconsolata LGC",
+    "editor.formatOnType": true,
     "editor.renderWhitespace": "boundary",
+    "editor.tabSize": 2,
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
     },
+    "gitlens.gitExplorer.location": "scm",
+    "gitlens.historyExplorer.location": "explorer",
     "gitlens.historyExplorer.enabled": true,
+    "gitlens.resultsExplorer.location": "scm",
     "javascript.referencesCodeLens.enabled": true,
     "javascript.implicitProjectConfig.checkJs": true,
+    "prettier.printWidth": 100,
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
     "rust-client.channel": "stable",
     "standard.usePackageJson": true,
     "standard.autoFixOnSave": true,
@@ -19,7 +46,13 @@
     ],
     "window.restoreWindows": "none",
     "workbench.colorCustomizations": {
+        "editor.findMatchBackground": "#383e6b",
+        "editor.findMatchHighlightBackground": "#383e6b",
         "editorGroupHeader.tabsBackground": "#221f22",
+        "editorOverviewRuler.findMatchForeground": "#7a87e6",
+        "editorOverviewRuler.selectionHighlightForeground": "#bebebd",
+        "editorOverviewRuler.wordHighlightForeground": "#bebebd",
+        "editorOverviewRuler.wordHighlightStrongForeground": "#bebebd",
         "tab.border": "#221f22",
         "tab.hoverBorder": "#2d2a2e",
         "tab.inactiveBackground": "#221f22"
@@ -28,7 +61,5 @@
     "workbench.editor.enablePreview": false,
     "workbench.iconTheme": "Monokai Pro Icons",
     "workbench.startupEditor": "newUntitledFile",
-    "[terraform]": {
-        "editor.formatOnSave": true
-    }
+    "window.zoomLevel": 0
 }

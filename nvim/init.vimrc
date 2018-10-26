@@ -33,6 +33,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " -------------------------------------
 
+  Plug 'Valloric/ListToggle'
   Plug 'svermeulen/vim-easyclip'
   Plug 'airblade/vim-rooter'
   Plug 'airblade/vim-gitgutter'

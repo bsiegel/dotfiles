@@ -33,6 +33,10 @@ autocmd! BufWritePost,BufEnter * Neomake
 let g:neomake_open_list = 2
 call neomake#configure#automake('rw')
 
+" ListToggle
+let g:lt_location_list_toggle_map = '<leader>l'
+let g:lt_quickfix_list_toggle_map = '<leader>q'
+
 " surround
 " # to surround with ruby string interpolation
 let g:surround_35 = "#{\r}"

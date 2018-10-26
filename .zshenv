@@ -1,6 +1,6 @@
 export KEYTIMEOUT=1
 export GOROOT=/usr/local/opt/go/libexec
-export GOPATH=$HOME/.go
+export GOPATH=$HOME/source/go
 export PATH=$HOME/bin:/usr/local/opt/openssl/bin:/usr/local/opt/python/libexec/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$GOROOT/bin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH
 export EDITOR='nvim -p'
 export VISUAL='nvim -p'
