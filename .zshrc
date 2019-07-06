@@ -1,19 +1,12 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$HOME/.dotfiles/custom
 ZSH_THEME="dpoggi"
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOCONNECT=false
-ZSH_TMUX_GROUP="tmux"
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
 plugins=(
-  tmux
   dircycle
   fancy-ctrl-z
-  gem
   git
   history-substring-search
-  tmux-pane-words
-  terraform
   zsh-completions
   zsh-syntax-highlighting
 )
@@ -29,6 +22,11 @@ autoload -U zmv
 bindkey '\e[A' history-substring-search-up
 bindkey '\e[B' history-substring-search-down
 
+zstyle ':completion:*' matcher-list '' \
+  'm:{a-z\-}={A-Z\_}' \
+  'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
+  'r:|?=** m:{a-z\-}={A-Z\_}'
+
 alias vi='nvim -p'
 alias vim='nvim -p'
 alias xargs='xargs -o'
@@ -39,6 +37,7 @@ alias serve='python -m SimpleHTTPServer'
 alias ag='rg -S'
 alias m='rg -S -l'
 alias e='xargs -o nvim -p'
+alias ve='xargs -o open -a "Visual Studio Code - Insiders"'
 alias f='rg -L -uuu --files . 2>/dev/null | rg -S'
 alias j='cd'
 alias jj='popd'
@@ -52,9 +51,12 @@ alias nr='npm run'
 alias stree='open -a SourceTree .'
 alias code='open -a "Visual Studio Code - Insiders"'
 alias subl='open -a "Sublime Text"'
+alias venv='python3 -m venv'
+alias pr='hub pr checkout'
 field() { awk "{print \$$1}" }
 activate() { if [[ -f .activate ]]; then source .activate; else source env/bin/activate; fi }
 
+alias gca='gc --amend --no-edit'
 alias gri='grbi --autosquash --autostash'
 alias grc='grbc'
 alias gra='grba'
@@ -71,6 +73,7 @@ alias gbdm='git branch --merged master | grep -v "\* master" | xargs -n 1 git br
 alias gchown='git commit --amend --reuse-message=HEAD --author "$(git config user.name) <$(git config user.email)>"'
 alias gcu='f \\.orig | xargs rm'
 alias gcf='gc --fixup'
+compdef __git_commits gcf
 gcff() { git commit --fixup $(git log -n 1 --pretty='%h' $1 2>/dev/null) }
 gwm() { git --no-pager show --abbrev-commit $(git log $1..master --ancestry-path --merges --pretty='%h' 2>/dev/null | tail -n1) }
 
@@ -79,8 +82,4 @@ alias kube-env='kubectl config use-context'
 kube-shell() { kubectl exec -i -t $* -- /bin/sh }
 
 eval "$(keychain --quiet --eval --agents ssh vsts.id_rsa github.id_rsa)"
-eval "$(rbenv init --no-rehash - zsh)"
-#eval "$(pyenv init --no-rehash - zsh)"
-#eval "$(nodenv init --no-rehash - zsh)"
-#eval "$(kubectl completion zsh)"
-#eval "$(npm completion)"
+source $HOME/.dotfiles/.iterm2_shell_integration.zsh

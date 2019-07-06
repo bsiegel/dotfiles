@@ -48,3 +48,5 @@
 	diffFilter = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight
 [core]
 	excludesfile = /Users/brsiegel/.gitignore_global
+[hub]
+	protocol = git

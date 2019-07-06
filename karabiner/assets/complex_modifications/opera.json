@@ -1,0 +1,58 @@
+{
+  "title": "Opera",
+  "rules": [
+    {
+      "description": "Change mouse button 4/5 to navigate back/forward in Opera",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "com\\.operasoftware\\.OperaDeveloper",
+                "com\\.operasoftware\\.OperaNext",
+                "com\\.operasoftware\\.Opera"
+              ],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "pointing_button": "button4"
+          },
+          "to": [
+            {
+              "key_code": "open_bracket",
+              "modifiers": [
+                "left_command"
+              ]
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "com\\.operasoftware\\.OperaDeveloper",
+                "com\\.operasoftware\\.OperaNext",
+                "com\\.operasoftware\\.Opera"
+              ],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "pointing_button": "button5"
+          },
+          "to": [
+            {
+              "key_code": "close_bracket",
+              "modifiers": [
+                "left_command"
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}

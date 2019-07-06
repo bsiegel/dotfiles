@@ -21,30 +21,40 @@
     "cSpell.allowCompoundWords": true,
     "editor.autoIndent": true,
     "editor.fontFamily": "Inconsolata LGC",
+    "editor.fontSize": 14,
     "editor.formatOnType": true,
     "editor.renderWhitespace": "boundary",
+    "editor.rulers": [
+        80,
+        120
+    ],
     "editor.tabSize": 2,
-    "gitlens.advanced.messages": {
-        "suppressShowKeyBindingsNotice": true
-    },
-    "gitlens.gitExplorer.location": "scm",
-    "gitlens.historyExplorer.location": "explorer",
-    "gitlens.historyExplorer.enabled": true,
-    "gitlens.resultsExplorer.location": "scm",
-    "javascript.referencesCodeLens.enabled": true,
-    "javascript.implicitProjectConfig.checkJs": true,
-    "prettier.printWidth": 100,
-    "prettier.semi": false,
-    "prettier.singleQuote": true,
-    "rust-client.channel": "stable",
-    "standard.usePackageJson": true,
-    "standard.autoFixOnSave": true,
-    "standard.validate": [
+    "eslint.validate": [
         "javascript",
         "javascriptreact",
-        "typescript"
+        {
+            "language": "typescript",
+            "autoFix": true
+        }
     ],
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "gitlens.views.compare.location": "scm",
+    "gitlens.views.fileHistory.location": "explorer",
+    "gitlens.views.lineHistory.location": "explorer",
+    "gitlens.views.repositories.location": "scm",
+    "gitlens.views.search.location": "scm",
+    "javascript.referencesCodeLens.enabled": true,
+    "javascript.implicitProjectConfig.checkJs": true,
+    "prettier.eslintIntegration": true,
+    "python.pythonPath": "/usr/local/bin/python3",
+    "rust.all_features": true,
+    "rust.clippy_preference": "on",
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+    "typescript.updateImportsOnFileMove.enabled": "always",
     "window.restoreWindows": "none",
+    "window.zoomLevel": 0,
     "workbench.colorCustomizations": {
         "editor.findMatchBackground": "#383e6b",
         "editor.findMatchHighlightBackground": "#383e6b",
@@ -60,6 +70,5 @@
     "workbench.colorTheme": "Monokai Pro",
     "workbench.editor.enablePreview": false,
     "workbench.iconTheme": "Monokai Pro Icons",
-    "workbench.startupEditor": "newUntitledFile",
-    "window.zoomLevel": 0
+    "workbench.startupEditor": "newUntitledFile"
 }
