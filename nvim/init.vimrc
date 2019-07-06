@@ -18,9 +18,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'leafgarland/typescript-vim'
   Plug 'bling/vim-airline'
   Plug 'Lokaltog/vim-easymotion'
-  Plug 'kien/ctrlp.vim'
+  " Plug 'kien/ctrlp.vim'
   Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
-  Plug 'rking/ag.vim'
+  " Plug 'rking/ag.vim'
   Plug 'majutsushi/tagbar'
   Plug 'godlygeek/tabular'
   Plug 'tpope/vim-markdown'
@@ -33,6 +33,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " -------------------------------------
 
+  Plug 'junegunn/fzf'
+  Plug 'junegunn/fzf.vim'
   Plug 'Valloric/ListToggle'
   Plug 'svermeulen/vim-easyclip'
   Plug 'airblade/vim-rooter'
@@ -42,10 +44,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'luochen1990/rainbow'
   Plug 'jamessan/vim-gnupg'
   Plug 'terryma/vim-expand-region'
-  Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-  Plug 'zchee/deoplete-go', {'do': 'make'}
-  Plug 'uplus/deoplete-solargraph'
-  Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+  " Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'w0rp/ale'
   Plug 'ervandew/supertab'
   Plug 'crusoexia/vim-monokai'
 call plug#end()

@@ -14,13 +14,17 @@ let g:airline_mode_map = {
     \ '' : 'S',
     \ }
 
+" ALE
+let g:airline#extensions#ale#enabled = 1
+let g:ale_list_window_size = 5
+
 " Supertab
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
 
 " CtrlP
 " respect the .gitignore
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 
 " tagbar
 let g:tagbar_autofocus = 1
@@ -29,8 +33,8 @@ let g:tagbar_autofocus = 1
 let NERDTreeHijackNetrw = 0
 
 " neomake
-autocmd! BufWritePost,BufEnter * Neomake
-let g:neomake_open_list = 2
+"autocmd! BufWritePost,BufEnter * Neomake
+"let g:neomake_open_list = 2
 call neomake#configure#automake('rw')
 
 " ListToggle
@@ -66,10 +70,13 @@ let g:rainbow_conf = {
 \}
 
 " CtrlP
-let g:ctrlp_use_caching = 0
-unlet g:ctrlp_user_command
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'ag %s -l --nocolor -g ""']
-let g:ctrlp_prompt_mappings = { 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'] }
+" let g:ctrlp_use_caching = 0
+" unlet g:ctrlp_user_command
+" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'ag %s -l --nocolor -g ""']
+" let g:ctrlp_prompt_mappings = { 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'] }
 
 " deoplete
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
+
+" coc
+let g:airline#extensions#coc#enabled = 1

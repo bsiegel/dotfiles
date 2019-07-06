@@ -1,15 +1,15 @@
 " ctrlp
-nnoremap <Leader>b :<C-U>CtrlPBuffer<CR>
-nnoremap <Leader>t :<C-U>CtrlP<CR>
-nnoremap <Leader>T :<C-U>CtrlPTag<CR>
+" nnoremap <Leader>b :<C-U>CtrlPBuffer<CR>
+" nnoremap <Leader>t :<C-U>CtrlP<CR>
+" nnoremap <Leader>T :<C-U>CtrlPTag<CR>
 
 " ag
-nmap g/ :Ag!<space>
-nmap g* :Ag! -w <C-R><C-W><space>
-nmap ga :AgAdd!<space>
-nmap gn :cnext<CR>
-nmap gp :cprev<CR>
-nmap gl :cwindow<CR>
+" nmap g/ :Ag!<space>
+" nmap g* :Ag! -w <C-R><C-W><space>
+" nmap ga :AgAdd!<space>
+" nmap gn :cnext<CR>
+" nmap gp :cprev<CR>
+" nmap gl :cwindow<CR>
 
 " tagbar
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
@@ -126,10 +126,16 @@ map <silent> <unique> <Leader>rd <Plug>RooterChangeToRootDirectory
 nnoremap <space> :<C-U>call InsertChar#insert(v:count1)<CR>
 
 " ag
-nmap <Leader>f :Ag<Space><C-r>=expand("<cword>")<CR>
+" nmap <Leader>f :Ag<Space><C-r>=expand("<cword>")<CR>
 
 " CtrlP
-nmap <silent><Leader><C-t> :CtrlPClearCache<CR>:<C-U>CtrlP<CR>
+" nmap <silent><Leader><C-t> :CtrlPClearCache<CR>:<C-U>CtrlP<CR>
+
+" fzf
+nnoremap <Leader>b :<C-U>Buffers<CR>
+nnoremap <Leader>t :<C-U>Files<CR>
+nnoremap <Leader>T :<C-U>Tags<CR>
+nmap <Leader>f :Rg<Space><C-r>=expand("<cword>")<CR>
 
 " nerdtree
 nmap <silent><Leader>] :NERDTreeToggle<CR>

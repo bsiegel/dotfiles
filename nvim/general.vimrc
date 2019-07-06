@@ -117,7 +117,7 @@
   autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 " use rg for searching
-  set grepprg=ag\ --nogroup\ --nocolor
+  set grepprg=rg\ --vimgrep
 
 " use xxd for hex viewing
   cnoreabbrev hex %!xxd
