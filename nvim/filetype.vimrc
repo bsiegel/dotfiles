@@ -15,4 +15,4 @@
   au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru,*.rabl} set ft=ruby
 
 " JSON is JS
-  au BufNewFile,BufRead *.json set ai filetype=javascript
+"  au BufNewFile,BufRead *.json set ai filetype=javascript
