@@ -1,31 +1,23 @@
 {
+	"auto_upgrade": false,
 	"bootstrapped": true,
 	"in_process_packages":
 	[
 	],
 	"installed_packages":
 	[
-		"AdvancedNewFile",
-		"AutoWrap",
 		"Block Cursor Everywhere",
 		"BracketHighlighter",
 		"Find++",
 		"Git",
 		"GitGutter",
-		"Haml",
 		"HexViewer",
 		"Highlighter",
-		"jQuery",
 		"Markdown Extended",
-		"Monokai Extended",
 		"Package Control",
-		"Search in Project",
 		"SideBarEnhancements",
-		"SmartMarkdown",
-		"StringEncode",
 		"Surround",
-		"SyncedSideBar",
-		"Theme - Soda",
+		"Theme - Monokai Pro",
 		"Vintage Escape",
 		"Vintage Surround",
 		"Wrap Plus"

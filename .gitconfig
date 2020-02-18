@@ -11,6 +11,7 @@
   mb = merge --no-ff --edit
   stop-packing = gc --prune=now
   pancake = !git fetch && git reset --hard $(git rev-parse --abbrev-ref --symbolic-full-name @{u})
+  upcake = !git fetch upstream && git reset --hard upstream/$(git rev-parse --abbrev-ref --symbolic-full-name HEAD)
 [push]
   default = upstream
 [pull]
@@ -49,4 +50,6 @@
 [core]
 	excludesfile = /Users/brsiegel/.gitignore_global
 [hub]
-	protocol = git
+	protocol = ssh
+[checkout]
+	defaultRemote = origin

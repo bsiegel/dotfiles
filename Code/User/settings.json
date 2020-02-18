@@ -1,5 +1,7 @@
 // Place your settings in this file to overwrite the default settings
 {
+  "amVim.startInInsertMode": true,
+  "amVim.mimicVimSearchBehavior": false,
   "bracket-pair-colorizer-2.colors": [
     "#ff6188",
     "#fc9867",
@@ -14,8 +16,12 @@
   "bracket-pair-colorizer-2.unmatchedScopeColor": "#da3c50",
   "breadcrumbs.enabled": true,
   "cSpell.allowCompoundWords": true,
-  "editor.autoIndent": true,
-  "editor.fontFamily": "Inconsolata LGC",
+  "editor.autoIndent": "full",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "InconsolataLGC Nerd Font",
   "editor.fontSize": 15,
   "editor.formatOnType": true,
   "editor.renderWhitespace": "boundary",
@@ -24,15 +30,6 @@
     120
   ],
   "editor.tabSize": 2,
-  "eslint.autoFixOnSave": true,
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    {
-      "language": "typescript",
-      "autoFix": true
-    }
-  ],
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "git.countBadge": "off",
@@ -45,12 +42,10 @@
   "html.format.wrapLineLength": 0,
   "javascript.referencesCodeLens.enabled": true,
   "javascript.implicitProjectConfig.checkJs": true,
-  "python.insidersChannel": "weekly",
+  "python.insidersChannel": "off",
   "python.pythonPath": "/usr/local/bin/python3",
-  "rust.all_features": true,
-  "rust.clippy_preference": "on",
+  "rewrap.autoWrap.enabled": false,
   "terminal.integrated.fontSize": 14,
-  "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.restoreWindows": "none",
   "window.zoomLevel": 0,
@@ -64,7 +59,6 @@
     "editorOverviewRuler.wordHighlightForeground": "#bebebd",
     "editorOverviewRuler.wordHighlightStrongForeground": "#bebebd",
     "tab.border": "#221f22",
-    "tab.hoverBorder": "#2d2a2e",
     "tab.inactiveBackground": "#221f22"
   },
   "workbench.colorTheme": "Monokai Pro",

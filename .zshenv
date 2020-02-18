@@ -1,10 +1,7 @@
-export KEYTIMEOUT=1
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/source/go
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/openssl/bin:/usr/local/opt/node@10/bin:/usr/local/lib/ruby/gems/2.6.0/bin:/usr/local/opt/ruby/bin:$GOROOT/bin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH
-export EDITOR='nvim -p'
-export VISUAL='nvim -p'
+export ANDROID_HOME=$HOME/Library/Android/sdk
 export JAVA_HOME=$(/usr/libexec/java_home)
 export NODE_PATH=/usr/local/lib/node_modules
 export OPENSSL_DIR=/usr/local/opt/openssl
-export GPG_TTY=$(tty)
+export GPG_TTY=$(/usr/bin/tty)

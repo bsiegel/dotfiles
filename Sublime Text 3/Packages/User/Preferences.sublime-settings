@@ -8,10 +8,10 @@
 	],
 	"bold_folder_labels": true,
 	"caret_style": "smooth",
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"color_scheme": "Monokai Pro.sublime-color-scheme",
 	"fade_fold_buttons": false,
-	"font_face": "Inconsolata LGC",
 	"font_size": 14,
+	"font_face": "InconsolataLGC Nerd Font",
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -20,10 +20,10 @@
 	"line_padding_bottom": 1,
 	"line_padding_top": 1,
 	"open_files_in_new_window": false,
-	"reveal-on-activate": true,
 	"rulers":
 	[
-		80
+		80,
+		120
 	],
 	"scroll_past_end": true,
 	"show_encoding": true,
