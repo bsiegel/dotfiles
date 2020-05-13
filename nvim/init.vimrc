@@ -49,4 +49,5 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'w0rp/ale'
   Plug 'ervandew/supertab'
   Plug 'crusoexia/vim-monokai'
+  Plug 'keith/swift.vim'
 call plug#end()

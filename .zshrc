@@ -24,6 +24,7 @@ autoload -U zmv
 bindkey '\e[A' history-substring-search-up
 bindkey '\e[B' history-substring-search-down
 
+zstyle ':completion:*' special-dirs false
 zstyle ':completion:*' matcher-list '' \
   'm:{a-z\-}={A-Z\_}' \
   'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
@@ -51,7 +52,6 @@ alias dr='docker run -v $PWD:$PWD -w $PWD'
 alias be='bundle exec'
 alias nr='npm run'
 alias stree='open -a SourceTree "$(git rev-parse --show-toplevel || echo .)"'
-# alias code='open -a "Visual Studio Code - Insiders"'
 alias code='code-insiders'
 alias subl='open -a "Sublime Text"'
 alias venv='python3 -m venv'
