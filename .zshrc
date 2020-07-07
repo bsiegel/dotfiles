@@ -1,6 +1,7 @@
 DISABLE_AUTO_UPDATE="true"
 ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$HOME/.dotfiles/custom
+ZSH_DISABLE_COMPFIX="true"
 ZSH_THEME="dpoggi"
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
 plugins=(
