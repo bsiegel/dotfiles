@@ -2,7 +2,7 @@
 
 # Make sure Sophos is removed
 if [ -f /Applications/Sophos\ Anti-Virus.app ]; then
-    echo "Run /Applications/Remove Sophos Anti-Virus.app first!"
+    echo "Run /Applications/Remove Sophos Endpoint.app first!"
     exit 1
 fi
 

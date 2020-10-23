@@ -22,7 +22,7 @@ Dir.mktmpdir { |dirname|
     abort("Failed to exec '#{cmd}'") unless exec_result
     
     site_path = File.join(dirname, 'out')
-    page_path = File.join(site_path, 'slides.html')
+    page_path = File.join(site_path, "#{slides_basename}.html")
 
     contents = IO.read(page_path)
     contents.gsub!(/\.\/(dist|plugin)/, 'https://cdn.jsdelivr.net/npm/reveal.js@4/\1')

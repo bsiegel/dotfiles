@@ -9,6 +9,7 @@ plugins=(
   fancy-ctrl-z
   git
   history-substring-search
+  swiftpm
   zsh-completions
   zsh-syntax-highlighting
   z
@@ -56,7 +57,7 @@ alias stree='open -a SourceTree "$(git rev-parse --show-toplevel || echo .)"'
 alias code='code-insiders'
 alias subl='open -a "Sublime Text"'
 alias venv='python3 -m venv'
-alias pr='hub pr checkout'
+alias pr='gh pr checkout'
 field() { awk "{print \$$1}" }
 activate() { if [[ -f .activate ]]; then source .activate; else source env/bin/activate; fi }
 
