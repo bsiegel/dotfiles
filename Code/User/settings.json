@@ -21,7 +21,7 @@
     "source.fixAll.eslint": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "InconsolataLGC Nerd Font",
+  "editor.fontFamily": "Office Code Pro",
   "editor.fontSize": 15,
   "editor.formatOnType": true,
   "editor.renderWhitespace": "boundary",
@@ -33,17 +33,12 @@
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "git.countBadge": "off",
-  "gitlens.views.compare.location": "scm",
-  "gitlens.views.fileHistory.location": "explorer",
-  "gitlens.views.lineHistory.location": "explorer",
-  "gitlens.views.repositories.location": "scm",
-  "gitlens.views.search.location": "scm",
   "html.format.indentHandlebars": true,
   "html.format.wrapLineLength": 0,
   "java.semanticHighlighting.enabled": true,
   "java.configuration.checkProjectSettingsExclusions": false,
   "javascript.referencesCodeLens.enabled": true,
-  "javascript.implicitProjectConfig.checkJs": true,
+  "js/ts.implicitProjectConfig.checkJs": true,
   "python.insidersChannel": "off",
   "python.pythonPath": "/usr/local/bin/python3",
   "rewrap.autoWrap.enabled": false,
@@ -51,7 +46,6 @@
   "terminal.integrated.fontSize": 14,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.restoreWindows": "none",
-  "window.zoomLevel": 0,
   "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
     "editor.findMatchBackground": "#383e6b",
@@ -67,5 +61,23 @@
   "workbench.colorTheme": "Monokai Pro",
   "workbench.editor.enablePreview": false,
   "workbench.iconTheme": "Monokai Pro Icons",
-  "workbench.startupEditor": "newUntitledFile"
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "python.languageServer": "Pylance",
+  "extensions.ignoreRecommendations": false,
+  "[markdown]": {
+    "editor.wordWrap": "off"
+  },
+  "files.associations": {
+    "*.pom": "xml"
+  },
+  "cSpell.enabled": true,
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter-notebook",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "workbench.editor.untitled.hint": "hidden"
 }

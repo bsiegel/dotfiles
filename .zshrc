@@ -47,7 +47,8 @@ alias f='rg -L -uuu --files . 2>/dev/null | rg -S'
 alias j='cd'
 alias jj='popd'
 alias dif='git diff --no-index --'
-alias bup='brew update && brew upgrade && brew cu -y -a && brew cleanup'
+alias bup='brew update && brew upgrade && brew cleanup'
+alias nup='npm ls -g --depth 0 --json | jq ".dependencies | keys[]" | xargs npm i -g'
 alias rcopy='rsync -a --info=progress2'
 alias docker-cleanup='docker rm $(docker ps -a -f "name=_run_" -q); docker rmi $(docker images -f "dangling=true" -q); docker volume rm $(docker volume ls -qf dangling=true)'
 alias dr='docker run -v $PWD:$PWD -w $PWD'
@@ -70,12 +71,16 @@ alias gma='gm --abort'
 alias glgg='glol'
 alias gpsu='gpsup'
 alias gbdd='gb -D'
+alias gbn='git rev-parse --abbrev-ref --symbolic-full-name HEAD'
+alias grbn='git rev-parse --abbrev-ref --symbolic-full-name @{u}'
 alias gup='gl --rebase --prune'
-alias guup='gl --rebase --prune upstream $(git rev-parse --abbrev-ref --symbolic-full-name HEAD)'
+alias guup='gl --rebase --prune upstream $(gbn)'
+alias gpup='gp upstream $(gbn)'
+alias grr='git rev-parse --show-cdup 2>/dev/null || echo .'
 alias gwc='gwch'
 alias gdc='gdca'
-alias glb='git fetch && git reset --hard $(git rev-parse --abbrev-ref --symbolic-full-name @{u})'
-alias glub='git fetch upstream && git reset --hard upstream/$(git rev-parse --abbrev-ref --symbolic-full-name HEAD)'
+#alias glb='git fetch && git reset --hard $(git rev-parse --abbrev-ref --symbolic-full-name @{u})'
+#alias glub='git fetch upstream && git reset --hard upstream/$(git rev-parse --abbrev-ref --symbolic-full-name HEAD)'
 alias gchown='git commit --amend --reuse-message=HEAD --author "$(git config user.name) <$(git config user.email)>"'
 alias gcu='f \\.orig | xargs rm'
 alias gcf='gc --fixup'
@@ -87,10 +92,13 @@ gfix() { gcf $1 && gsquash $1~1 }
 gffix() { gcff $1 && gsquash $1~1 }
 gbdm() { git branch --merged ${1:-master} | grep -v "\* ${1:-master}" | xargs -n 1 git branch -d }
 
-alias kube-secret='EDITOR=nvim ksecret'
 alias kube-env='kubectl config use-context'
+alias docker-shell='docker run --rm -it --entrypoint /bin/sh'
 kube-shell() { kubectl exec -i -t $* -- /bin/sh }
 
+alias adb-screenshot='adb exec-out screencap -p > ~/Desktop/screenshot.png'
+alias ashell='jshell --class-path $ANDROID_HOME/platforms/android-30/android.jar'
+
 #eval "$(keychain --quiet --eval --agents ssh vsts.id_rsa github.id_rsa)"
-source $HOME/Private/Keys/azure_keys.sh
+#source $HOME/Private/Keys/azure_keys.sh
 source $HOME/.dotfiles/.iterm2_shell_integration.zsh

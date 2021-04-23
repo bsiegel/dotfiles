@@ -1,9 +1,8 @@
 [user]
-	name = Brandon Siegel
-	email = brandon@smartercode.net
-	signingkey = 3D6E8B65
+  name = Brandon Siegel
+  email = brandon@smartercode.net
 [color]
-	ui = auto
+  ui = auto
 [alias]
   d = diff --word-diff
   lg = log --color --oneline
@@ -17,37 +16,48 @@
 [pull]
   rebase = true
 [rebase]
-	autosquash = true
-	autostash = true
+  autosquash = true
+  autostash = true
 [diff]
-	algorithm = patience
-	tool = kdiff3
-	compactionHeuristic = true
+  algorithm = histogram
+  tool = kdiff3
+  compactionHeuristic = true
+  colorMoved = default
 [merge]
-	tool = kdiff3
+  tool = kdiff3
 [difftool]
-	prompt = false
+  prompt = false
 [mergetool]
-	prompt = false
-	keepBackup = false
+  prompt = false
+  keepBackup = false
 [difftool "kdiff3"]
-	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+  path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
 [mergetool "kdiff3"]
-	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+  path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
 [difftool "sourcetree"]
-	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$LOCAL\" \"$REMOTE\"
 [mergetool "sourcetree"]
-	cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+  trustExitCode = true
 [difftool "meld"]
-	path = /Applications/Meld.app/Contents/MacOS/Meld
+  path = /Applications/Meld.app/Contents/MacOS/Meld
 [mergetool "meld"]
-	path = /Applications/Meld.app/Contents/MacOS/Meld
+  path = /Applications/Meld.app/Contents/MacOS/Meld
 [interactive]
-	diffFilter = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight
+  diffFilter = delta --color-only
 [core]
-	excludesfile = /Users/brsiegel/.gitignore_global
-	pager = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+  excludesfile = /Users/brsiegel/.gitignore_global
+  pager = delta
 [checkout]
-	defaultRemote = origin
+  defaultRemote = origin
+[delta]
+  features = line-numbers
+[feature]
+  manyFiles = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	defaultBranch = main
