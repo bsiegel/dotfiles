@@ -8,18 +8,20 @@
 	<true/>
 	<key>AllowClipboardAccess</key>
 	<true/>
+	<key>AllowTabbarInTitlebarAccessoryBigSur</key>
+	<true/>
 	<key>AlternateMouseScroll</key>
 	<true/>
 	<key>AnimateDimming</key>
 	<true/>
 	<key>AutoCommandHistory</key>
-	<false/>
+	<true/>
 	<key>AutoHideTmuxClientSession</key>
 	<true/>
 	<key>BracketedPasteMode</key>
 	<true/>
 	<key>CheckTestRelease</key>
-	<false/>
+	<true/>
 	<key>ClosingHotkeySwitchesSpaces</key>
 	<true/>
 	<key>Command</key>
@@ -27,11 +29,11 @@
 	<key>CommandSelection</key>
 	<true/>
 	<key>CompactMinimalTabBarHeight</key>
-	<real>20</real>
+	<real>22</real>
 	<key>Control</key>
 	<integer>1</integer>
 	<key>ConvertDosNewlines</key>
-	<true/>
+	<false/>
 	<key>CopyLastNewline</key>
 	<false/>
 	<key>CopySelection</key>
@@ -2750,10 +2752,12 @@
 	<false/>
 	<key>EscapeShellCharsWithBackslash</key>
 	<true/>
+	<key>FastForegroundJobUpdates</key>
+	<false/>
 	<key>FocusFollowsMouse</key>
 	<false/>
 	<key>FontChangeAffectsBroadcastingSessions</key>
-	<true/>
+	<false/>
 	<key>FsTabDelay</key>
 	<real>1</real>
 	<key>GlobalKeyMap</key>
@@ -3043,7 +3047,7 @@ Resize Split Pane.Move Divider Down</string>
 	<key>MaxVertically</key>
 	<false/>
 	<key>MiddleClickClosesTab</key>
-	<false/>
+	<true/>
 	<key>NeverWarnAboutShortLivedSessions_AB528825-B469-4B9E-9B00-D83EA36F4A53</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -3150,12 +3154,16 @@ Resize Split Pane.Move Divider Down</string>
 			</dict>
 			<key>Ansi 3 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.11875960975885391</real>
+				<real>0.14509803921568629</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.58530014753341675</real>
+				<real>0.65098039215686276</real>
 				<key>Red Component</key>
-				<real>0.99176251888275146</real>
+				<real>1</real>
 			</dict>
 			<key>Ansi 4 Color</key>
 			<dict>
@@ -3177,12 +3185,16 @@ Resize Split Pane.Move Divider Down</string>
 			</dict>
 			<key>Ansi 6 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.94012451171875</real>
+				<real>0.94901960784313721</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.8532407283782959</real>
+				<real>0.8784313725490196</real>
 				<key>Red Component</key>
-				<real>0.40329229831695557</real>
+				<real>0.46274509803921571</real>
 			</dict>
 			<key>Ansi 7 Color</key>
 			<dict>
@@ -3252,7 +3264,7 @@ Resize Split Pane.Move Divider Down</string>
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>80</integer>
+			<integer>100</integer>
 			<key>Command</key>
 			<string>/bin/zsh</string>
 			<key>Cursor Boost</key>
@@ -3304,10 +3316,36 @@ Resize Split Pane.Move Divider Down</string>
 			</dict>
 			<key>Guid</key>
 			<string>AB528825-B469-4B9E-9B00-D83EA36F4A53</string>
+			<key>Has Hotkey</key>
+			<false/>
 			<key>Hide After Opening</key>
 			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
+			<key>HotKey Activated By Modifier</key>
+			<false/>
+			<key>HotKey Alternate Shortcuts</key>
+			<array/>
+			<key>HotKey Characters</key>
+			<string></string>
+			<key>HotKey Characters Ignoring Modifiers</key>
+			<string></string>
+			<key>HotKey Key Code</key>
+			<integer>0</integer>
+			<key>HotKey Modifier Activation</key>
+			<integer>0</integer>
+			<key>HotKey Modifier Flags</key>
+			<integer>0</integer>
+			<key>HotKey Window Animates</key>
+			<true/>
+			<key>HotKey Window AutoHides</key>
+			<true/>
+			<key>HotKey Window Dock Click Action</key>
+			<integer>0</integer>
+			<key>HotKey Window Floats</key>
+			<true/>
+			<key>HotKey Window Reopens On Activation</key>
+			<false/>
 			<key>Icon</key>
 			<integer>0</integer>
 			<key>Idle Code</key>
@@ -3768,8 +3806,12 @@ Resize Split Pane.Move Divider Down</string>
 				<dict>
 					<key>algorithm</key>
 					<integer>1</integer>
+					<key>auto-rainbow style</key>
+					<integer>0</integer>
 					<key>font</key>
 					<string>.AppleSystemUIFont 12</string>
+					<key>remove empty components</key>
+					<true/>
 				</dict>
 				<key>components</key>
 				<array>
@@ -3808,8 +3850,12 @@ Resize Split Pane.Move Divider Down</string>
 							<dict>
 								<key>algorithm</key>
 								<integer>1</integer>
+								<key>auto-rainbow style</key>
+								<integer>0</integer>
 								<key>font</key>
 								<string>.AppleSystemUIFont 12</string>
+								<key>remove empty components</key>
+								<true/>
 							</dict>
 						</dict>
 					</dict>
@@ -3846,8 +3892,12 @@ Resize Split Pane.Move Divider Down</string>
 							<dict>
 								<key>algorithm</key>
 								<integer>1</integer>
+								<key>auto-rainbow style</key>
+								<integer>0</integer>
 								<key>font</key>
 								<string>.AppleSystemUIFont 12</string>
+								<key>remove empty components</key>
+								<true/>
 							</dict>
 						</dict>
 					</dict>
@@ -3878,8 +3928,12 @@ Resize Split Pane.Move Divider Down</string>
 							<dict>
 								<key>algorithm</key>
 								<integer>1</integer>
+								<key>auto-rainbow style</key>
+								<integer>0</integer>
 								<key>font</key>
 								<string>.AppleSystemUIFont 12</string>
+								<key>remove empty components</key>
+								<true/>
 							</dict>
 						</dict>
 					</dict>
@@ -3910,8 +3964,12 @@ Resize Split Pane.Move Divider Down</string>
 							<dict>
 								<key>algorithm</key>
 								<integer>1</integer>
+								<key>auto-rainbow style</key>
+								<integer>0</integer>
 								<key>font</key>
 								<string>.AppleSystemUIFont 12</string>
+								<key>remove empty components</key>
+								<true/>
 							</dict>
 						</dict>
 					</dict>
@@ -3942,8 +4000,12 @@ Resize Split Pane.Move Divider Down</string>
 							<dict>
 								<key>algorithm</key>
 								<integer>1</integer>
+								<key>auto-rainbow style</key>
+								<integer>0</integer>
 								<key>font</key>
 								<string>.AppleSystemUIFont 12</string>
+								<key>remove empty components</key>
+								<true/>
 							</dict>
 						</dict>
 					</dict>
@@ -3976,8 +4038,12 @@ Resize Split Pane.Move Divider Down</string>
 							<dict>
 								<key>algorithm</key>
 								<integer>1</integer>
+								<key>auto-rainbow style</key>
+								<integer>0</integer>
 								<key>font</key>
 								<string>.AppleSystemUIFont 12</string>
+								<key>remove empty components</key>
+								<true/>
 							</dict>
 						</dict>
 					</dict>
@@ -4012,8 +4078,12 @@ Resize Split Pane.Move Divider Down</string>
 							<dict>
 								<key>algorithm</key>
 								<integer>1</integer>
+								<key>auto-rainbow style</key>
+								<integer>0</integer>
 								<key>font</key>
 								<string>.AppleSystemUIFont 12</string>
+								<key>remove empty components</key>
+								<true/>
 							</dict>
 						</dict>
 					</dict>
@@ -4048,8 +4118,12 @@ Resize Split Pane.Move Divider Down</string>
 							<dict>
 								<key>algorithm</key>
 								<integer>1</integer>
+								<key>auto-rainbow style</key>
+								<integer>0</integer>
 								<key>font</key>
 								<string>.AppleSystemUIFont 12</string>
+								<key>remove empty components</key>
+								<true/>
 							</dict>
 						</dict>
 					</dict>
@@ -4097,7 +4171,7 @@ Resize Split Pane.Move Divider Down</string>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>15</integer>
+			<integer>0</integer>
 			<key>Working Directory</key>
 			<string></string>
 		</dict>
@@ -4307,7 +4381,7 @@ Resize Split Pane.Move Divider Down</string>
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>80</integer>
+			<integer>100</integer>
 			<key>Command</key>
 			<string>/bin/bash</string>
 			<key>Cursor Boost</key>
@@ -4836,7 +4910,7 @@ Resize Split Pane.Move Divider Down</string>
 	<key>OpenBookmark</key>
 	<false/>
 	<key>OpenFileInNewWindows</key>
-	<true/>
+	<false/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>2</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
@@ -4845,6 +4919,10 @@ Resize Split Pane.Move Divider Down</string>
 	<true/>
 	<key>PasteFromClipboard</key>
 	<false/>
+	<key>PasteSpecialChunkDelay</key>
+	<real>0.01</real>
+	<key>PasteSpecialChunkSize</key>
+	<integer>1024</integer>
 	<key>PasteSpecialRegex</key>
 	<string></string>
 	<key>PasteSpecialSubstitution</key>
@@ -4887,10 +4965,6 @@ Resize Split Pane.Move Divider Down</string>
 	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
-	<key>QuickPasteBytesPerCall</key>
-	<integer>1536</integer>
-	<key>QuickPasteDelayBetweenCalls</key>
-	<real>0.0066666663624346256</real>
 	<key>QuitWhenAllWindowsClosed</key>
 	<true/>
 	<key>RememberWindowPositions</key>
@@ -4901,6 +4975,8 @@ Resize Split Pane.Move Divider Down</string>
 	<integer>3</integer>
 	<key>SavePasteHistory</key>
 	<false/>
+	<key>SaveScrollBufferWhenClearing</key>
+	<true/>
 	<key>Selection Respects Soft Boundaries</key>
 	<true/>
 	<key>SeparateStatusBarsPerPane</key>
@@ -4963,6 +5039,8 @@ Resize Split Pane.Move Divider Down</string>
 	<false/>
 	<key>UseCompactLabel</key>
 	<true/>
+	<key>UseExperimentalFontMetrics</key>
+	<false/>
 	<key>UseLionStyleFullscreen</key>
 	<false/>
 	<key>UseMetal</key>
@@ -4992,7 +5070,7 @@ Resize Split Pane.Move Divider Down</string>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>kCPKSelectionViewPreferredModeKey</key>
-	<integer>0</integer>
+	<integer>2</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
 	<false/>
 	<key>kCommandHistoryHasEverBeenUsed</key>

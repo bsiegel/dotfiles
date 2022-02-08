@@ -2,21 +2,14 @@
 {
   "amVim.startInInsertMode": true,
   "amVim.mimicVimSearchBehavior": false,
-  "bracket-pair-colorizer-2.colors": [
-    "#ff6188",
-    "#fc9867",
-    "#ffd866",
-    "#a9dc76",
-    "#78dce8",
-    "#ab9df2"
-  ],
-  "bracket-pair-colorizer-2.showBracketsInGutter": true,
-  "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
-  "bracket-pair-colorizer-2.showVerticalScopeLine": false,
-  "bracket-pair-colorizer-2.unmatchedScopeColor": "#da3c50",
+  "amVim.useSystemClipboard": true,
+  "bracketLens.color": "#99999959",
+  "bracketLens.mode": "auto",
   "breadcrumbs.enabled": true,
   "cSpell.allowCompoundWords": true,
+  "cSpell.enabled": true,
   "editor.autoIndent": "full",
+  "editor.bracketPairColorization.enabled": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -24,30 +17,53 @@
   "editor.fontFamily": "Office Code Pro",
   "editor.fontSize": 15,
   "editor.formatOnType": true,
+  "editor.guides.bracketPairs": true,
+  "editor.guides.bracketPairsHorizontal": false,
+  "editor.inlineSuggest.enabled": true,
   "editor.renderWhitespace": "boundary",
   "editor.rulers": [
     80,
     120
   ],
+  "editor.suggestSelection": "first",
   "editor.tabSize": 2,
+  "extensions.supportUntrustedWorkspaces": {
+    "auiworks.amvim": {
+      "supported": true
+    },
+  },
+  "files.associations": {
+    "*.pom": "xml"
+  },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "git.countBadge": "off",
+  "gitlens.advanced.abbreviateShaOnCopy": true,
+  "go.toolsManagement.autoUpdate": true,
   "html.format.indentHandlebars": true,
   "html.format.wrapLineLength": 0,
-  "java.semanticHighlighting.enabled": true,
-  "java.configuration.checkProjectSettingsExclusions": false,
-  "javascript.referencesCodeLens.enabled": true,
   "js/ts.implicitProjectConfig.checkJs": true,
-  "python.insidersChannel": "off",
-  "python.pythonPath": "/usr/local/bin/python3",
+  "python.defaultInterpreterPath": "/usr/local/bin/python3",
+  "python.insidersChannel": "weekly",
   "rewrap.autoWrap.enabled": false,
+  "security.workspace.trust.banner": "never",
+  "security.workspace.trust.emptyWindow": false,
+  "security.workspace.trust.startupPrompt": "never",
+  "security.workspace.trust.untrustedFiles": "newWindow",
   "shellcheck.enableQuickFix": true,
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 15,
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.restoreWindows": "none",
   "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
+    "editorBracketHighlight.foreground1": "#ff6188",
+    "editorBracketHighlight.foreground2": "#fc9867",
+    "editorBracketHighlight.foreground3": "#ffd866",
+    "editorBracketHighlight.foreground4": "#a9dc76",
+    "editorBracketHighlight.foreground5": "#78dce8",
+    "editorBracketHighlight.foreground6": "#ab9df2",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#da3c50",
     "editor.findMatchBackground": "#383e6b",
     "editor.findMatchHighlightBackground": "#383e6b",
     "editorGroupHeader.tabsBackground": "#221f22",
@@ -60,24 +76,7 @@
   },
   "workbench.colorTheme": "Monokai Pro",
   "workbench.editor.enablePreview": false,
+  "workbench.editor.untitled.hint": "hidden",
   "workbench.iconTheme": "Monokai Pro Icons",
-  "workbench.startupEditor": "newUntitledFile",
-  "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "python.languageServer": "Pylance",
-  "extensions.ignoreRecommendations": false,
-  "[markdown]": {
-    "editor.wordWrap": "off"
-  },
-  "files.associations": {
-    "*.pom": "xml"
-  },
-  "cSpell.enabled": true,
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter-notebook",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
-  "workbench.editor.untitled.hint": "hidden"
+  "workbench.startupEditor": "newUntitledFile"
 }

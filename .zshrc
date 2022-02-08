@@ -9,7 +9,7 @@ plugins=(
   fancy-ctrl-z
   git
   history-substring-search
-  swiftpm
+  zsh-autosuggestions
   zsh-completions
   zsh-syntax-highlighting
   z
@@ -25,6 +25,10 @@ autoload -U zmv
 
 bindkey '\e[A' history-substring-search-up
 bindkey '\e[B' history-substring-search-down
+bindkey '^ ' autosuggest-accept
+
+# Remove this when zsh >5.8 is released
+zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 
 zstyle ':completion:*' special-dirs false
 zstyle ':completion:*' matcher-list '' \
@@ -87,16 +91,20 @@ alias gcf='gc --fixup'
 alias gsquash='GIT_SEQUENCE_EDITOR=: gri'
 compdef __git_commits gcf
 gcff() { git commit --fixup $(git log -n 1 --pretty='%h' $1 2>/dev/null) }
-gwm() { git --no-pager show --abbrev-commit $(git log $1..${2:-master} --ancestry-path --merges --pretty='%h' 2>/dev/null | tail -n1) }
+gwm() { git --no-pager show --abbrev-commit $(git log $1..${2:-develop} --ancestry-path --merges --pretty='%h' 2>/dev/null | tail -n1) }
 gfix() { gcf $1 && gsquash $1~1 }
 gffix() { gcff $1 && gsquash $1~1 }
-gbdm() { git branch --merged ${1:-master} | grep -v "\* ${1:-master}" | xargs -n 1 git branch -d }
+gbdm() { gco ${1:-develop} && git branch --merged ${1:-develop} | grep -v "^\(\s\|\*\)*\(${1:-develop}\|develop\|main\|master\)$" | xargs -n 1 git branch -d }
+
+export RR=$(grr)
+chpwd() { export RR=$(grr) }
 
 alias kube-env='kubectl config use-context'
 alias docker-shell='docker run --rm -it --entrypoint /bin/sh'
 kube-shell() { kubectl exec -i -t $* -- /bin/sh }
 
-alias adb-screenshot='adb exec-out screencap -p > ~/Desktop/screenshot.png'
+alias adb-screenshot='adb exec-out screencap -p > ~/Desktop/Screenshot\ $(date +%F)\ $(date +%H.%M.%S).png'
+alias adb-mirror='adb exec-out screenrecord --bit-rate=16m --output-format=h264 --size 1920x1080 - | ffplay -framerate 60 -framedrop -bufsize 16M -'
 alias ashell='jshell --class-path $ANDROID_HOME/platforms/android-30/android.jar'
 
 #eval "$(keychain --quiet --eval --agents ssh vsts.id_rsa github.id_rsa)"

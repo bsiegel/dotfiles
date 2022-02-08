@@ -10,6 +10,7 @@
   mb = merge --no-ff --edit
   stop-packing = gc --prune=now
   pancake = !git fetch && git reset --hard $(git rev-parse --abbrev-ref --symbolic-full-name @{u})
+  cleanup = !zsh -c 'rm **/*.orig'
   upcake = !git fetch upstream && git reset --hard upstream/$(git rev-parse --abbrev-ref --symbolic-full-name HEAD)
 [push]
   default = upstream
@@ -61,3 +62,5 @@
 	required = true
 [init]
 	defaultBranch = main
+[oh-my-zsh]
+	hide-status = 1
