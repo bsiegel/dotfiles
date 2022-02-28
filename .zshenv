@@ -1,9 +1,12 @@
-export GOROOT=/usr/local/opt/go/libexec
+export HOMEBREW_PREFIX="/opt/homebrew";
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+export HOMEBREW_REPOSITORY="/opt/homebrew";
+export GOROOT=$HOMEBREW_PREFIX/opt/go/libexec
 export GOPATH=$HOME/source/go
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_NDK_ROOT=$ANDROID_HOME/ndk/21.4.7075529
 export JAVA_HOME=$(/usr/libexec/java_home)
-export NODE_PATH=/usr/local/lib/node_modules
-export OPENSSL_DIR=/usr/local/opt/openssl
+export NODE_PATH=$HOMEBREW_PREFIX/lib/node_modules
+export OPENSSL_DIR=$HOMEBREW_PREFIX/opt/openssl@3
 export GPG_TTY=$(/usr/bin/tty)
-export CHROME_EXECUTABLE="/Applications/Microsoft Edge Canary.app/Contents/MacOS/Microsoft Edge Canary"
+export CHROME_EXECUTABLE="/Applications/Microsoft Edge Dev.app/Contents/MacOS/Microsoft Edge Dev"

@@ -43,7 +43,6 @@
   "html.format.indentHandlebars": true,
   "html.format.wrapLineLength": 0,
   "js/ts.implicitProjectConfig.checkJs": true,
-  "python.defaultInterpreterPath": "/usr/local/bin/python3",
   "python.insidersChannel": "weekly",
   "rewrap.autoWrap.enabled": false,
   "security.workspace.trust.banner": "never",
