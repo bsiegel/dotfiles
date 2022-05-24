@@ -122,3 +122,16 @@
 " use xxd for hex viewing
   cnoreabbrev hex %!xxd
   cnoreabbrev hexq %!xxd -r
+
+" merge signcolumn and number column into one
+  set signcolumn=number
+
+" Don't pass messages to |ins-completion-menu|.
+  set shortmess+=c
+
+" disable the perl provider
+  let g:loaded_perl_provider = 0
+
+" enable the new filetype plugin
+  let g:do_filetype_lua = 1
+  let g:did_load_filetypes = 0
