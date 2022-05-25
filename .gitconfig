@@ -16,6 +16,7 @@
   default = upstream
 [pull]
   rebase = true
+  twohead = ort
 [rebase]
   autosquash = true
   autostash = true
@@ -34,16 +35,9 @@
 [difftool "kdiff3"]
   path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
 [mergetool "kdiff3"]
-  path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
-[difftool "sourcetree"]
-  cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$LOCAL\" \"$REMOTE\"
-[mergetool "sourcetree"]
-  cmd = /Applications/kdiff3.app/Contents/MacOS/kdiff3 \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
-  trustExitCode = true
-[difftool "meld"]
-  path = /Applications/Meld.app/Contents/MacOS/Meld
-[mergetool "meld"]
-  path = /Applications/Meld.app/Contents/MacOS/Meld
+  cmd = kdiff3 --auto --L1 \"$MERGED (Original)\" --L2 \"$MERGED (Changes in $(git name-rev --name-only --exclude='remotes/*' $(test -f .git/MERGE_HEAD && cat .git/ORIG_HEAD || cat .git/rebase-merge/onto)))\" --L3 \"$MERGED (Changes in $(git name-rev --name-only --exclude='remotes/*' $(test -f .git/MERGE_HEAD && cat .git/MERGE_HEAD || cat .git/ORIG_HEAD)))\" -o \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
+[mergetool "kdiff3NoAuto"]
+  cmd = kdiff3 --L1 \"$MERGED (Original)\" --L2 \"$MERGED (Changes in $(git name-rev --name-only --exclude='remotes/*' $(test -f .git/MERGE_HEAD && cat .git/ORIG_HEAD || cat .git/rebase-merge/onto)))\" --L3 \"$MERGED (Changes in $(git name-rev --name-only --exclude='remotes/*' $(test -f .git/MERGE_HEAD && cat .git/MERGE_HEAD || cat .git/ORIG_HEAD)))\" -o \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
 [interactive]
   diffFilter = delta --color-only
 [core]
@@ -56,11 +50,11 @@
 [feature]
   manyFiles = true
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [oh-my-zsh]
-	hide-status = 1
+  hide-status = 1

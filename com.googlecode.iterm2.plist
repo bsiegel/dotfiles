@@ -4940,21 +4940,38 @@ Resize Split Pane.Move Divider Down</string>
 		<key>Button,1,1,,</key>
 		<dict>
 			<key>Action</key>
-			<string>kSendHexCodePointerAction</string>
+			<string>kPasteFromClipboardPointerAction</string>
 			<key>Argument</key>
-			<string>0x01 0x5d</string>
-		</dict>
-		<key>Button,1,1,^,</key>
-		<dict>
-			<key>Action</key>
-			<string>kSendHexCodePointerAction</string>
-			<key>Argument</key>
-			<string>0x01 0x3d</string>
+			<string>{"ConvertUnicodePunctuation":true,"WaitForPrompts":false,"Substitution":"","EscapeForShell":false,"Base64":false,"TabStopSize":4,"Delay":0.01,"RemoveNewlines":false,"Regex":"","ConvertNewlines":true,"TabTransform":0,"BracketAllowed":true,"UseRegexSubstitution":false,"ChunkSize":1024,"RemoveControls":true}</string>
+			<key>Version</key>
+			<integer>0</integer>
 		</dict>
 		<key>Button,1,1,o,</key>
 		<dict>
 			<key>Action</key>
 			<string>kContextMenuPointerAction</string>
+			<key>Version</key>
+			<integer>0</integer>
+		</dict>
+		<key>Gesture,ThreeFingerSwipeDown,,</key>
+		<dict>
+			<key>Action</key>
+			<string>kPrevWindowPointerAction</string>
+		</dict>
+		<key>Gesture,ThreeFingerSwipeLeft,,</key>
+		<dict>
+			<key>Action</key>
+			<string>kPrevTabPointerAction</string>
+		</dict>
+		<key>Gesture,ThreeFingerSwipeRight,,</key>
+		<dict>
+			<key>Action</key>
+			<string>kNextTabPointerAction</string>
+		</dict>
+		<key>Gesture,ThreeFingerSwipeUp,,</key>
+		<dict>
+			<key>Action</key>
+			<string>kNextWindowPointerAction</string>
 		</dict>
 	</dict>
 	<key>PreserveWindowSizeWhenTabBarVisibilityChanges</key>
