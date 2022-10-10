@@ -1,5 +1,8 @@
+local g = vim.g
 local map = require("core.utils").map
 
+--leader
+g.mapleader = "\\"
 -- substitute
 map("n", "cp", "<cmd>lua require('substitute').operator()<cr>", { noremap = true })
 map("n", "cpp", "<cmd>lua require('substitute').line()<cr>", { noremap = true })
