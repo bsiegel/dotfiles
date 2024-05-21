@@ -1,29 +1,163 @@
-local g = vim.g
-local map = require("core.utils").map
+local M = {}
 
---leader
-g.mapleader = "\\"
--- substitute
-map("n", "cp", "<cmd>lua require('substitute').operator()<cr>", { noremap = true })
-map("n", "cpp", "<cmd>lua require('substitute').line()<cr>", { noremap = true })
-map("x", "cp", "<cmd>lua require('substitute').visual()<cr>", { noremap = true })
+M.substitute = {
+  n = {
+    ["cp"] = {
+      function()
+        require('substitute').operator()
+      end,
+      opts = { noremap = true }
+    },
+    ["cpp"] = {
+      function()
+        require('substitute').line()
+      end,
+      opts = { noremap = true }
+    }
+  },
 
--- hop
-map('n', 'hw', "<cmd>lua require'hop'.hint_words({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
-map('n', 'Hw', "<cmd>lua require'hop'.hint_words({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
-map('n', 'hhw', "<cmd>lua require'hop'.hint_words()<cr>", {})
-map('n', 'h/', "<cmd>lua require'hop'.hint_patterns({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
-map('n', 'H/', "<cmd>lua require'hop'.hint_patterns({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
-map('n', 'hh/', "<cmd>lua require'hop'.hint_patterns()<cr>", {})
-map('n', 'hc', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
-map('n', 'Hc', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
-map('n', 'hhc', "<cmd>lua require'hop'.hint_char2()<cr>", {})
-map('o', 'hw', "<cmd>lua require'hop'.hint_words({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
-map('o', 'Hw', "<cmd>lua require'hop'.hint_words({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
-map('o', 'hhw', "<cmd>lua require'hop'.hint_words()<cr>", {})
-map('o', 'h/', "<cmd>lua require'hop'.hint_patterns({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
-map('o', 'H/', "<cmd>lua require'hop'.hint_patterns({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
-map('o', 'hh/', "<cmd>lua require'hop'.hint_patterns()<cr>", {})
-map('o', 'hc', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
-map('o', 'Hc', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
-map('o', 'hhc', "<cmd>lua require'hop'.hint_char2()<cr>", {})
+  x = {
+    ["cp"] = {
+      function()
+        require('substitute').visual()
+      end,
+      opts = { noremap = true }
+    },
+  }
+}
+
+M.hop = {
+  n = {
+    ["hw"] = {
+      function()
+        require('hop').hint_words({
+          direction = require('AFTER_CURSOR').HintDirection.AFTER_CURSOR,
+          current_line_only = true
+        })
+      end
+    },
+    ["Hw"] = {
+      function()
+        require('hop').hint_words({
+          direction = require('hop.hint').HintDirection.BEFORE_CURSOR,
+          current_line_only = true
+        })
+      end
+    },
+    ["hhw"] = {
+      function()
+        require('hop').hint_words()
+      end
+    },
+    ["h/"] = {
+      function()
+        require('hop').hint_patterns({
+          direction = require('hop.hint').HintDirection.AFTER_CURSOR,
+          current_line_only = true
+        })
+      end
+    },
+    ["H/"] = {
+      function()
+        require('hop').hint_patterns({
+          direction = require('hop.hint').HintDirection.BEFORE_CURSOR,
+          current_line_only = true
+        })
+      end
+    },
+    ["hh/"] = {
+      function()
+        require('hop').hint_patterns()
+      end
+    },
+    ["hc"] = {
+      function()
+        require('hop').hint_char1({
+          direction = require('hop.hint').HintDirection.AFTER_CURSOR,
+          current_line_only = true
+        })
+      end
+    },
+    ["Hc"] = {
+      function()
+        require('hop').hint_char1({
+          direction = require('hop.hint').HintDirection.BEFORE_CURSOR,
+          current_line_only = true
+        })
+      end
+    },
+    ["hhc"] = {
+      function()
+        require('hop').hint_char2()
+      end
+    },
+  },
+
+  o = {
+    ["hw"] = {
+      function()
+        require('hop').hint_words({
+          direction = require('hop.hint').HintDirection.AFTER_CURSOR,
+          current_line_only = true
+        })
+      end
+    },
+    ["Hw"] = {
+      function()
+        require('hop').hint_words({
+          direction = require('hop.hint').HintDirection.BEFORE_CURSOR,
+          current_line_only = true
+        })
+      end
+    },
+    ["hhw"] = {
+      function()
+        require('hop').hint_words()
+      end
+    },
+    ["h/"] = {
+      function()
+        require('hop').hint_patterns({
+          direction = require('hop.hint').HintDirection.AFTER_CURSOR,
+          current_line_only = true
+        })
+      end
+    },
+    ["H/"] = {
+      function()
+        require('hop').hint_patterns({
+          direction = require('hop.hint').HintDirection.BEFORE_CURSOR,
+          current_line_only = true
+        })
+      end
+    },
+    ["hh/"] = {
+      function()
+        require('hop').hint_patterns()
+      end
+    },
+    ["hc"] = {
+      function()
+        require('hop').hint_char1({
+          direction = require('hop.hint').HintDirection.AFTER_CURSOR,
+          current_line_only = true
+        })
+      end
+    },
+    ["Hc"] = {
+      function()
+        require('hop').hint_char1({
+          direction = require('hop.hint').HintDirection.BEFORE_CURSOR,
+          current_line_only = true
+        })
+      end
+    },
+    ["hhc"] = {
+      function()
+        require('hop').hint_char2()
+      end
+    },
+  }
+}
+
+return M

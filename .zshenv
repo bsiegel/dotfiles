@@ -6,6 +6,7 @@ export GOPATH=$HOME/source/go
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_NDK_ROOT=$ANDROID_HOME/ndk/21.4.7075529
 export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_OPTS="-Xmx4g -XX:MaxMetaspaceSize=1g"
 export NODE_PATH=$HOMEBREW_PREFIX/lib/node_modules
 export OPENSSL_DIR=$HOMEBREW_PREFIX/opt/openssl@3
 export GPG_TTY=$(/usr/bin/tty)

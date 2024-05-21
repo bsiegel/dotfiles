@@ -73,7 +73,7 @@ alias gra='grba'
 alias gmc='gm --continue'
 alias gma='gm --abort'
 alias gmt='gmtl'
-alias glgg='glol'
+alias glgg='git log --graph --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset" --date=relative'
 alias gpsu='gpsup'
 alias gbdd='gb -D'
 alias gbn='git rev-parse --abbrev-ref --symbolic-full-name HEAD'
@@ -107,6 +107,8 @@ kube-shell() { kubectl exec -i -t $* -- /bin/sh }
 alias adb-screenshot='adb exec-out screencap -p > ~/Desktop/Screenshot\ $(date +%F)\ $(date +%H.%M.%S).png'
 alias adb-mirror='adb exec-out screenrecord --bit-rate=16m --output-format=h264 --size 1920x1080 - | ffplay -framerate 60 -framedrop -bufsize 16M -'
 alias ashell='jshell --class-path $ANDROID_HOME/platforms/android-30/android.jar'
+
+alias deeplink='adb shell am start -a android.intent.action.VIEW -d'
 
 #eval "$(keychain --quiet --eval --agents ssh vsts.id_rsa github.id_rsa)"
 #source $HOME/Private/Keys/azure_keys.sh

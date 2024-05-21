@@ -2735,7 +2735,7 @@
 	<key>DimOnlyText</key>
 	<true/>
 	<key>DisableFullscreenTransparency</key>
-	<true/>
+	<false/>
 	<key>DisableMetalWhenIdle</key>
 	<true/>
 	<key>DisallowCopyEmptyString</key>
@@ -3055,6 +3055,8 @@ Resize Split Pane.Move Divider Down</string>
 		<dict>
 			<key>ASCII Anti Aliased</key>
 			<true/>
+			<key>ASCII Ligatures</key>
+			<true/>
 			<key>AWDS Pane Directory</key>
 			<string></string>
 			<key>AWDS Pane Option</key>
@@ -3080,7 +3082,43 @@ Resize Split Pane.Move Divider Down</string>
 				<key>Red Component</key>
 				<real>0.070588238537311554</real>
 			</dict>
+			<key>Ansi 0 Color (Dark)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.070588238537311554</real>
+				<key>Green Component</key>
+				<real>0.070588238537311554</real>
+				<key>Red Component</key>
+				<real>0.070588238537311554</real>
+			</dict>
+			<key>Ansi 0 Color (Light)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.070588238537311554</real>
+				<key>Green Component</key>
+				<real>0.070588238537311554</real>
+				<key>Red Component</key>
+				<real>0.070588238537311554</real>
+			</dict>
 			<key>Ansi 1 Color</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.13332411646842957</real>
+				<key>Green Component</key>
+				<real>0.1338672935962677</real>
+				<key>Red Component</key>
+				<real>0.89965265989303589</real>
+			</dict>
+			<key>Ansi 1 Color (Dark)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.13332411646842957</real>
+				<key>Green Component</key>
+				<real>0.1338672935962677</real>
+				<key>Red Component</key>
+				<real>0.89965265989303589</real>
+			</dict>
+			<key>Ansi 1 Color (Light)</key>
 			<dict>
 				<key>Blue Component</key>
 				<real>0.13332411646842957</real>
@@ -3098,7 +3136,43 @@ Resize Split Pane.Move Divider Down</string>
 				<key>Red Component</key>
 				<real>0.65098041296005249</real>
 			</dict>
+			<key>Ansi 10 Color (Dark)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.17647059261798859</real>
+				<key>Green Component</key>
+				<real>0.89019608497619629</real>
+				<key>Red Component</key>
+				<real>0.65098041296005249</real>
+			</dict>
+			<key>Ansi 10 Color (Light)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.17647059261798859</real>
+				<key>Green Component</key>
+				<real>0.89019608497619629</real>
+				<key>Red Component</key>
+				<real>0.65098041296005249</real>
+			</dict>
 			<key>Ansi 11 Color</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.11764702945947647</real>
+				<key>Green Component</key>
+				<real>0.58431375026702881</real>
+				<key>Red Component</key>
+				<real>0.98823535442352295</real>
+			</dict>
+			<key>Ansi 11 Color (Dark)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.11764702945947647</real>
+				<key>Green Component</key>
+				<real>0.58431375026702881</real>
+				<key>Red Component</key>
+				<real>0.98823535442352295</real>
+			</dict>
+			<key>Ansi 11 Color (Light)</key>
 			<dict>
 				<key>Blue Component</key>
 				<real>0.11764702945947647</real>
@@ -3116,7 +3190,43 @@ Resize Split Pane.Move Divider Down</string>
 				<key>Red Component</key>
 				<real>0.76862746477127075</real>
 			</dict>
+			<key>Ansi 12 Color (Dark)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>1</real>
+				<key>Green Component</key>
+				<real>0.55294120311737061</real>
+				<key>Red Component</key>
+				<real>0.76862746477127075</real>
+			</dict>
+			<key>Ansi 12 Color (Light)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>1</real>
+				<key>Green Component</key>
+				<real>0.55294120311737061</real>
+				<key>Red Component</key>
+				<real>0.76862746477127075</real>
+			</dict>
 			<key>Ansi 13 Color</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.45098039507865906</real>
+				<key>Green Component</key>
+				<real>0.14509804546833038</real>
+				<key>Red Component</key>
+				<real>0.98039215803146362</real>
+			</dict>
+			<key>Ansi 13 Color (Dark)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.45098039507865906</real>
+				<key>Green Component</key>
+				<real>0.14509804546833038</real>
+				<key>Red Component</key>
+				<real>0.98039215803146362</real>
+			</dict>
+			<key>Ansi 13 Color (Light)</key>
 			<dict>
 				<key>Blue Component</key>
 				<real>0.45098039507865906</real>
@@ -3134,6 +3244,24 @@ Resize Split Pane.Move Divider Down</string>
 				<key>Red Component</key>
 				<real>0.40392157435417175</real>
 			</dict>
+			<key>Ansi 14 Color (Dark)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.94117647409439087</real>
+				<key>Green Component</key>
+				<real>0.85098040103912354</real>
+				<key>Red Component</key>
+				<real>0.40392157435417175</real>
+			</dict>
+			<key>Ansi 14 Color (Light)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.94117647409439087</real>
+				<key>Green Component</key>
+				<real>0.85098040103912354</real>
+				<key>Red Component</key>
+				<real>0.40392157435417175</real>
+			</dict>
 			<key>Ansi 15 Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -3143,7 +3271,43 @@ Resize Split Pane.Move Divider Down</string>
 				<key>Red Component</key>
 				<real>0.94901978969573975</real>
 			</dict>
+			<key>Ansi 15 Color (Dark)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.94901955127716064</real>
+				<key>Green Component</key>
+				<real>0.9490196704864502</real>
+				<key>Red Component</key>
+				<real>0.94901978969573975</real>
+			</dict>
+			<key>Ansi 15 Color (Light)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.94901955127716064</real>
+				<key>Green Component</key>
+				<real>0.9490196704864502</real>
+				<key>Red Component</key>
+				<real>0.94901978969573975</real>
+			</dict>
 			<key>Ansi 2 Color</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.17665885388851166</real>
+				<key>Green Component</key>
+				<real>0.88793504238128662</real>
+				<key>Red Component</key>
+				<real>0.65002298355102539</real>
+			</dict>
+			<key>Ansi 2 Color (Dark)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.17665885388851166</real>
+				<key>Green Component</key>
+				<real>0.88793504238128662</real>
+				<key>Red Component</key>
+				<real>0.65002298355102539</real>
+			</dict>
+			<key>Ansi 2 Color (Light)</key>
 			<dict>
 				<key>Blue Component</key>
 				<real>0.17665885388851166</real>
@@ -3165,6 +3329,32 @@ Resize Split Pane.Move Divider Down</string>
 				<key>Red Component</key>
 				<real>1</real>
 			</dict>
+			<key>Ansi 3 Color (Dark)</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.14509803921568629</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
+				<key>Green Component</key>
+				<real>0.65098039215686276</real>
+				<key>Red Component</key>
+				<real>1</real>
+			</dict>
+			<key>Ansi 3 Color (Light)</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.14509803921568629</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
+				<key>Green Component</key>
+				<real>0.65098039215686276</real>
+				<key>Red Component</key>
+				<real>1</real>
+			</dict>
 			<key>Ansi 4 Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -3174,7 +3364,43 @@ Resize Split Pane.Move Divider Down</string>
 				<key>Red Component</key>
 				<real>0.76874160766601562</real>
 			</dict>
+			<key>Ansi 4 Color (Dark)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.99910145998001099</real>
+				<key>Green Component</key>
+				<real>0.55320799350738525</real>
+				<key>Red Component</key>
+				<real>0.76874160766601562</real>
+			</dict>
+			<key>Ansi 4 Color (Light)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.99910145998001099</real>
+				<key>Green Component</key>
+				<real>0.55320799350738525</real>
+				<key>Red Component</key>
+				<real>0.76874160766601562</real>
+			</dict>
 			<key>Ansi 5 Color</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.45190438628196716</real>
+				<key>Green Component</key>
+				<real>0.14562125504016876</real>
+				<key>Red Component</key>
+				<real>0.98164010047912598</real>
+			</dict>
+			<key>Ansi 5 Color (Dark)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.45190438628196716</real>
+				<key>Green Component</key>
+				<real>0.14562125504016876</real>
+				<key>Red Component</key>
+				<real>0.98164010047912598</real>
+			</dict>
+			<key>Ansi 5 Color (Light)</key>
 			<dict>
 				<key>Blue Component</key>
 				<real>0.45190438628196716</real>
@@ -3196,7 +3422,51 @@ Resize Split Pane.Move Divider Down</string>
 				<key>Red Component</key>
 				<real>0.46274509803921571</real>
 			</dict>
+			<key>Ansi 6 Color (Dark)</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.94901960784313721</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
+				<key>Green Component</key>
+				<real>0.8784313725490196</real>
+				<key>Red Component</key>
+				<real>0.46274509803921571</real>
+			</dict>
+			<key>Ansi 6 Color (Light)</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.94901960784313721</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
+				<key>Green Component</key>
+				<real>0.8784313725490196</real>
+				<key>Red Component</key>
+				<real>0.46274509803921571</real>
+			</dict>
 			<key>Ansi 7 Color</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.95073968172073364</real>
+				<key>Green Component</key>
+				<real>0.95072358846664429</real>
+				<key>Red Component</key>
+				<real>0.95075207948684692</real>
+			</dict>
+			<key>Ansi 7 Color (Dark)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.95073968172073364</real>
+				<key>Green Component</key>
+				<real>0.95072358846664429</real>
+				<key>Red Component</key>
+				<real>0.95075207948684692</real>
+			</dict>
+			<key>Ansi 7 Color (Light)</key>
 			<dict>
 				<key>Blue Component</key>
 				<real>0.95073968172073364</real>
@@ -3214,7 +3484,43 @@ Resize Split Pane.Move Divider Down</string>
 				<key>Red Component</key>
 				<real>0.30196076631546021</real>
 			</dict>
+			<key>Ansi 8 Color (Dark)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.30196076631546021</real>
+				<key>Green Component</key>
+				<real>0.30196073651313782</real>
+				<key>Red Component</key>
+				<real>0.30196076631546021</real>
+			</dict>
+			<key>Ansi 8 Color (Light)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.30196076631546021</real>
+				<key>Green Component</key>
+				<real>0.30196073651313782</real>
+				<key>Red Component</key>
+				<real>0.30196076631546021</real>
+			</dict>
 			<key>Ansi 9 Color</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.13332411646842957</real>
+				<key>Green Component</key>
+				<real>0.1338672935962677</real>
+				<key>Red Component</key>
+				<real>0.89965265989303589</real>
+			</dict>
+			<key>Ansi 9 Color (Dark)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.13332411646842957</real>
+				<key>Green Component</key>
+				<real>0.1338672935962677</real>
+				<key>Red Component</key>
+				<real>0.89965265989303589</real>
+			</dict>
+			<key>Ansi 9 Color (Light)</key>
 			<dict>
 				<key>Blue Component</key>
 				<real>0.13332411646842957</real>
@@ -3236,10 +3542,67 @@ Resize Split Pane.Move Divider Down</string>
 				<key>Red Component</key>
 				<real>0.070588238537311554</real>
 			</dict>
+			<key>Background Color (Dark)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.070588231086730957</real>
+				<key>Green Component</key>
+				<real>0.070588238537311554</real>
+				<key>Red Component</key>
+				<real>0.070588238537311554</real>
+			</dict>
+			<key>Background Color (Light)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.070588231086730957</real>
+				<key>Green Component</key>
+				<real>0.070588238537311554</real>
+				<key>Red Component</key>
+				<real>0.070588238537311554</real>
+			</dict>
 			<key>Background Image Is Tiled</key>
 			<false/>
 			<key>Background Image Location</key>
 			<string></string>
+			<key>Badge Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>0.5</real>
+				<key>Blue Component</key>
+				<real>0.13960540294647217</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.25479039549827576</real>
+				<key>Red Component</key>
+				<real>0.92929404973983765</real>
+			</dict>
+			<key>Badge Color (Dark)</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>0.5</real>
+				<key>Blue Component</key>
+				<real>0.13960540294647217</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.25479039549827576</real>
+				<key>Red Component</key>
+				<real>0.92929404973983765</real>
+			</dict>
+			<key>Badge Color (Light)</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>0.5</real>
+				<key>Blue Component</key>
+				<real>0.13960540294647217</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.25479039549827576</real>
+				<key>Red Component</key>
+				<real>0.92929404973983765</real>
+			</dict>
 			<key>Blend</key>
 			<real>0.30000001192092896</real>
 			<key>Blink Allowed</key>
@@ -3249,7 +3612,7 @@ Resize Split Pane.Move Divider Down</string>
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>7.208702564239502</real>
+			<real>20.053848840835247</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -3259,6 +3622,30 @@ Resize Split Pane.Move Divider Down</string>
 				<key>Red Component</key>
 				<real>0.9999992847442627</real>
 			</dict>
+			<key>Bold Color (Dark)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.99999129772186279</real>
+				<key>Green Component</key>
+				<real>0.99997442960739136</real>
+				<key>Red Component</key>
+				<real>0.9999992847442627</real>
+			</dict>
+			<key>Bold Color (Light)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.99999129772186279</real>
+				<key>Green Component</key>
+				<real>0.99997442960739136</real>
+				<key>Red Component</key>
+				<real>0.9999992847442627</real>
+			</dict>
+			<key>Brighten Bold Text</key>
+			<true/>
+			<key>Brighten Bold Text (Dark)</key>
+			<true/>
+			<key>Brighten Bold Text (Light)</key>
+			<true/>
 			<key>Character Encoding</key>
 			<integer>4</integer>
 			<key>Close Sessions On End</key>
@@ -3269,6 +3656,10 @@ Resize Split Pane.Move Divider Down</string>
 			<string>/bin/zsh</string>
 			<key>Cursor Boost</key>
 			<real>0.0</real>
+			<key>Cursor Boost (Dark)</key>
+			<real>0.0</real>
+			<key>Cursor Boost (Light)</key>
+			<real>0.0</real>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -3278,7 +3669,82 @@ Resize Split Pane.Move Divider Down</string>
 				<key>Red Component</key>
 				<real>0.99215686321258545</real>
 			</dict>
+			<key>Cursor Color (Dark)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.16470588743686676</real>
+				<key>Green Component</key>
+				<real>0.59215688705444336</real>
+				<key>Red Component</key>
+				<real>0.99215686321258545</real>
+			</dict>
+			<key>Cursor Color (Light)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.16470588743686676</real>
+				<key>Green Component</key>
+				<real>0.59215688705444336</real>
+				<key>Red Component</key>
+				<real>0.99215686321258545</real>
+			</dict>
+			<key>Cursor Guide Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>0.25</real>
+				<key>Blue Component</key>
+				<real>0.99125725030899048</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.92047786712646484</real>
+				<key>Red Component</key>
+				<real>0.74862593412399292</real>
+			</dict>
+			<key>Cursor Guide Color (Dark)</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>0.25</real>
+				<key>Blue Component</key>
+				<real>0.99125725030899048</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.92047786712646484</real>
+				<key>Red Component</key>
+				<real>0.74862593412399292</real>
+			</dict>
+			<key>Cursor Guide Color (Light)</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>0.25</real>
+				<key>Blue Component</key>
+				<real>0.99125725030899048</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.92047786712646484</real>
+				<key>Red Component</key>
+				<real>0.74862593412399292</real>
+			</dict>
 			<key>Cursor Text Color</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.0</real>
+				<key>Green Component</key>
+				<real>0.0</real>
+				<key>Red Component</key>
+				<real>0.0</real>
+			</dict>
+			<key>Cursor Text Color (Dark)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.0</real>
+				<key>Green Component</key>
+				<real>0.0</real>
+				<key>Red Component</key>
+				<real>0.0</real>
+			</dict>
+			<key>Cursor Text Color (Light)</key>
 			<dict>
 				<key>Blue Component</key>
 				<real>0.0</real>
@@ -3306,6 +3772,24 @@ Resize Split Pane.Move Divider Down</string>
 			<key>Flashing Bell</key>
 			<true/>
 			<key>Foreground Color</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.95073968172073364</real>
+				<key>Green Component</key>
+				<real>0.95072358846664429</real>
+				<key>Red Component</key>
+				<real>0.95075207948684692</real>
+			</dict>
+			<key>Foreground Color (Dark)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.95073968172073364</real>
+				<key>Green Component</key>
+				<real>0.95072358846664429</real>
+				<key>Red Component</key>
+				<real>0.95075207948684692</real>
+			</dict>
+			<key>Foreground Color (Light)</key>
 			<dict>
 				<key>Blue Component</key>
 				<real>0.95073968172073364</real>
@@ -3353,7 +3837,7 @@ Resize Split Pane.Move Divider Down</string>
 			<key>Initial Text</key>
 			<string></string>
 			<key>Initial Use Transparency</key>
-			<false/>
+			<true/>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -3634,20 +4118,69 @@ Resize Split Pane.Move Divider Down</string>
 					<string>[1;5F</string>
 				</dict>
 			</dict>
+			<key>Link Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.7093239426612854</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.35333043336868286</real>
+				<key>Red Component</key>
+				<real>0.14513972401618958</real>
+			</dict>
+			<key>Link Color (Dark)</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.7093239426612854</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.35333043336868286</real>
+				<key>Red Component</key>
+				<real>0.14513972401618958</real>
+			</dict>
+			<key>Link Color (Light)</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.7093239426612854</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.35333043336868286</real>
+				<key>Red Component</key>
+				<real>0.14513972401618958</real>
+			</dict>
+			<key>Load Shell Integration Automatically</key>
+			<true/>
 			<key>Log Directory</key>
 			<string></string>
 			<key>Minimum Contrast</key>
+			<real>0.0</real>
+			<key>Minimum Contrast (Dark)</key>
+			<real>0.0</real>
+			<key>Minimum Contrast (Light)</key>
 			<real>0.0</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>Menlo-Regular 13</string>
+			<string>SymbolsNerdFontComplete-1000-em 15</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
+			<key>Non-ASCII Ligatures</key>
+			<false/>
 			<key>Normal Font</key>
-			<string>OfficeCodePro-Regular 15</string>
+			<string>CommitMono-Regular 15</string>
+			<key>Only The Default BG Color Uses Transparency</key>
+			<false/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prevent Opening in a Tab</key>
@@ -3677,7 +4210,43 @@ Resize Split Pane.Move Divider Down</string>
 				<key>Red Component</key>
 				<real>1</real>
 			</dict>
+			<key>Selected Text Color (Dark)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>1</real>
+				<key>Green Component</key>
+				<real>1</real>
+				<key>Red Component</key>
+				<real>1</real>
+			</dict>
+			<key>Selected Text Color (Light)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>1</real>
+				<key>Green Component</key>
+				<real>1</real>
+				<key>Red Component</key>
+				<real>1</real>
+			</dict>
 			<key>Selection Color</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.30241930484771729</real>
+				<key>Green Component</key>
+				<real>0.30241933465003967</real>
+				<key>Red Component</key>
+				<real>0.30241936445236206</real>
+			</dict>
+			<key>Selection Color (Dark)</key>
+			<dict>
+				<key>Blue Component</key>
+				<real>0.30241930484771729</real>
+				<key>Green Component</key>
+				<real>0.30241933465003967</real>
+				<key>Red Component</key>
+				<real>0.30241936445236206</real>
+			</dict>
+			<key>Selection Color (Light)</key>
 			<dict>
 				<key>Blue Component</key>
 				<real>0.30241930484771729</real>
@@ -3708,6 +4277,10 @@ Resize Split Pane.Move Divider Down</string>
 			<key>Silence Bell</key>
 			<true/>
 			<key>Smart Cursor Color</key>
+			<true/>
+			<key>Smart Cursor Color (Dark)</key>
+			<true/>
+			<key>Smart Cursor Color (Light)</key>
 			<true/>
 			<key>Smart Selection Rules</key>
 			<array>
@@ -4138,7 +4711,7 @@ Resize Split Pane.Move Divider Down</string>
 			<key>Thin Strokes</key>
 			<integer>4</integer>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.050365691489361708</real>
 			<key>Triggers</key>
 			<array>
 				<dict>
@@ -4146,6 +4719,12 @@ Resize Split Pane.Move Divider Down</string>
 					<string>BounceTrigger</string>
 					<key>regex</key>
 					<string></string>
+				</dict>
+				<dict>
+					<key>action</key>
+					<string>iTermHighlightLineTrigger</string>
+					<key>regex</key>
+					<string>\[deleted\].+origin/bsiegel</string>
 				</dict>
 			</array>
 			<key>Unicode Version</key>
@@ -4156,18 +4735,40 @@ Resize Split Pane.Move Divider Down</string>
 			<true/>
 			<key>Use Bright Bold</key>
 			<true/>
+			<key>Use Bright Bold (Dark)</key>
+			<true/>
+			<key>Use Bright Bold (Light)</key>
+			<true/>
 			<key>Use Canonical Parser</key>
 			<true/>
 			<key>Use Cursor Guide</key>
 			<false/>
+			<key>Use Cursor Guide (Dark)</key>
+			<false/>
+			<key>Use Cursor Guide (Light)</key>
+			<false/>
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
+			<true/>
+			<key>Use Separate Colors for Light and Dark Mode</key>
+			<false/>
+			<key>Use Tab Color</key>
+			<false/>
+			<key>Use Tab Color (Dark)</key>
+			<false/>
+			<key>Use Tab Color (Light)</key>
+			<false/>
+			<key>Use Underline Color</key>
+			<false/>
+			<key>Use Underline Color (Dark)</key>
+			<false/>
+			<key>Use Underline Color (Light)</key>
 			<false/>
 			<key>Use libtickit protocol</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.1499999999999999</real>
+			<real>1.1000000000000001</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -4177,6 +4778,8 @@ Resize Split Pane.Move Divider Down</string>
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>
+			<true/>
+			<key>ASCII Ligatures</key>
 			<true/>
 			<key>AWDS Pane Directory</key>
 			<string></string>
@@ -4714,11 +5317,11 @@ Resize Split Pane.Move Divider Down</string>
 			<key>Name</key>
 			<string>bash</string>
 			<key>Non Ascii Font</key>
-			<string>Menlo-Regular 11</string>
+			<string>SymbolsNerdFontComplete-1000-em 15</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>OfficeCodePro-Regular 15</string>
+			<string>CommitMono-Regular 15</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prevent Opening in a Tab</key>
@@ -4892,9 +5495,9 @@ Resize Split Pane.Move Divider Down</string>
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
-			<false/>
+			<true/>
 			<key>Vertical Spacing</key>
-			<real>1.1499999999999999</real>
+			<real>1.1000000000000001</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -5003,7 +5606,7 @@ Resize Split Pane.Move Divider Down</string>
 	<key>ShowBookmarkName</key>
 	<true/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowMetalFPSmeter</key>
 	<false/>
 	<key>ShowNewOutputIndicator</key>
@@ -5018,6 +5621,8 @@ Resize Split Pane.Move Divider Down</string>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.25365968528368799</real>
+	<key>StartDebugLoggingAutomatically</key>
+	<false/>
 	<key>StatusBarPosition</key>
 	<integer>1</integer>
 	<key>StretchTabsToFillBar</key>

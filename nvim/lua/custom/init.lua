@@ -1,1 +1,2 @@
-require "custom.mappings"
+local g = vim.g
+g.mapleader = "\\"

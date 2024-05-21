@@ -26,6 +26,8 @@
   tool = kdiff3
   compactionHeuristic = true
   colorMoved = default
+[diff "localizablestrings"]
+  textconv = "iconv -f utf-16 -t utf-8"
 [merge]
   tool = kdiff3
 [difftool]
@@ -36,9 +38,7 @@
 [difftool "kdiff3"]
   path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
 [mergetool "kdiff3"]
-  cmd = kdiff3 --auto --L1 \"$MERGED (Original)\" --L2 \"$MERGED (Changes in $(git name-rev --name-only --exclude='remotes/*' $(test -f .git/MERGE_HEAD && cat .git/ORIG_HEAD || cat .git/rebase-merge/onto)))\" --L3 \"$MERGED (Changes in $(git name-rev --name-only --exclude='remotes/*' $(test -f .git/MERGE_HEAD && cat .git/MERGE_HEAD || cat .git/ORIG_HEAD)))\" -o \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
-[mergetool "kdiff3NoAuto"]
-  cmd = kdiff3 --L1 \"$MERGED (Original)\" --L2 \"$MERGED (Changes in $(git name-rev --name-only --exclude='remotes/*' $(test -f .git/MERGE_HEAD && cat .git/ORIG_HEAD || cat .git/rebase-merge/onto)))\" --L3 \"$MERGED (Changes in $(git name-rev --name-only --exclude='remotes/*' $(test -f .git/MERGE_HEAD && cat .git/MERGE_HEAD || cat .git/ORIG_HEAD)))\" -o \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
+  cmd = kdiff3 --L1 \"$MERGED (Original)\" --L2 \"$MERGED (Changes in $(git name-rev --name-only --exclude='remotes/*' $(test -f .git/MERGE_HEAD && cat .git/ORIG_HEAD || (test -f .git/CHERRY_PICK_HEAD && cat .git/ORIG_HEAD || cat .git/rebase-merge/onto))))\" --L3 \"$MERGED (Changes in $(git name-rev --name-only --exclude='remotes/*' $(test -f .git/MERGE_HEAD && cat .git/MERGE_HEAD || (test -f .git/CHERRY_PICK_HEAD && cat .git/CHERRY_PICK_HEAD || cat .git/ORIG_HEAD))))\" -o \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
 [interactive]
   diffFilter = delta --color-only
 [core]
@@ -59,3 +59,7 @@
   defaultBranch = main
 [oh-my-zsh]
   hide-status = 1
+[credential]
+	helper = osxkeychain
+	azreposCredentialType = oauth
+	helper = /usr/local/share/gcm-core/git-credential-manager
