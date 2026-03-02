@@ -1,18 +1,21 @@
 DISABLE_AUTO_UPDATE="true"
+DISABLE_MAGIC_FUNCTIONS="true"
+DISABLE_COMPFIX="true"
 ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$HOME/.dotfiles/custom
 ZSH_DISABLE_COMPFIX="true"
 ZSH_THEME="dpoggi"
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor)
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
+ZSH_AUTOSUGGEST_USE_ASYNC=1
 plugins=(
-  dircycle
+  z
   fancy-ctrl-z
   git
   history-substring-search
   zsh-autosuggestions
   zsh-completions
   zsh-syntax-highlighting
-  z
 )
 source $ZSH/oh-my-zsh.sh
 
@@ -20,7 +23,13 @@ setopt AUTO_PUSHD
 setopt EXTENDED_GLOB
 setopt GLOB_DOTS
 
-autoload -U compinit && compinit
+autoload -Uz compinit
+if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
+    compinit
+else
+    compinit -C
+fi
+
 autoload -U zmv
 
 bindkey '\e[A' history-substring-search-up
@@ -36,8 +45,8 @@ zstyle ':completion:*' matcher-list '' \
   'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
   'r:|?=** m:{a-z\-}={A-Z\_}'
 
-alias vi='nvim -p'
-alias vim='nvim -p'
+alias vi='nvim'
+alias vim='nvim'
 alias xargs='xargs -o'
 alias mmv='noglob zmv -W'
 alias lsop='lsof -Pni'
@@ -45,7 +54,7 @@ alias sudo='sudo '
 alias serve='python3 -m http.server'
 alias ag='rg -S'
 alias m='rg -S -l'
-alias e='xargs -o nvim -p'
+alias e='xargs -o nvim'
 alias ev='xargs -o open -a "Visual Studio Code - Insiders"'
 alias f='rg -L -uuu --files . 2>/dev/null | rg -S'
 alias j='cd'
@@ -75,14 +84,15 @@ alias gma='gm --abort'
 alias gmt='gmtl'
 alias glgg='git log --graph --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset" --date=relative'
 alias gpsu='gpsup'
-alias gbdd='gb -D'
+alias gb='git branch --sort=-committerdate --format="%(HEAD) %(if)%(HEAD)%(then)%(color:green)%(else)%(color:yellow)%(end)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative))%(color:reset) %(color:blue)<%(authorname)>%(color:reset)"'
+alias gbdd='git branch -D'
 alias gbn='git rev-parse --abbrev-ref --symbolic-full-name HEAD'
 alias grbn='git rev-parse --abbrev-ref --symbolic-full-name @{u}'
-alias gup='gl --rebase --prune'
+alias gup='git update'
 alias guup='gl --rebase --prune upstream $(gbn)'
 alias gpup='gp upstream $(gbn)'
 alias grr='git rev-parse --show-cdup 2>/dev/null || echo .'
-alias gwc='gwch'
+alias gwc='git log -p'
 alias gdc='gdca'
 #alias glb='git fetch && git reset --hard $(git rev-parse --abbrev-ref --symbolic-full-name @{u})'
 #alias glub='git fetch upstream && git reset --hard upstream/$(git rev-parse --abbrev-ref --symbolic-full-name HEAD)'
@@ -93,23 +103,15 @@ alias gsquash='GIT_SEQUENCE_EDITOR=: gri'
 compdef __git_commits gcf
 gcff() { git commit --fixup $(git log -n 1 --pretty='%h' $1 2>/dev/null) }
 gwm() { git --no-pager show --abbrev-commit $(git log $1..${2:-develop} --ancestry-path --merges --pretty='%h' 2>/dev/null | tail -n1) }
-gfix() { gcf $1 && gsquash $1~1 }
-gffix() { gcff $1 && gsquash $1~1 }
+gcfx() { gcf $1 && gsquash $1~1 }
+gcffx() { gcff $1 && gsquash $1~1 }
 gbdm() { gco ${1:-develop} && git branch --merged ${1:-develop} | grep -v "^\(\s\|\*\)*\(${1:-develop}\|develop\|main\|master\)$" | xargs -n 1 git branch -d }
 
 export RR=$(grr)
 chpwd() { export RR=$(grr) }
 
-alias kube-env='kubectl config use-context'
-alias docker-shell='docker run --rm -it --entrypoint /bin/sh'
-kube-shell() { kubectl exec -i -t $* -- /bin/sh }
-
 alias adb-screenshot='adb exec-out screencap -p > ~/Desktop/Screenshot\ $(date +%F)\ $(date +%H.%M.%S).png'
 alias adb-mirror='adb exec-out screenrecord --bit-rate=16m --output-format=h264 --size 1920x1080 - | ffplay -framerate 60 -framedrop -bufsize 16M -'
-alias ashell='jshell --class-path $ANDROID_HOME/platforms/android-30/android.jar'
-
+alias ashell='jshell --class-path $ANDROID_HOME/platforms/android-35/android.jar'
 alias deeplink='adb shell am start -a android.intent.action.VIEW -d'
-
-#eval "$(keychain --quiet --eval --agents ssh vsts.id_rsa github.id_rsa)"
-#source $HOME/Private/Keys/azure_keys.sh
-source $HOME/.dotfiles/.iterm2_shell_integration.zsh
+alias listening='sudo lsof -iTCP -sTCP:LISTEN -n -P'

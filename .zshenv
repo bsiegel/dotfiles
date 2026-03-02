@@ -2,12 +2,11 @@ export HOMEBREW_PREFIX="/opt/homebrew";
 export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
 export HOMEBREW_REPOSITORY="/opt/homebrew";
 export GOROOT=$HOMEBREW_PREFIX/opt/go/libexec
-export GOPATH=$HOME/source/go
+export GOPATH=/opt/source/go
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_NDK_ROOT=$ANDROID_HOME/ndk/21.4.7075529
-export JAVA_HOME=$(/usr/libexec/java_home)
-export JAVA_OPTS="-Xmx4g -XX:MaxMetaspaceSize=1g"
 export NODE_PATH=$HOMEBREW_PREFIX/lib/node_modules
 export OPENSSL_DIR=$HOMEBREW_PREFIX/opt/openssl@3
+export DOTNET_ROOT=$HOMEBREW_PREFIX/opt/dotnet/libexec
 export GPG_TTY=$(/usr/bin/tty)
 export CHROME_EXECUTABLE="/Applications/Microsoft Edge Dev.app/Contents/MacOS/Microsoft Edge Dev"

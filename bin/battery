@@ -1,6 +1,37 @@
 #!/bin/sh
-DIR=$(dirname "$0")
-RESULT=$($DIR/../battery/bin/battery $*)
-if [[ -n "$RESULT" ]]; then
-  echo " $RESULT "
-fi
+
+case $1 in
+"Discharging")
+  ext="No"
+  ;;
+"Charging")
+  ext="Yes"
+  ;;
+esac
+
+ioreg -c AppleSmartBattery -w0 |
+  grep -o '"[^"]*" = [^ ]*' |
+  sed -e 's/= //g' -e 's/"//g' |
+  sort |
+  while read key value; do
+    case $key in
+    "MaxCapacity")
+      export maxcap=$value
+      ;;
+    "CurrentCapacity")
+      export curcap=$value
+      ;;
+    "ExternalConnected")
+      if [ -n "$ext" ] && [ "$ext" != "$value" ]; then
+        exit
+      fi
+      if [ -n "$ext" ] && [ "$ext" = "Yes" ]; then
+        export charging=⚡️
+      fi
+      ;;
+    esac
+    if [[ -n "$maxcap" && -n $curcap ]]; then
+      echo "$((100 * $curcap / $maxcap))% ${charging}"
+      break
+    fi
+  done

@@ -1,65 +1,80 @@
 [user]
-  name = Brandon Siegel
-  email = brandon@smartercode.net
+	name = Brandon Siegel
+	email = brandon@smartercode.net
 [color]
-  ui = auto
+	ui = auto
 [alias]
-  d = diff --word-diff
-  lg = log --color --oneline
-  co = checkout
-  mb = merge --no-ff --edit
-  stop-packing = gc --prune=now
-  pancake = !git fetch && git reset --hard $(git rev-parse --abbrev-ref --symbolic-full-name @{u})
-  cleanup = !zsh -c 'rm **/*.orig'
-  upcake = !git fetch upstream && git reset --hard upstream/$(git rev-parse --abbrev-ref --symbolic-full-name HEAD)
+	d = diff --word-diff
+	lg = log --color --oneline
+	co = checkout
+	mb = merge --no-ff --edit
+	stop-packing = gc --prune=now
+	pancake = !git fetch && git reset --hard $(git rev-parse --abbrev-ref --symbolic-full-name @{u})
+	cleanup = !zsh -c 'rm **/*.orig'
+	upcake = !git fetch upstream && git reset --hard upstream/$(git rev-parse --abbrev-ref --symbolic-full-name HEAD)
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
 [push]
-  default = upstream
+	default = upstream
+	autoSetupRemote = true
 [pull]
-  rebase = true
-  twohead = ort
+	rebase = true
+	twohead = ort
 [rebase]
-  autosquash = true
-  autostash = true
+	autosquash = true
+	autostash = true
 	updateRefs = true
 [diff]
-  algorithm = histogram
-  tool = kdiff3
-  compactionHeuristic = true
-  colorMoved = default
+	algorithm = histogram
+	tool = kdiff3
+	compactionHeuristic = true
+	colormoved = default
+	colormovedws = allow-indentation-change
+	renames = true
 [diff "localizablestrings"]
-  textconv = "iconv -f utf-16 -t utf-8"
-[merge]
-  tool = kdiff3
+	textconv = "iconv -f utf-16 -t utf-8"
 [difftool]
-  prompt = false
-[mergetool]
-  prompt = false
-  keepBackup = false
+	prompt = false
 [difftool "kdiff3"]
-  path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+[merge]
+	tool = kdiff3
+	conflictStyle = zdiff3
+[merge "mergiraf"]
+	name = mergiraf
+	driver = mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P -l %L
+[mergetool]
+	prompt = false
+	keepBackup = false
 [mergetool "kdiff3"]
-  cmd = kdiff3 --L1 \"$MERGED (Original)\" --L2 \"$MERGED (Changes in $(git name-rev --name-only --exclude='remotes/*' $(test -f .git/MERGE_HEAD && cat .git/ORIG_HEAD || (test -f .git/CHERRY_PICK_HEAD && cat .git/ORIG_HEAD || cat .git/rebase-merge/onto))))\" --L3 \"$MERGED (Changes in $(git name-rev --name-only --exclude='remotes/*' $(test -f .git/MERGE_HEAD && cat .git/MERGE_HEAD || (test -f .git/CHERRY_PICK_HEAD && cat .git/CHERRY_PICK_HEAD || cat .git/ORIG_HEAD))))\" -o \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
+	cmd = kdiff3 --L1 \"$MERGED (Original)\" --L2 \"$MERGED (Changes in $(git name-rev --name-only --exclude='remotes/*' $(test -f .git/MERGE_HEAD && cat .git/ORIG_HEAD || (test -f .git/CHERRY_PICK_HEAD && cat .git/ORIG_HEAD || cat .git/rebase-merge/onto))))\" --L3 \"$MERGED (Changes in $(git name-rev --name-only --exclude='remotes/*' $(test -f .git/MERGE_HEAD && cat .git/MERGE_HEAD || (test -f .git/CHERRY_PICK_HEAD && cat .git/CHERRY_PICK_HEAD || cat .git/ORIG_HEAD))))\" -o \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
 [interactive]
-  diffFilter = delta --color-only
+	diffFilter = delta --color-only
 [core]
-  excludesfile = /Users/brsiegel/.gitignore_global
-  pager = delta
+	attributesfile = ~/.gitattributes
+	excludesfile = ~/.gitignore_global
+	pager = delta
 [checkout]
-  defaultRemote = origin
+	defaultRemote = origin
 [delta]
-  features = line-numbers
+	features = line-numbers
+	navigate = true
 [feature]
-  manyFiles = true
+	manyFiles = true
 [filter "lfs"]
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
-  required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [init]
-  defaultBranch = main
+	defaultBranch = main
 [oh-my-zsh]
-  hide-status = 1
+	hide-status = 1
 [credential]
-	helper = osxkeychain
 	azreposCredentialType = oauth
+	helper = 
 	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true

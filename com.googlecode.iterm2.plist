@@ -2,16 +2,38 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AIFeatureFunctionCalling</key>
+	<true/>
+	<key>AIFeatureHostedCodeInterpeter</key>
+	<true/>
+	<key>AIFeatureHostedFileSearch</key>
+	<true/>
+	<key>AIFeatureHostedWebSearch</key>
+	<true/>
+	<key>AIFeatureStreamingResponses</key>
+	<true/>
+	<key>AITermAPI</key>
+	<integer>2</integer>
+	<key>AIVectorStore</key>
+	<integer>0</integer>
 	<key>Actions</key>
 	<array/>
 	<key>AdjustWindowForFontSizeChange</key>
 	<true/>
+	<key>AiMaxTokens</key>
+	<integer>400000</integer>
+	<key>AiModel</key>
+	<string>gpt-5.2</string>
+	<key>AiResponseMaxTokens</key>
+	<integer>128000</integer>
+	<key>AitermURL</key>
+	<string>https://api.openai.com/v1/responses</string>
 	<key>AllowClipboardAccess</key>
 	<true/>
 	<key>AllowTabbarInTitlebarAccessoryBigSur</key>
-	<true/>
+	<false/>
 	<key>AlternateMouseScroll</key>
-	<true/>
+	<false/>
 	<key>AnimateDimming</key>
 	<true/>
 	<key>AutoCommandHistory</key>
@@ -21,7 +43,9 @@
 	<key>BracketedPasteMode</key>
 	<true/>
 	<key>CheckTestRelease</key>
-	<true/>
+	<false/>
+	<key>CloseBookmarksWindowAfterOpening</key>
+	<false/>
 	<key>ClosingHotkeySwitchesSpaces</key>
 	<true/>
 	<key>Command</key>
@@ -2751,9 +2775,9 @@
 	<key>EnableRendezvous</key>
 	<false/>
 	<key>EscapeShellCharsWithBackslash</key>
-	<true/>
-	<key>FastForegroundJobUpdates</key>
 	<false/>
+	<key>FastForegroundJobUpdates</key>
+	<true/>
 	<key>FocusFollowsMouse</key>
 	<false/>
 	<key>FontChangeAffectsBroadcastingSessions</key>
@@ -2844,6 +2868,19 @@ Resize Split Pane.Move Divider Down</string>
 			<integer>32</integer>
 			<key>Text</key>
 			<string></string>
+		</dict>
+		<key>0xd-0x20000-0x24</key>
+		<dict>
+			<key>Action</key>
+			<integer>12</integer>
+			<key>Keycode</key>
+			<integer>13</integer>
+			<key>Modifiers</key>
+			<integer>131072</integer>
+			<key>Text</key>
+			<string>\n</string>
+			<key>Version</key>
+			<integer>1</integer>
 		</dict>
 		<key>0xf700-0x300000</key>
 		<dict>
@@ -3062,16 +3099,18 @@ Resize Split Pane.Move Divider Down</string>
 			<key>AWDS Pane Option</key>
 			<string>Recycle</string>
 			<key>AWDS Tab Directory</key>
-			<string>~/source/client_groupme_android/</string>
+			<string>/opt/source/client_groupme_android/</string>
 			<key>AWDS Tab Option</key>
 			<string>Recycle</string>
 			<key>AWDS Window Directory</key>
-			<string>~/source/client_groupme_android/</string>
+			<string>/opt/source/client_groupme_android/</string>
 			<key>AWDS Window Option</key>
 			<string>Yes</string>
 			<key>Allow Title Reporting</key>
 			<true/>
 			<key>Ambiguous Double Width</key>
+			<false/>
+			<key>Animate Movement</key>
 			<false/>
 			<key>Ansi 0 Color</key>
 			<dict>
@@ -3651,7 +3690,7 @@ Resize Split Pane.Move Divider Down</string>
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>100</integer>
+			<integer>150</integer>
 			<key>Command</key>
 			<string>/bin/zsh</string>
 			<key>Cursor Boost</key>
@@ -3766,9 +3805,11 @@ Resize Split Pane.Move Divider Down</string>
 			<key>Disable Smcup Rmcup</key>
 			<false/>
 			<key>Disable Window Resizing</key>
-			<false/>
+			<true/>
 			<key>Draw Powerline Glyphs</key>
 			<true/>
+			<key>Enable Triggers in Interactive Apps</key>
+			<false/>
 			<key>Flashing Bell</key>
 			<true/>
 			<key>Foreground Color</key>
@@ -3798,6 +3839,8 @@ Resize Split Pane.Move Divider Down</string>
 				<key>Red Component</key>
 				<real>0.95075207948684692</real>
 			</dict>
+			<key>Function Key</key>
+			<integer>0</integer>
 			<key>Guid</key>
 			<string>AB528825-B469-4B9E-9B00-D83EA36F4A53</string>
 			<key>Has Hotkey</key>
@@ -3856,62 +3899,6 @@ Resize Split Pane.Move Divider Down</string>
 					<key>Text</key>
 					<string>AB528825-B469-4B9E-9B00-D83EA36F4A53</string>
 				</dict>
-				<key>0x2d-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1f</string>
-				</dict>
-				<key>0x32-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x00</string>
-				</dict>
-				<key>0x33-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b</string>
-				</dict>
-				<key>0x34-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1c</string>
-				</dict>
-				<key>0x35-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1d</string>
-				</dict>
-				<key>0x36-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1e</string>
-				</dict>
-				<key>0x37-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1f</string>
-				</dict>
-				<key>0x38-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x7f</string>
-				</dict>
 				<key>0x5c-0x1c0000-0x2a</key>
 				<dict>
 					<key>Action</key>
@@ -3935,48 +3922,6 @@ Resize Split Pane.Move Divider Down</string>
 					<key>Text</key>
 					<string>0x17</string>
 				</dict>
-				<key>0xf700-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5A</string>
-				</dict>
-				<key>0xf700-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6A</string>
-				</dict>
-				<key>0xf701-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5B</string>
-				</dict>
-				<key>0xf701-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6B</string>
-				</dict>
-				<key>0xf702-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5D</string>
-				</dict>
-				<key>0xf702-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6D</string>
-				</dict>
 				<key>0xf702-0x280000</key>
 				<dict>
 					<key>Action</key>
@@ -3984,138 +3929,12 @@ Resize Split Pane.Move Divider Down</string>
 					<key>Text</key>
 					<string>b</string>
 				</dict>
-				<key>0xf703-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5C</string>
-				</dict>
-				<key>0xf703-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6C</string>
-				</dict>
 				<key>0xf703-0x280000</key>
 				<dict>
 					<key>Action</key>
 					<integer>10</integer>
 					<key>Text</key>
 					<string>f</string>
-				</dict>
-				<key>0xf704-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2P</string>
-				</dict>
-				<key>0xf705-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2Q</string>
-				</dict>
-				<key>0xf706-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2R</string>
-				</dict>
-				<key>0xf707-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2S</string>
-				</dict>
-				<key>0xf708-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[15;2~</string>
-				</dict>
-				<key>0xf709-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[17;2~</string>
-				</dict>
-				<key>0xf70a-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[18;2~</string>
-				</dict>
-				<key>0xf70b-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[19;2~</string>
-				</dict>
-				<key>0xf70c-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[20;2~</string>
-				</dict>
-				<key>0xf70d-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[21;2~</string>
-				</dict>
-				<key>0xf70e-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[23;2~</string>
-				</dict>
-				<key>0xf70f-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[24;2~</string>
-				</dict>
-				<key>0xf729-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2H</string>
-				</dict>
-				<key>0xf729-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5H</string>
-				</dict>
-				<key>0xf72b-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2F</string>
-				</dict>
-				<key>0xf72b-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5F</string>
 				</dict>
 			</dict>
 			<key>Link Color</key>
@@ -4172,7 +3991,7 @@ Resize Split Pane.Move Divider Down</string>
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>SymbolsNerdFontComplete-1000-em 15</string>
+			<string>SymbolsNF 15</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Non-ASCII Ligatures</key>
@@ -4182,7 +4001,7 @@ Resize Split Pane.Move Divider Down</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prevent Opening in a Tab</key>
 			<false/>
 			<key>Prompt Before Closing 2</key>
@@ -4192,7 +4011,7 @@ Resize Split Pane.Move Divider Down</string>
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>25</integer>
+			<integer>40</integer>
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
@@ -4712,14 +4531,10 @@ Resize Split Pane.Move Divider Down</string>
 			<integer>4</integer>
 			<key>Transparency</key>
 			<real>0.050365691489361708</real>
+			<key>Treat Option as Alt</key>
+			<false/>
 			<key>Triggers</key>
 			<array>
-				<dict>
-					<key>action</key>
-					<string>BounceTrigger</string>
-					<key>regex</key>
-					<string></string>
-				</dict>
 				<dict>
 					<key>action</key>
 					<string>iTermHighlightLineTrigger</string>
@@ -5020,7 +4835,7 @@ Resize Split Pane.Move Divider Down</string>
 			<key>Disable Smcup Rmcup</key>
 			<false/>
 			<key>Disable Window Resizing</key>
-			<false/>
+			<true/>
 			<key>Draw Powerline Glyphs</key>
 			<true/>
 			<key>Flashing Bell</key>
@@ -5045,7 +4860,7 @@ Resize Split Pane.Move Divider Down</string>
 			<key>Initial Text</key>
 			<string></string>
 			<key>Initial Use Transparency</key>
-			<false/>
+			<true/>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -5055,62 +4870,6 @@ Resize Split Pane.Move Divider Down</string>
 			</array>
 			<key>Keyboard Map</key>
 			<dict>
-				<key>0x2d-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1f</string>
-				</dict>
-				<key>0x32-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x00</string>
-				</dict>
-				<key>0x33-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b</string>
-				</dict>
-				<key>0x34-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1c</string>
-				</dict>
-				<key>0x35-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1d</string>
-				</dict>
-				<key>0x36-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1e</string>
-				</dict>
-				<key>0x37-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1f</string>
-				</dict>
-				<key>0x38-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x7f</string>
-				</dict>
 				<key>0x7f-0x100000</key>
 				<dict>
 					<key>Action</key>
@@ -5125,68 +4884,12 @@ Resize Split Pane.Move Divider Down</string>
 					<key>Text</key>
 					<string>0x17</string>
 				</dict>
-				<key>0xf700-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5A</string>
-				</dict>
-				<key>0xf700-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6A</string>
-				</dict>
-				<key>0xf701-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5B</string>
-				</dict>
-				<key>0xf701-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6B</string>
-				</dict>
-				<key>0xf702-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5D</string>
-				</dict>
-				<key>0xf702-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6D</string>
-				</dict>
 				<key>0xf702-0x280000</key>
 				<dict>
 					<key>Action</key>
 					<integer>10</integer>
 					<key>Text</key>
 					<string>b</string>
-				</dict>
-				<key>0xf703-0x240000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5C</string>
-				</dict>
-				<key>0xf703-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;6C</string>
 				</dict>
 				<key>0xf703-0x280000</key>
 				<dict>
@@ -5195,119 +4898,9 @@ Resize Split Pane.Move Divider Down</string>
 					<key>Text</key>
 					<string>f</string>
 				</dict>
-				<key>0xf704-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2P</string>
-				</dict>
-				<key>0xf705-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2Q</string>
-				</dict>
-				<key>0xf706-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2R</string>
-				</dict>
-				<key>0xf707-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2S</string>
-				</dict>
-				<key>0xf708-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[15;2~</string>
-				</dict>
-				<key>0xf709-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[17;2~</string>
-				</dict>
-				<key>0xf70a-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[18;2~</string>
-				</dict>
-				<key>0xf70b-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[19;2~</string>
-				</dict>
-				<key>0xf70c-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[20;2~</string>
-				</dict>
-				<key>0xf70d-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[21;2~</string>
-				</dict>
-				<key>0xf70e-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[23;2~</string>
-				</dict>
-				<key>0xf70f-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[24;2~</string>
-				</dict>
-				<key>0xf729-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2H</string>
-				</dict>
-				<key>0xf729-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5H</string>
-				</dict>
-				<key>0xf72b-0x20000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;2F</string>
-				</dict>
-				<key>0xf72b-0x40000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[1;5F</string>
-				</dict>
 			</dict>
+			<key>Left Option Key Changeable</key>
+			<true/>
 			<key>Log Directory</key>
 			<string></string>
 			<key>Minimum Contrast</key>
@@ -5323,7 +4916,7 @@ Resize Split Pane.Move Divider Down</string>
 			<key>Normal Font</key>
 			<string>CommitMono-Regular 15</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prevent Opening in a Tab</key>
 			<false/>
 			<key>Prompt Before Closing 2</key>
@@ -5337,7 +4930,7 @@ Resize Split Pane.Move Divider Down</string>
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>0</integer>
+			<integer>10000</integer>
 			<key>Scrollback With Status Bar</key>
 			<false/>
 			<key>Scrollback in Alternate Screen</key>
@@ -5478,6 +5071,8 @@ Resize Split Pane.Move Divider Down</string>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
 			<real>0.0</real>
+			<key>Treat Option as Alt</key>
+			<false/>
 			<key>Triggers</key>
 			<array/>
 			<key>Unicode Version</key>
@@ -5527,11 +5122,11 @@ Resize Split Pane.Move Divider Down</string>
 	<key>PasteSpecialChunkSize</key>
 	<integer>1024</integer>
 	<key>PasteSpecialRegex</key>
-	<string></string>
+	<string>"</string>
 	<key>PasteSpecialSubstitution</key>
 	<string></string>
 	<key>PasteSpecialUseRegexSubstitution</key>
-	<false/>
+	<true/>
 	<key>PasteTabToStringTabStopSize</key>
 	<integer>4</integer>
 	<key>PerPaneBackgroundImage</key>
