@@ -1,0 +1,48 @@
+{
+  "env": {
+    "CLAUDE_CODE_TMPDIR": "/tmp/brsiegel_claude",
+    "ENABLE_TOOL_SEARCH": "true",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "95"
+  },
+  "permissions": {
+    "defaultMode": "default"
+  },
+  "model": "opus",
+  "statusLine": {
+    "type": "command",
+    "command": "npx -y ccstatusline@latest",
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "azure-best-practices@mai-agents": true,
+    "linear-groupme-org@mai-agents": true,
+    "linear-mcp@mai-agents": true,
+    "local-memory-mcp@mai-agents": true,
+    "mai-code-reviewer@mai-agents": true,
+    "slack-canvas-rag@mai-agents": true,
+    "web-search@mai-agents": true
+  },
+  "extraKnownMarketplaces": {
+    "mai-agents": {
+      "source": {
+        "source": "directory",
+        "path": "/opt/source/mai-agents"
+      }
+    },
+    "local-skills": {
+      "source": {
+        "source": "directory",
+        "path": "/opt/source/mai-agents/skills/local"
+      }
+    }
+  },
+  "alwaysThinkingEnabled": true,
+  "fastMode": true,
+  "skipDangerousModePermissionPrompt": true,
+  "teammateMode": "auto",
+  "pluginSources": [
+    "/opt/source/mai-agents",
+    "/opt/source/mai-agents/skills/local"
+  ]
+}

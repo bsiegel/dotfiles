@@ -1,0 +1,569 @@
+{
+  "numStartups": 187,
+  "installMethod": "native",
+  "autoUpdates": false,
+  "verbose": true,
+  "hasSeenTasksHint": true,
+  "tipsHistory": {
+    "new-user-warmup": 1,
+    "plan-mode-for-complex-tasks": 145,
+    "memory-command": 171,
+    "theme-command": 187,
+    "status-line": 53,
+    "stickers-command": 24,
+    "prompt-queue": 24,
+    "enter-to-steer-in-relatime": 187,
+    "todo-list": 166,
+    "shift-enter": 184,
+    "ide-upsell-external-terminal": 184,
+    "# for memory": 9,
+    "install-github-app": 180,
+    "drag-and-drop-images": 180,
+    "paste-images-mac": 180,
+    "permissions": 184,
+    "double-esc-code-restore": 178,
+    "continue": 178,
+    "rename-conversation": 180,
+    "custom-commands": 180,
+    "shift-tab": 179,
+    "image-paste": 179,
+    "config-thinking-mode": 14,
+    "ultrathink-keyword": 14,
+    "custom-agents": 180,
+    "default-permission-mode-config": 69,
+    "install-slack-app": 177,
+    "desktop-app": 171,
+    "web-app": 171,
+    "mobile-app": 172,
+    "git-worktrees": 177,
+    "agent-flag": 185
+  },
+  "promptQueueUseCount": 333,
+  "cachedStatsigGates": {
+    "tengu_disable_bypass_permissions_mode": false,
+    "tengu_tool_pear": false,
+    "tengu_enable_versioned_plugins": false,
+    "tengu_web_tasks": false,
+    "tengu_log_1p_events": false,
+    "code_slack_app_install_banner": false,
+    "tengu_sumi": false,
+    "tengu_react_vulnerability_warning": false,
+    "tengu_prompt_suggestion": false
+  },
+  "cachedDynamicConfigs": {
+    "tengu-top-of-feed-tip": {
+      "tip": "",
+      "color": "dim"
+    }
+  },
+  "cachedGrowthBookFeatures": {
+    "tengu_1p_event_batch_config": {
+      "scheduledDelayMillis": 5000,
+      "maxExportBatchSize": 200,
+      "maxQueueSize": 8192
+    },
+    "tengu_mcp_tool_search": false,
+    "tengu_scratch": false,
+    "tengu_disable_bypass_permissions_mode": false,
+    "tengu_log_segment_events": false,
+    "tengu_log_datadog_events": true,
+    "tengu_event_sampling_config": {},
+    "tengu_tool_pear": false,
+    "tengu_thinkback": false,
+    "tengu_sumi": true,
+    "tengu_c4w_usage_limit_notifications_enabled": true,
+    "tengu-top-of-feed-tip": {
+      "tip": "",
+      "color": ""
+    },
+    "tengu_react_vulnerability_warning": false,
+    "tengu_code_diff_cli": true,
+    "tengu_post_compact_survey": false,
+    "tengu_tool_search_unsupported_models": [
+      "haiku"
+    ],
+    "tengu_streaming_tool_execution2": false,
+    "tengu_ant_attribution_header_new": true,
+    "enhanced_telemetry_beta": false,
+    "tengu_brass_pebble": false,
+    "tengu_claudeai_mcp_connectors": false,
+    "tengu_keybinding_customization": false,
+    "tengu_pid_based_version_locking": true,
+    "tengu_vscode_review_upsell": false,
+    "tengu_vscode_onboarding": false,
+    "tengu_cache_plum_violet": false,
+    "tengu_attribution_header": false,
+    "tengu_bash_haiku_prefetch": true,
+    "tengu_marble_anvil": true,
+    "tengu_scarf_coffee": false,
+    "tengu_keybinding_customization_release": true,
+    "tengu_marble_kite": false,
+    "tengu_kv7_prompt_sort": false,
+    "tengu_coral_fern": false
+  },
+  "hasSeenStashHint": true,
+  "firstStartTime": "2025-06-08T05:02:21.230Z",
+  "userID": "270a104004f0ed8a3754fb33ea647962f4343261bb9510412b2cbf0fe6ea234b",
+  "projects": {
+    "/opt/source/client_groupme_android": {
+      "allowedTools": [],
+      "dontCrawlDirectory": false,
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": true,
+      "projectOnboardingSeenCount": 2,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false,
+      "exampleFiles": [
+        "# Analysis of Modified Files",
+        "",
+        "## Summary",
+        "This appears to be a **major release or refactoring** of a GroupMe Android application with **439 total lines changed** across 20 files.",
+        "",
+        "## Change Categories",
+        "",
+        "### 🔴 **Critical Infrastructure Changes** (High impact)",
+        "- **build.gradle** (55 + 48 lines) - Dependency updates, build configuration",
+        "- **gradle/libs.versions.toml** (37 lines) - Version catalog updates",
+        "- **gm-app/gradle.lockfile** (34 lines) - Dependency lock changes",
+        "",
+        "### 🟠 **Core Feature Changes** (Medium-High impact)",
+        "- **HomeActivity.java** (66 lines) - Main entry point modifications",
+        "- **ChatFragment.java** (50 lines) - Chat UI/logic updates",
+        "- **ConversationListFragment.java** (40 lines) - List view changes",
+        "- **ChatActivity.java** (23 lines) - Chat screen modifications",
+        "- **MessageViewHolder.java** (24 lines) - Message rendering updates",
+        "",
+        "### 🟡 **Configuration & Manifest** (Medium impact)",
+        "- **AndroidManifest.xml** (34 lines) - Permissions, activities, or services",
+        "- **strings.xml** (65 lines) - UI text changes (likely new features/translations)",
+        "- **colors.xml** (20 lines) - Theme updates",
+        "- **styles.xml** (19 lines) - Style definitions",
+        "",
+        "### 🟢 **Secondary/Supporting Changes** (Lower impact)",
+        "- **DiscoverHomeFragment.java** (26 lines) - Discovery/directory feature",
+        "- **ProfileFragment.java** (21 lines) - User profile updates",
+        "- **MessageUtils.java** (19 lines) - Utility methods",
+        "- **ConversationUtils.java** (19 lines) - Helper functions",
+        "",
+        "### 📋 **Documentation & CI/CD**",
+        "- **RELEASE_NOTES.md** (27 lines) - Release documentation",
+        "- **build-release.yml** + **build.yml** (34 + 20 lines) - CI/CD pipeline changes",
+        "",
+        "## Recommendations",
+        "",
+        "1. **Priority Review**: Focus on `build.gradle` files and manifest changes first",
+        "2. **Test Areas**: Chat functionality, conversation list, message rendering",
+        "3. **Check**: Dependency compatibility and any breaking changes in `libs.versions.toml`",
+        "4. **Validate**: CI/CD pipeline changes with actual builds"
+      ],
+      "exampleFilesGeneratedAt": 1765572007923,
+      "lastTotalWebSearchRequests": 0,
+      "lastCost": 2.63553,
+      "lastAPIDuration": 518699,
+      "lastToolDuration": 112271,
+      "lastDuration": 669824,
+      "lastLinesAdded": 0,
+      "lastLinesRemoved": 0,
+      "lastTotalInputTokens": 424814,
+      "lastTotalOutputTokens": 32904,
+      "lastTotalCacheCreationInputTokens": 0,
+      "lastTotalCacheReadInputTokens": 0,
+      "lastSessionId": "e62bd4ba-42ed-40d5-89f8-b9ff15c954b1",
+      "reactVulnerabilityCache": {
+        "detected": false,
+        "package": null,
+        "packageName": null,
+        "version": null,
+        "packageManager": null
+      },
+      "lastAPIDurationWithoutRetries": 518662,
+      "lastModelUsage": {
+        "opus": {
+          "inputTokens": 11975,
+          "outputTokens": 28719,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.46670999999999996
+        },
+        "claude-opus-4-6": {
+          "inputTokens": 97590,
+          "outputTokens": 866,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.5096
+        },
+        "claude-sonnet-4-6": {
+          "inputTokens": 315249,
+          "outputTokens": 3319,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 1.6592200000000001
+        }
+      },
+      "hasCompletedProjectOnboarding": true,
+      "disabledMcpServers": [
+        "plugin:azure-devops-mcp:azure-devops-mcp",
+        "plugin:azure-mcp-server:azure-mcp-server"
+      ],
+      "lastFpsAverage": 2.76,
+      "lastFpsLow1Pct": 132.91,
+      "lastSessionMetrics": {
+        "frame_duration_ms_count": 1849,
+        "frame_duration_ms_min": 0.37941599999612663,
+        "frame_duration_ms_max": 20.701790999999503,
+        "frame_duration_ms_avg": 1.6823773098974275,
+        "frame_duration_ms_p50": 0.9538954999952693,
+        "frame_duration_ms_p95": 4.118122299994134,
+        "frame_duration_ms_p99": 7.383643910008105,
+        "pre_tool_hook_duration_ms_count": 21,
+        "pre_tool_hook_duration_ms_min": 0,
+        "pre_tool_hook_duration_ms_max": 3,
+        "pre_tool_hook_duration_ms_avg": 1.3333333333333333,
+        "pre_tool_hook_duration_ms_p50": 1,
+        "pre_tool_hook_duration_ms_p95": 3,
+        "pre_tool_hook_duration_ms_p99": 3,
+        "hook_duration_ms_count": 4,
+        "hook_duration_ms_min": 0,
+        "hook_duration_ms_max": 0,
+        "hook_duration_ms_avg": 0,
+        "hook_duration_ms_p50": 0,
+        "hook_duration_ms_p95": 0,
+        "hook_duration_ms_p99": 0
+      }
+    },
+    "/opt/source/mai-agents": {
+      "allowedTools": [],
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": false,
+      "projectOnboardingSeenCount": 0,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false,
+      "exampleFiles": [],
+      "reactVulnerabilityCache": {
+        "detected": false,
+        "package": null,
+        "packageName": null,
+        "version": null,
+        "packageManager": null
+      },
+      "hasCompletedProjectOnboarding": true,
+      "lastCost": 0,
+      "lastAPIDuration": 0,
+      "lastAPIDurationWithoutRetries": 0,
+      "lastToolDuration": 0,
+      "lastDuration": 43955,
+      "lastLinesAdded": 0,
+      "lastLinesRemoved": 0,
+      "lastTotalInputTokens": 0,
+      "lastTotalOutputTokens": 0,
+      "lastTotalCacheCreationInputTokens": 0,
+      "lastTotalCacheReadInputTokens": 0,
+      "lastTotalWebSearchRequests": 0,
+      "lastFpsAverage": 1.93,
+      "lastFpsLow1Pct": 87.6,
+      "lastModelUsage": {},
+      "lastSessionId": "2a453505-c660-4689-b2b9-95d8a34c40d7",
+      "lastSessionMetrics": {
+        "frame_duration_ms_count": 84,
+        "frame_duration_ms_min": 0.3240829999995185,
+        "frame_duration_ms_max": 11.41541600000346,
+        "frame_duration_ms_avg": 2.2295317142856512,
+        "frame_duration_ms_p50": 1.6348539999997058,
+        "frame_duration_ms_p95": 5.401528649999804,
+        "frame_duration_ms_p99": 10.989903219998487
+      },
+      "disabledMcpServers": [
+        "plugin:azure-devops-mcp:azure-devops-mcp",
+        "plugin:azure-mcp-server:azure-mcp-server",
+        "plugin:linear-mcp:linear-server"
+      ]
+    },
+    "/opt/source/client-android": {
+      "allowedTools": [],
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": false,
+      "projectOnboardingSeenCount": 0,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false,
+      "exampleFiles": [],
+      "hasCompletedProjectOnboarding": true,
+      "lastCost": 10.923409999999997,
+      "lastAPIDuration": 331283,
+      "lastAPIDurationWithoutRetries": 330952,
+      "lastToolDuration": 191423,
+      "lastDuration": 97792442,
+      "lastLinesAdded": 209,
+      "lastLinesRemoved": 109,
+      "lastTotalInputTokens": 2109912,
+      "lastTotalOutputTokens": 14954,
+      "lastTotalCacheCreationInputTokens": 0,
+      "lastTotalCacheReadInputTokens": 0,
+      "lastTotalWebSearchRequests": 0,
+      "lastFpsAverage": 0.09,
+      "lastFpsLow1Pct": 19.44,
+      "lastModelUsage": {
+        "claude-opus-4-6": {
+          "inputTokens": 1039325,
+          "outputTokens": 8061,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 5.398150000000001
+        },
+        "claude-sonnet-4-5-20250929": {
+          "inputTokens": 1070587,
+          "outputTokens": 6893,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 5.52526
+        }
+      },
+      "lastSessionId": "900d9319-b0b8-4b10-8dd5-f36fa63cf78b",
+      "lastSessionMetrics": {
+        "frame_duration_ms_count": 8176,
+        "frame_duration_ms_min": 0.2808340000010503,
+        "frame_duration_ms_max": 118.18495799973607,
+        "frame_duration_ms_avg": 3.2653071510486913,
+        "frame_duration_ms_p50": 1.8057915000244975,
+        "frame_duration_ms_p95": 7.1554606998106305,
+        "frame_duration_ms_p99": 50.95124824972823
+      }
+    },
+    "/opt/source/emoji_picker": {
+      "allowedTools": [],
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": true,
+      "projectOnboardingSeenCount": 0,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false,
+      "exampleFiles": [],
+      "lastCost": 1.5541979999999997,
+      "lastAPIDuration": 104128,
+      "lastAPIDurationWithoutRetries": 104123,
+      "lastToolDuration": 28525,
+      "lastDuration": 798701,
+      "lastLinesAdded": 3,
+      "lastLinesRemoved": 7,
+      "lastTotalInputTokens": 298715,
+      "lastTotalOutputTokens": 3247,
+      "lastTotalCacheCreationInputTokens": 0,
+      "lastTotalCacheReadInputTokens": 0,
+      "lastTotalWebSearchRequests": 0,
+      "lastFpsAverage": 2.73,
+      "lastFpsLow1Pct": 165.35,
+      "lastModelUsage": {
+        "opus": {
+          "inputTokens": 656,
+          "outputTokens": 1924,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.030828
+        },
+        "claude-opus-4-6": {
+          "inputTokens": 298059,
+          "outputTokens": 1323,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 1.52337
+        }
+      },
+      "lastSessionId": "b5e1c221-e13f-4683-a222-411a5f9bd161",
+      "lastSessionMetrics": {
+        "frame_duration_ms_count": 2179,
+        "frame_duration_ms_min": 0.15816700001596473,
+        "frame_duration_ms_max": 13.494582999992417,
+        "frame_duration_ms_avg": 0.9689551000460315,
+        "frame_duration_ms_p50": 0.7210625000006985,
+        "frame_duration_ms_p95": 2.0811393500014668,
+        "frame_duration_ms_p99": 6.040437499984109,
+        "pre_tool_hook_duration_ms_count": 8,
+        "pre_tool_hook_duration_ms_min": 0,
+        "pre_tool_hook_duration_ms_max": 1,
+        "pre_tool_hook_duration_ms_avg": 0.125,
+        "pre_tool_hook_duration_ms_p50": 0,
+        "pre_tool_hook_duration_ms_p95": 0.6499999999999995,
+        "pre_tool_hook_duration_ms_p99": 0.9299999999999997,
+        "hook_duration_ms_count": 6,
+        "hook_duration_ms_min": 0,
+        "hook_duration_ms_max": 46,
+        "hook_duration_ms_avg": 11.833333333333334,
+        "hook_duration_ms_p50": 1,
+        "hook_duration_ms_p95": 40.25,
+        "hook_duration_ms_p99": 44.85000000000001
+      },
+      "disabledMcpServers": [
+        "linear-server",
+        "figma"
+      ]
+    }
+  },
+  "sonnet45MigrationComplete": true,
+  "opus45MigrationComplete": true,
+  "githubRepoPaths": {
+    "infinity-microsoft/mai-agents": [
+      "/opt/source/mai-agents"
+    ],
+    "groupme/client-android": [
+      "/opt/source/client-android"
+    ],
+    "groupme/emojipicker": [
+      "/opt/source/emoji_picker"
+    ]
+  },
+  "iterm2SetupInProgress": false,
+  "iterm2BackupPath": "/Users/brsiegel/Library/Preferences/com.googlecode.iterm2.plist.bak",
+  "shiftEnterKeyBindingInstalled": true,
+  "hasCompletedOnboarding": true,
+  "lastOnboardingVersion": "2.0.59",
+  "lastReleaseNotesSeen": "2.1.62",
+  "subscriptionNoticeCount": 0,
+  "hasAvailableSubscription": false,
+  "changelogLastFetched": 1765245330322,
+  "officialMarketplaceAutoInstallAttempted": true,
+  "officialMarketplaceAutoInstalled": true,
+  "mcpServers": {
+    "figma": {
+      "type": "http",
+      "url": "http://127.0.0.1:3845/mcp"
+    },
+    "azure-devops-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@azure-devops/mcp",
+        "skype"
+      ]
+    },
+    "android-mcp": {
+      "command": "java",
+      "args": [
+        "-jar",
+        "/opt/source/mcp/android-mcp/build/libs/android-mcp.jar"
+      ]
+    }
+  },
+  "lastPlanModeUse": 1772492872186,
+  "opusProMigrationComplete": true,
+  "thinkingMigrationComplete": true,
+  "cachedChromeExtensionInstalled": false,
+  "skillUsage": {
+    "init": {
+      "usageCount": 4,
+      "lastUsedAt": 1768934443377
+    },
+    "slack-canvas-rag": {
+      "usageCount": 8,
+      "lastUsedAt": 1770850361172
+    },
+    "statusline": {
+      "usageCount": 2,
+      "lastUsedAt": 1769202001984
+    },
+    "linear-groupme-org": {
+      "usageCount": 1,
+      "lastUsedAt": 1769197550137
+    },
+    "slack-mcp": {
+      "usageCount": 1,
+      "lastUsedAt": 1769544735373
+    },
+    "cosmos-db": {
+      "usageCount": 1,
+      "lastUsedAt": 1770320448661
+    },
+    "memory": {
+      "usageCount": 2,
+      "lastUsedAt": 1772231654149
+    }
+  },
+  "hasUsedBackslashReturn": true,
+  "autoUpdatesProtectedForNative": true,
+  "clientDataCache": {
+    "data": null,
+    "timestamp": 1772231406042
+  },
+  "showSpinnerTree": false,
+  "effortCalloutDismissed": true,
+  "sonnet1m45MigrationComplete": true,
+  "toolUsage": {
+    "ToolSearch": {
+      "usageCount": 7,
+      "lastUsedAt": 1772231658764
+    },
+    "mcp__plugin_slack-mcp_slack__slack_canvas_read": {
+      "usageCount": 2,
+      "lastUsedAt": 1772065997527
+    },
+    "mcp__plugin_local-memory-mcp_local-memory__recall": {
+      "usageCount": 2,
+      "lastUsedAt": 1772231662445
+    },
+    "mcp__plugin_local-memory-mcp_local-memory__check_repo_status": {
+      "usageCount": 2,
+      "lastUsedAt": 1772231662460
+    },
+    "Bash": {
+      "usageCount": 105,
+      "lastUsedAt": 1772493004090
+    },
+    "Grep": {
+      "usageCount": 76,
+      "lastUsedAt": 1772492937512
+    },
+    "Glob": {
+      "usageCount": 28,
+      "lastUsedAt": 1772247923293
+    },
+    "Read": {
+      "usageCount": 122,
+      "lastUsedAt": 1772492998777
+    },
+    "Task": {
+      "usageCount": 9,
+      "lastUsedAt": 1772493019229
+    },
+    "mcp__plugin_local-memory-mcp_local-memory__remember": {
+      "usageCount": 1,
+      "lastUsedAt": 1772231224727
+    },
+    "mcp__plugin_local-memory-mcp_local-memory__mark_repo_indexed": {
+      "usageCount": 1,
+      "lastUsedAt": 1772231224763
+    },
+    "TaskCreate": {
+      "usageCount": 4,
+      "lastUsedAt": 1772232689961
+    },
+    "TaskUpdate": {
+      "usageCount": 8,
+      "lastUsedAt": 1772232905233
+    },
+    "Edit": {
+      "usageCount": 53,
+      "lastUsedAt": 1772475981123
+    },
+    "Write": {
+      "usageCount": 3,
+      "lastUsedAt": 1772236942440
+    }
+  },
+  "teammateMode": "auto"
+}
